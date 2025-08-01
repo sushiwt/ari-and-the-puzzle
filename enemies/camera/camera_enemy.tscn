@@ -31,7 +31,8 @@ position = Vector2(7.22087, 3.80246)
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sensor/SensorArea"]
 polygon = PackedVector2Array(1.27559, 1.26998, 45.0223, 22.811, 42.9113, 27.4826, 37.4118, 34.7072, 34.8718, 37.2584, 27.6715, 42.7897, 23.0093, 44.9213)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Shadow" type="Sprite2D" parent="."]
+z_index = -2
 texture_filter = 1
 position = Vector2(0, 48)
 texture = ExtResource("4_2wa53")

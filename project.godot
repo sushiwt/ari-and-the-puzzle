@@ -14,7 +14,8 @@ config/name="Ari And The Puzzle"
 run/main_scene="uid://ckq1qrj8313lj"
 config/use_custom_user_dir=true
 config/features=PackedStringArray("4.4", "GL Compatibility")
-run/max_fps=2
+run/max_fps=60
+boot_splash/bg_color=Color(0, 0, 0, 1)
 config/icon="uid://ba5nmyliq213f"
 
 [autoload]
@@ -25,7 +26,6 @@ GameState="*res://basegame/autoload/game_state.gd"
 
 window/size/viewport_width=320
 window/size/viewport_height=240
-window/size/mode=2
 window/size/window_width_override=640
 window/size/window_height_override=480
 window/stretch/mode="viewport"
@@ -47,6 +47,11 @@ jump={
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":90,"key_label":0,"unicode":122,"location":0,"echo":false,"script":null)
 ]
 }
+confirm={
+"deadzone": 0.2,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":1,"position":Vector2(71, 37),"global_position":Vector2(85, 110),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
+]
+}
 
 [layer_names]
 
@@ -58,3 +63,4 @@ jump={
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)

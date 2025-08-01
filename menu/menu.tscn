@@ -1,0 +1,60 @@
+[gd_scene load_steps=8 format=3 uid="uid://b4hofg1kgse0l"]
+
+[ext_resource type="Texture2D" uid="uid://db6r5aycm80mw" path="res://menu/sprite/title.png" id="1_j0t7f"]
+[ext_resource type="PackedScene" uid="uid://iefe3fpk1u25" path="res://menu/button.tscn" id="1_juveg"]
+[ext_resource type="Texture2D" uid="uid://cdrviwm2kq14v" path="res://menu/sprite/play.png" id="1_pbjm4"]
+[ext_resource type="Texture2D" uid="uid://x7tdqx6r4rgm" path="res://menu/sprite/background.jpg" id="1_v6yed"]
+[ext_resource type="Texture2D" uid="uid://b42p084vx6o6m" path="res://menu/sprite/settings.png" id="2_svuvw"]
+[ext_resource type="Texture2D" uid="uid://d2d8sp0f0gkyt" path="res://menu/sprite/quit.png" id="3_juveg"]
+[ext_resource type="Texture2D" uid="uid://m1623m3kawup" path="res://menu/sprite/version.png" id="6_juveg"]
+
+[node name="Menu" type="Node2D"]
+texture_filter = 1
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(168, 236)
+texture = ExtResource("1_v6yed")
+
+[node name="BackgroundButtonCover" type="Polygon2D" parent="."]
+color = Color(0, 0, 0, 0.501961)
+polygon = PackedVector2Array(0, 152, 72, 152, 72, 208, 88, 208, 88, 240, 0, 240)
+
+[node name="BackgroundButtonCover2" type="Polygon2D" parent="."]
+position = Vector2(256, 0)
+color = Color(0, 0, 0, 0.501961)
+polygon = PackedVector2Array(0, 216, 64, 216, 64, 240, 0, 240)
+
+[node name="PlayButton" parent="." instance=ExtResource("1_juveg")]
+position = Vector2(8, 160)
+
+[node name="Play" type="Sprite2D" parent="PlayButton"]
+position = Vector2(32, 8)
+texture = ExtResource("1_pbjm4")
+
+[node name="SettingsButton" parent="." instance=ExtResource("1_juveg")]
+position = Vector2(8, 176)
+option = "settings"
+
+[node name="Settings" type="Sprite2D" parent="SettingsButton"]
+position = Vector2(32, 8)
+texture = ExtResource("2_svuvw")
+
+[node name="QuitButton" parent="." instance=ExtResource("1_juveg")]
+position = Vector2(8, 192)
+option = "quit"
+
+[node name="Quit" type="Sprite2D" parent="QuitButton"]
+position = Vector2(32, 8)
+texture = ExtResource("3_juveg")
+
+[node name="Credits" parent="." instance=ExtResource("1_juveg")]
+position = Vector2(256, 216)
+
+[node name="Version" type="Sprite2D" parent="Credits"]
+position = Vector2(24, 8)
+texture = ExtResource("6_juveg")
+
+[node name="Title" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(48, 224)
+texture = ExtResource("1_j0t7f")
