@@ -1,0 +1,87 @@
+[gd_scene load_steps=11 format=3 uid="uid://drxjouvwainga"]
+
+[ext_resource type="Texture2D" uid="uid://vkyl22n41yo7" path="res://bank/props/table4x2.png" id="1_ebfiw"]
+[ext_resource type="Script" uid="uid://bie5w2t6p0wk7" path="res://bank/props/table.gd" id="1_ktg33"]
+[ext_resource type="Texture2D" uid="uid://dfvchkcx80y3j" path="res://bank/props/paper.png" id="2_ev4jt"]
+[ext_resource type="Texture2D" uid="uid://i3yp172ywpjt" path="res://bank/props/computer.png" id="2_exrhf"]
+[ext_resource type="Texture2D" uid="uid://cvky5t7txjee3" path="res://bank/props/computer_back.png" id="3_on648"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oi8yu"]
+size = Vector2(64, 32)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_oi8yu"]
+polygon = PackedVector2Array(0, 0, 0, 14, 4, 14, 4, 5, 9, 0)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ktg33"]
+polygon = PackedVector2Array(0, 0, -9, 0, -4, 5, -4, 14, 0, 14)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_sfdo2"]
+polygon = PackedVector2Array(0, 0, 64, 0, 64, 32, 0, 32)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_qyo0m"]
+polygon = PackedVector2Array(0, 0, 64, 0, 64, 2, 0, 2)
+
+[node name="Table" type="StaticBody2D"]
+script = ExtResource("1_ktg33")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+texture_filter = 1
+offset_top = -16.0
+offset_right = 64.0
+offset_bottom = 32.0
+texture = ExtResource("1_ebfiw")
+region_rect = Rect2(0, 0, 64, 48)
+patch_margin_left = 12
+patch_margin_top = 1
+patch_margin_right = 12
+patch_margin_bottom = 17
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(32, 16)
+shape = SubResource("RectangleShape2D_oi8yu")
+
+[node name="Paper2" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+position = Vector2(40, -6)
+texture = ExtResource("2_ev4jt")
+
+[node name="Computer" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+position = Vector2(41, -1)
+texture = ExtResource("2_exrhf")
+
+[node name="ComputerBack" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+position = Vector2(22, -6)
+texture = ExtResource("3_on648")
+
+[node name="Paper" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+position = Vector2(18, 8)
+texture = ExtResource("2_ev4jt")
+
+[node name="LeftLegOccluder" type="LightOccluder2D" parent="."]
+visible = false
+position = Vector2(2, 18)
+occluder = SubResource("OccluderPolygon2D_oi8yu")
+
+[node name="RightLegOccluder" type="LightOccluder2D" parent="."]
+visible = false
+position = Vector2(62, 18)
+occluder = SubResource("OccluderPolygon2D_ktg33")
+
+[node name="TableOccluder" type="LightOccluder2D" parent="."]
+visible = false
+position = Vector2(0, -16)
+occluder = SubResource("OccluderPolygon2D_sfdo2")
+
+[node name="TableEdgeOccluder" type="LightOccluder2D" parent="."]
+visible = false
+position = Vector2(0, 16)
+occluder = SubResource("OccluderPolygon2D_qyo0m")

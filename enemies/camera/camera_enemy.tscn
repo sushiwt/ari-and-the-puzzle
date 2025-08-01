@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://ddedo2oeuftiv"]
+
+[ext_resource type="Script" uid="uid://cjgqmf715ubu7" path="res://player/cameraenemy.gd" id="1_wi8dh"]
+[ext_resource type="Texture2D" uid="uid://k5cmujoq1kpm" path="res://enemies/camera/sprite/light.png" id="2_6iqcr"]
+[ext_resource type="Texture2D" uid="uid://cnrpl5elw8qg5" path="res://player/sprite/shadow.png" id="4_2wa53"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_w7mfc"]
+blend_mode = 1
+
+[node name="CameraEnemy" type="Node2D"]
+script = ExtResource("1_wi8dh")
+
+[node name="Sensor" type="Marker2D" parent="."]
+rotation = -2.35399
+scale = Vector2(1.66667, 1.66667)
+
+[node name="Marker2D" type="Marker2D" parent="Sensor"]
+position = Vector2(7.22089, 3.80244)
+scale = Vector2(0.15, 0.15)
+
+[node name="Light" type="Sprite2D" parent="Sensor"]
+material = SubResource("CanvasItemMaterial_w7mfc")
+position = Vector2(7.22089, 3.80243)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_6iqcr")
+offset = Vector2(256, 256)
+
+[node name="SensorArea" type="Area2D" parent="Sensor"]
+position = Vector2(7.22087, 3.80246)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sensor/SensorArea"]
+polygon = PackedVector2Array(1.27559, 1.26998, 45.0223, 22.811, 42.9113, 27.4826, 37.4118, 34.7072, 34.8718, 37.2584, 27.6715, 42.7897, 23.0093, 44.9213)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, 48)
+texture = ExtResource("4_2wa53")
+
+[connection signal="body_entered" from="Sensor/SensorArea" to="." method="_on_sensor_area_body_entered"]
+[connection signal="body_exited" from="Sensor/SensorArea" to="." method="_on_sensor_area_body_exited"]
