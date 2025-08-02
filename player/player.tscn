@@ -17,8 +17,7 @@ texture = ExtResource("2_g1dw6")
 [node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = ExtResource("2_rkbax")
-animation = &"runUp"
-frame_progress = 0.0973997
+animation = &"idleLeft"
 offset = Vector2(0, -24)
 
 [node name="PlayerCollision" type="CollisionShape2D" parent="."]
