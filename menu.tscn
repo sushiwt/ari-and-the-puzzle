@@ -1,0 +1,95 @@
+[gd_scene load_steps=12 format=3 uid="uid://b4hofg1kgse0l"]
+
+[ext_resource type="AudioStream" uid="uid://yhot3kyjldep" path="res://music/theme.wav" id="1_nrnbx"]
+[ext_resource type="Texture2D" uid="uid://x7tdqx6r4rgm" path="res://menu/sprite/background.jpg" id="2_iqepy"]
+[ext_resource type="PackedScene" uid="uid://iefe3fpk1u25" path="res://menu/gui_elements/button.tscn" id="3_h1wq0"]
+[ext_resource type="Texture2D" uid="uid://cdrviwm2kq14v" path="res://menu/sprite/play.png" id="4_dwrpx"]
+[ext_resource type="Texture2D" uid="uid://b42p084vx6o6m" path="res://menu/sprite/settings.png" id="5_g7jxm"]
+[ext_resource type="Texture2D" uid="uid://d2d8sp0f0gkyt" path="res://menu/sprite/quit.png" id="6_jspdm"]
+[ext_resource type="Texture2D" uid="uid://m1623m3kawup" path="res://menu/sprite/version.png" id="7_oxnod"]
+[ext_resource type="Texture2D" uid="uid://db6r5aycm80mw" path="res://menu/sprite/title.png" id="8_gd0jp"]
+[ext_resource type="Script" uid="uid://qjkwtrm5sbv8" path="res://menu/gui_elements/title.gd" id="9_4ndjb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6fswf"]
+size = Vector2(64, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bc54p"]
+size = Vector2(64, 24)
+
+[node name="Menu" type="Node2D"]
+texture_filter = 1
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_nrnbx")
+autoplay = true
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(168, 236)
+texture = ExtResource("2_iqepy")
+
+[node name="BackgroundButtonCover" type="Polygon2D" parent="."]
+color = Color(0, 0, 0, 0.501961)
+polygon = PackedVector2Array(0, 152, 72, 152, 87, 152, 87, 207, 87, 240, 0, 240)
+
+[node name="BackgroundButtonCover2" type="Polygon2D" parent="."]
+position = Vector2(256, 0)
+color = Color(0, 0, 0, 0.501961)
+polygon = PackedVector2Array(0, 216, 64, 216, 64, 240, 0, 240)
+
+[node name="PlayButton" parent="." instance=ExtResource("3_h1wq0")]
+position = Vector2(8, 160)
+animation_delay = 45
+
+[node name="Play" type="Sprite2D" parent="PlayButton"]
+position = Vector2(32, 8)
+texture = ExtResource("4_dwrpx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayButton"]
+position = Vector2(32, 8)
+shape = SubResource("RectangleShape2D_6fswf")
+
+[node name="SettingsButton" parent="." instance=ExtResource("3_h1wq0")]
+position = Vector2(8, 176)
+option = "settings"
+animation_delay = 30
+
+[node name="Settings" type="Sprite2D" parent="SettingsButton"]
+position = Vector2(32, 8)
+texture = ExtResource("5_g7jxm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SettingsButton"]
+position = Vector2(32, 8)
+shape = SubResource("RectangleShape2D_6fswf")
+
+[node name="QuitButton" parent="." instance=ExtResource("3_h1wq0")]
+position = Vector2(8, 192)
+option = "quit"
+animation_delay = 15
+
+[node name="Quit" type="Sprite2D" parent="QuitButton"]
+position = Vector2(32, 8)
+texture = ExtResource("6_jspdm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="QuitButton"]
+position = Vector2(32, 8)
+shape = SubResource("RectangleShape2D_6fswf")
+
+[node name="Credits" parent="." instance=ExtResource("3_h1wq0")]
+position = Vector2(256, 216)
+option = "credits"
+animation_offset = 128
+
+[node name="Version" type="Sprite2D" parent="Credits"]
+position = Vector2(24, 8)
+texture = ExtResource("7_oxnod")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Credits"]
+position = Vector2(32, 12)
+shape = SubResource("RectangleShape2D_bc54p")
+
+[node name="Title" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(48, 224)
+texture = ExtResource("8_gd0jp")
+script = ExtResource("9_4ndjb")
+animation_offset = -128

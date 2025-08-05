@@ -1,0 +1,80 @@
+[gd_scene load_steps=4 format=3 uid="uid://c50yb01iiuqfh"]
+
+[ext_resource type="Script" uid="uid://b0mnxxteyq6gb" path="res://menu/panels/panel_overlay.gd" id="1_nidem"]
+[ext_resource type="Texture2D" uid="uid://dtlidpg357uty" path="res://menu/sprite/panel.png" id="2_viegw"]
+[ext_resource type="FontFile" uid="uid://de8o0r0elchgg" path="res://basegame/fonts/minitext.ttf" id="3_1qbs2"]
+
+[node name="Credits" type="Control"]
+z_index = 10
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nidem")
+
+[node name="PanelBackground" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 320.0
+offset_bottom = 240.0
+color = Color(0, 0, 0, 0.501961)
+
+[node name="PanelShadow" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 84.0
+offset_top = 56.0
+offset_right = 244.0
+offset_bottom = 192.0
+color = Color(0, 0, 0, 0.25098)
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 52.0
+offset_right = 240.0
+offset_bottom = 188.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="PanelContainer"]
+layout_mode = 2
+texture = ExtResource("2_viegw")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="CreditsLabel" type="Label" parent="PanelContainer/NinePatchRect"]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 4.0
+offset_right = 154.0
+offset_bottom = 32.0
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("3_1qbs2")
+theme_override_font_sizes/font_size = 32
+text = "- Credits -"
+
+[node name="CreatorLabel" type="Label" parent="PanelContainer/NinePatchRect"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 28.0
+offset_right = 296.0
+offset_bottom = 248.0
+scale = Vector2(0.5, 0.5)
+theme_override_constants/line_spacing = -4
+theme_override_fonts/font = ExtResource("3_1qbs2")
+theme_override_font_sizes/font_size = 32
+text = "Created, written, and
+coded by sushiwt
+
+Music by gooolixx
+
+Big Ari art by syntaxxari
+
+Thanks for playing <3"
+
+[connection signal="gui_input" from="PanelBackground" to="." method="_on_panel_background_gui_input"]
+[connection signal="gui_input" from="PanelShadow" to="." method="_on_panel_background_gui_input"]
+[connection signal="mouse_entered" from="PanelContainer" to="." method="_on_panel_container_mouse_entered"]
+[connection signal="mouse_exited" from="PanelContainer" to="." method="_on_panel_container_mouse_exited"]

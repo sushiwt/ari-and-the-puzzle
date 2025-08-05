@@ -1,6 +1,7 @@
 extends AudioStreamPlayer
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+var found_sound = load("res://music/found.mp3")
+
 func _process(delta: float) -> void:
 	#pitch_scale = 1 - (GameState.player_seen * 0.05)
 	if GameState.player_contacted:

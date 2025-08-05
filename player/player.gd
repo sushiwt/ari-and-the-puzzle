@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 const WALK_SPEED = 100.0
 const RUN_SPEED = 200.0
+
 var mvmt_vector: Vector2
 var use_spd
 
@@ -37,3 +38,4 @@ func _process(delta: float) -> void:
 		player_state = "run"
 	
 	$PlayerSprite.play(player_state + player_direction)
+	

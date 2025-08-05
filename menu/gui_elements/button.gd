@@ -27,12 +27,18 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 		
 		if option == "play":
 			get_tree().change_scene_to_file("res://bank/game.tscn")
-		if option == "settings":
-			var settings_scene = preload("res://menu/settings.tscn") # Load the scene file
+		if option == "menu":
+			get_tree().change_scene_to_file("res://menu.tscn")
+		elif option == "settings":
+			var settings_scene = preload("res://menu/panels/settings.tscn") # Load the scene file
 			var settings_instance = settings_scene.instantiate() # Create an instance of the scene
 			add_sibling(settings_instance)
 		elif option == "quit":
 			get_tree().quit()
+		elif option == "credits":
+			var credits_scene = preload("res://menu/panels/credits.tscn") # Load the scene file
+			var credits_instance = credits_scene.instantiate() # Create an instance of the scene
+			add_sibling(credits_instance)
 
 func _on_mouse_entered() -> void:
 	modulate.a = 1

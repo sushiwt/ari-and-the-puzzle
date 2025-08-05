@@ -1,12 +1,12 @@
 [gd_scene load_steps=11 format=3 uid="uid://bxomscsa0kltd"]
 
-[ext_resource type="Texture2D" uid="uid://dtlidpg357uty" path="res://menu/sprite/panel.png" id="1_2j7bf"]
-[ext_resource type="Script" uid="uid://b0mnxxteyq6gb" path="res://menu/settings.gd" id="1_fqw17"]
-[ext_resource type="FontFile" uid="uid://de8o0r0elchgg" path="res://basegame/fonts/minitext.ttf" id="3_oksnb"]
-[ext_resource type="Script" uid="uid://b8fs5an6lan14" path="res://menu/volume.gd" id="3_qxoij"]
-[ext_resource type="Texture2D" uid="uid://j66ax432yb1w" path="res://menu/sprite/grabber.png" id="4_lwjig"]
-[ext_resource type="Texture2D" uid="uid://cawsrykx0685r" path="res://menu/sprite/checkbox_full.png" id="6_fredc"]
-[ext_resource type="Texture2D" uid="uid://bp1juqp50e601" path="res://menu/sprite/checkbox_empty.png" id="7_ymyge"]
+[ext_resource type="Script" uid="uid://b0mnxxteyq6gb" path="res://menu/panels/panel_overlay.gd" id="1_x8as2"]
+[ext_resource type="Texture2D" uid="uid://dtlidpg357uty" path="res://menu/sprite/panel.png" id="2_u5gwn"]
+[ext_resource type="FontFile" uid="uid://de8o0r0elchgg" path="res://basegame/fonts/minitext.ttf" id="3_mlxts"]
+[ext_resource type="Texture2D" uid="uid://j66ax432yb1w" path="res://menu/sprite/grabber.png" id="4_dm5nv"]
+[ext_resource type="Script" uid="uid://b8fs5an6lan14" path="res://menu/panels/volume.gd" id="5_elxc5"]
+[ext_resource type="Texture2D" uid="uid://cawsrykx0685r" path="res://menu/sprite/checkbox_full.png" id="6_fuc8l"]
+[ext_resource type="Texture2D" uid="uid://bp1juqp50e601" path="res://menu/sprite/checkbox_empty.png" id="7_fmqj4"]
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_mottj"]
 color = Color(0.133333, 0.12549, 0.203922, 1)
@@ -31,7 +31,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_fqw17")
+script = ExtResource("1_x8as2")
 
 [node name="PanelBackground" type="ColorRect" parent="."]
 layout_mode = 0
@@ -56,7 +56,7 @@ offset_bottom = 172.0
 
 [node name="NinePatchRect" type="NinePatchRect" parent="PanelContainer"]
 layout_mode = 2
-texture = ExtResource("1_2j7bf")
+texture = ExtResource("2_u5gwn")
 patch_margin_left = 5
 patch_margin_top = 5
 patch_margin_right = 5
@@ -64,14 +64,14 @@ patch_margin_bottom = 5
 
 [node name="SettingsLabel" type="Label" parent="PanelContainer/NinePatchRect"]
 layout_mode = 0
-offset_left = 49.0
+offset_left = 38.0
 offset_top = 4.0
-offset_right = 111.0
-offset_bottom = 27.0
+offset_right = 144.0
+offset_bottom = 32.0
 scale = Vector2(0.5, 0.5)
-theme_override_fonts/font = ExtResource("3_oksnb")
+theme_override_fonts/font = ExtResource("3_mlxts")
 theme_override_font_sizes/font_size = 32
-text = "Settings"
+text = "- Settings -"
 
 [node name="MasterVolLabel" type="Label" parent="PanelContainer/NinePatchRect"]
 layout_mode = 0
@@ -80,7 +80,7 @@ offset_top = 24.0
 offset_right = 134.0
 offset_bottom = 52.0
 scale = Vector2(0.5, 0.5)
-theme_override_fonts/font = ExtResource("3_oksnb")
+theme_override_fonts/font = ExtResource("3_mlxts")
 theme_override_font_sizes/font_size = 32
 text = "Master Volume"
 
@@ -90,14 +90,14 @@ offset_left = 8.0
 offset_top = 40.0
 offset_right = 120.0
 offset_bottom = 56.0
-theme_override_icons/grabber = ExtResource("4_lwjig")
-theme_override_icons/grabber_highlight = ExtResource("4_lwjig")
+theme_override_icons/grabber = ExtResource("4_dm5nv")
+theme_override_icons/grabber_highlight = ExtResource("4_dm5nv")
 theme_override_styles/slider = SubResource("StyleBoxLine_mottj")
 theme_override_styles/grabber_area = SubResource("StyleBoxLine_fredc")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_fredc")
 min_value = -72.0
 max_value = 6.0
-script = ExtResource("3_qxoij")
+script = ExtResource("5_elxc5")
 
 [node name="BigAriLabel" type="Label" parent="PanelContainer/NinePatchRect"]
 layout_mode = 0
@@ -106,7 +106,7 @@ offset_top = 63.0
 offset_right = 134.0
 offset_bottom = 91.0
 scale = Vector2(0.5, 0.5)
-theme_override_fonts/font = ExtResource("3_oksnb")
+theme_override_fonts/font = ExtResource("3_mlxts")
 theme_override_font_sizes/font_size = 32
 text = "Disable big Ari"
 
@@ -117,8 +117,8 @@ offset_top = 58.0
 offset_right = 125.0
 offset_bottom = 82.0
 theme_override_styles/focus = SubResource("StyleBoxEmpty_fredc")
-theme_override_icons/checked = ExtResource("6_fredc")
-theme_override_icons/unchecked = ExtResource("7_ymyge")
+theme_override_icons/checked = ExtResource("6_fuc8l")
+theme_override_icons/unchecked = ExtResource("7_fmqj4")
 
 [node name="BigAriLabel2" type="Label" parent="PanelContainer/NinePatchRect"]
 layout_mode = 0
@@ -127,7 +127,7 @@ offset_top = 81.0
 offset_right = 126.0
 offset_bottom = 109.0
 scale = Vector2(0.5, 0.5)
-theme_override_fonts/font = ExtResource("3_oksnb")
+theme_override_fonts/font = ExtResource("3_mlxts")
 theme_override_font_sizes/font_size = 32
 text = "Slide on walls"
 
@@ -138,8 +138,8 @@ offset_top = 76.0
 offset_right = 125.0
 offset_bottom = 100.0
 theme_override_styles/focus = SubResource("StyleBoxEmpty_fredc")
-theme_override_icons/checked = ExtResource("6_fredc")
-theme_override_icons/unchecked = ExtResource("7_ymyge")
+theme_override_icons/checked = ExtResource("6_fuc8l")
+theme_override_icons/unchecked = ExtResource("7_fmqj4")
 
 [connection signal="gui_input" from="PanelBackground" to="." method="_on_panel_background_gui_input"]
 [connection signal="gui_input" from="PanelShadow" to="." method="_on_panel_background_gui_input"]

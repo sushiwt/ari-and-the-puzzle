@@ -29,7 +29,7 @@ func _ready():
 func _process(delta:float) -> void:
 	char_sin += 0.01
 	$Sensor.rotation += 0.01
-	
+		
 	point1 = Vector2((cos(char_sin + (PI / 3)) * width), (sin(char_sin + ((1 * PI) / 3)) * height))
 	point2 = Vector2((cos(char_sin + ((5 * PI) / 3)) * width), (sin(char_sin + ((5 * PI) / 3))  * height))
 	point3 = Vector2((cos(char_sin + ((4 * PI) / 3)) * width), (sin(char_sin + ((4 * PI) / 3)) * height))
@@ -77,14 +77,17 @@ func _draw() -> void:
 	draw_line(point2, point3, edge_color)
 	draw_line(point3, point4, edge_color)
 	draw_line(point4, point1, edge_color)
-	
 
 
-func _on_sensor_area_body_entered(body: Node2D) -> void:
-	if body.is_in_group("Player"):
+func _on_sensor_area_area_entered(area: Area2D) -> void:
+	if area.is_in_group("Player"):
+		if GameState.room_timer < 60:
+			char_sin = 0
+			$Sensor.rotation_degrees = -134.9
+		
 		GameState.player_detect_amount += 1
 
 
-func _on_sensor_area_body_exited(body: Node2D) -> void:
-	if body.is_in_group("Player"):
+func _on_sensor_area_area_exited(area: Area2D) -> void:
+	if area.is_in_group("Player"):
 		GameState.player_detect_amount -= 1

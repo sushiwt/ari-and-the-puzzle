@@ -1,25 +1,35 @@
-[gd_scene load_steps=5 format=3 uid="uid://cveiyoy15wew4"]
+[gd_scene load_steps=6 format=3 uid="uid://cveiyoy15wew4"]
 
 [ext_resource type="Script" uid="uid://c7qco6ebf2l72" path="res://player/player.gd" id="1_rkbax"]
 [ext_resource type="Texture2D" uid="uid://cnrpl5elw8qg5" path="res://player/sprite/shadow.png" id="2_g1dw6"]
 [ext_resource type="SpriteFrames" uid="uid://18w4y5eq60p" path="res://player/playersprite.tres" id="2_rkbax"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_oul6g"]
-size = Vector2(12, 5)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g1dw6"]
+size = Vector2(12, 36)
 
-[node name="Player" type="CharacterBody2D" groups=["Player"]]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oul6g"]
+size = Vector2(12, 9)
+
+[node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_rkbax")
+
+[node name="PlayerCatchArea" type="Area2D" parent="." groups=["Player"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerCatchArea"]
+shape = SubResource("RectangleShape2D_g1dw6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
+position = Vector2(0, 14)
 texture = ExtResource("2_g1dw6")
 
 [node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
+position = Vector2(0, 14)
 sprite_frames = ExtResource("2_rkbax")
 animation = &"idleLeft"
 offset = Vector2(0, -24)
 
 [node name="PlayerCollision" type="CollisionShape2D" parent="."]
-position = Vector2(0, -2.5)
+position = Vector2(0, 13.5)
 shape = SubResource("RectangleShape2D_oul6g")

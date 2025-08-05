@@ -11,7 +11,8 @@ config_version=5
 [application]
 
 config/name="Ari And The Puzzle"
-run/main_scene="uid://ckq1qrj8313lj"
+config/tags=PackedStringArray("passion_projects")
+run/main_scene="uid://b4hofg1kgse0l"
 config/use_custom_user_dir=true
 config/features=PackedStringArray("4.4", "GL Compatibility")
 run/max_fps=60
@@ -40,6 +41,8 @@ movie_writer/fps=30
 [global_group]
 
 Player=""
+Enemy=""
+Obstacle=""
 
 [input]
 

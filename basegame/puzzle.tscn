@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://w16xdbjeo1ey"]
+
+[ext_resource type="Script" uid="uid://c0qboxl30tehm" path="res://basegame/puzzle.gd" id="1_4s4rb"]
+[ext_resource type="Texture2D" uid="uid://c0bas3d8lx8s8" path="res://basegame/sprites/puzzle.png" id="1_mkxqf"]
+[ext_resource type="AudioStream" uid="uid://d1smie4jq8id1" path="res://music/collect.wav" id="3_cm6x5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4s4rb"]
+size = Vector2(32, 32)
+
+[node name="Puzzle" type="Area2D"]
+texture_filter = 1
+script = ExtResource("1_4s4rb")
+
+[node name="PuzzleCollision" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_4s4rb")
+
+[node name="PuzzleSprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_mkxqf")
+hframes = 2
+vframes = 2
+
+[node name="PuzzleAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_cm6x5")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
