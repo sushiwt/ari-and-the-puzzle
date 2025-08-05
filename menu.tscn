@@ -31,11 +31,6 @@ texture = ExtResource("2_iqepy")
 color = Color(0, 0, 0, 0.501961)
 polygon = PackedVector2Array(0, 152, 72, 152, 87, 152, 87, 207, 87, 240, 0, 240)
 
-[node name="BackgroundButtonCover2" type="Polygon2D" parent="."]
-position = Vector2(256, 0)
-color = Color(0, 0, 0, 0.501961)
-polygon = PackedVector2Array(0, 216, 64, 216, 64, 240, 0, 240)
-
 [node name="PlayButton" parent="." instance=ExtResource("3_h1wq0")]
 position = Vector2(8, 160)
 animation_delay = 45
@@ -74,6 +69,18 @@ texture = ExtResource("6_jspdm")
 position = Vector2(32, 8)
 shape = SubResource("RectangleShape2D_6fswf")
 
+[node name="Title" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(48, 224)
+texture = ExtResource("8_gd0jp")
+script = ExtResource("9_4ndjb")
+animation_offset = -128
+
+[node name="BackgroundButtonCover2" type="Polygon2D" parent="."]
+position = Vector2(256, 0)
+color = Color(0, 0, 0, 0.501961)
+polygon = PackedVector2Array(0, 216, 64, 216, 64, 240, 0, 240)
+
 [node name="Credits" parent="." instance=ExtResource("3_h1wq0")]
 position = Vector2(256, 216)
 option = "credits"
@@ -86,10 +93,3 @@ texture = ExtResource("7_oxnod")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Credits"]
 position = Vector2(32, 12)
 shape = SubResource("RectangleShape2D_bc54p")
-
-[node name="Title" type="Sprite2D" parent="."]
-texture_filter = 1
-position = Vector2(48, 224)
-texture = ExtResource("8_gd0jp")
-script = ExtResource("9_4ndjb")
-animation_offset = -128

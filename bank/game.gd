@@ -8,6 +8,7 @@ var table_layout = false
 func _ready() -> void:
 	GameState.puzzle_requirement = 4
 	GameState.room = 0
+	GameState.score = 0
 	
 	start_game()
 

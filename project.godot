@@ -30,7 +30,7 @@ window/size/viewport_height=240
 window/size/mode=2
 window/size/window_width_override=640
 window/size/window_height_override=480
-window/stretch/mode="viewport"
+window/stretch/mode="canvas_items"
 
 [editor]
 
@@ -62,6 +62,10 @@ back={
 ]
 }
 
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
+
 [layer_names]
 
 2d_render/layer_1="Background"
@@ -72,3 +76,4 @@ back={
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true

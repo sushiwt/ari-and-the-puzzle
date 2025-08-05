@@ -26,7 +26,7 @@ scale = Vector2(2, 2)
 texture = ExtResource("1_4st0s")
 
 [node name="RetryButton" parent="." instance=ExtResource("2_ru24h")]
-position = Vector2(24, 128)
+position = Vector2(24, 120)
 
 [node name="Retry" type="Sprite2D" parent="RetryButton"]
 position = Vector2(32, 8)
@@ -37,7 +37,7 @@ position = Vector2(32, 8)
 shape = SubResource("RectangleShape2D_s4mg2")
 
 [node name="MenuButton" parent="." instance=ExtResource("2_ru24h")]
-position = Vector2(24, 144)
+position = Vector2(24, 136)
 option = "menu"
 
 [node name="Retry" type="Sprite2D" parent="MenuButton"]
@@ -49,7 +49,7 @@ position = Vector2(32, 8)
 shape = SubResource("RectangleShape2D_s4mg2")
 
 [node name="QuitButton" parent="." instance=ExtResource("2_ru24h")]
-position = Vector2(24, 160)
+position = Vector2(24, 152)
 option = "quit"
 
 [node name="Retry" type="Sprite2D" parent="QuitButton"]
@@ -67,9 +67,9 @@ autoplay = true
 [node name="RoomLabel" type="Label" parent="."]
 z_index = 2
 offset_left = 24.0
-offset_top = 64.0
+offset_top = 72.0
 offset_right = 86.0
-offset_bottom = 88.0
+offset_bottom = 96.0
 theme_override_fonts/font = ExtResource("7_uaxet")
 text = "Room Label"
 script = ExtResource("8_2up6k")
@@ -77,9 +77,9 @@ script = ExtResource("8_2up6k")
 [node name="ScoreLabel" type="Label" parent="."]
 z_index = 2
 offset_left = 24.0
-offset_top = 80.0
+offset_top = 88.0
 offset_right = 88.0
-offset_bottom = 104.0
+offset_bottom = 112.0
 theme_override_fonts/font = ExtResource("7_uaxet")
 text = "Score Label"
 script = ExtResource("9_jscf4")
