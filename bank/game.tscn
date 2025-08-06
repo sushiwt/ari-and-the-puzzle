@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://ckq1qrj8313lj"]
+[gd_scene load_steps=22 format=4 uid="uid://ckq1qrj8313lj"]
 
 [ext_resource type="Script" uid="uid://lnxo5m00x0rr" path="res://bank/game.gd" id="1_66eb5"]
 [ext_resource type="AudioStream" uid="uid://cnu57gedrmemc" path="res://music/heist.wav" id="1_cbuho"]
@@ -14,9 +14,6 @@
 [ext_resource type="AudioStream" uid="uid://dupcfxxhriui5" path="res://music/explode.wav" id="10_djxs5"]
 [ext_resource type="Script" uid="uid://cx1blc061flhr" path="res://bank/environment_light.gd" id="10_yxq05"]
 [ext_resource type="Texture2D" uid="uid://bt2k840dmk7kl" path="res://bank/door.png" id="12_sqnqs"]
-[ext_resource type="Texture2D" uid="uid://dtlidpg357uty" path="res://menu/sprite/panel.png" id="15_2uaax"]
-[ext_resource type="Script" uid="uid://bb3qs0ultijqx" path="res://bank/touch_controls.gd" id="15_5fovq"]
-[ext_resource type="Texture2D" uid="uid://bp1juqp50e601" path="res://menu/sprite/checkbox_empty.png" id="16_5fovq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7jktm"]
 resource_name = "Floor"
@@ -487,16 +484,17 @@ fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.853211, 0.183486)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fe325"]
-size = Vector2(48, 16)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2uaax"]
-size = Vector2(16, 48)
-
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
 texture_filter = 1
 script = ExtResource("1_66eb5")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="RoomScoreText" type="Node2D" parent="UI"]
+z_index = 4
+texture_filter = 1
+script = ExtResource("8_eb4e2")
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_cbuho")
@@ -518,10 +516,6 @@ tile_set = SubResource("TileSet_ryrav")
 texture_filter = 1
 tile_map_data = PackedByteArray("AAAAAAAAAQAJAAIAAAAAAAEAAQAJAAIAAAAAAAIAAQAJAAIAAAAAAAMAAQAJAAIAAAAAAAQAAQAJAAIAAAAAAAUAAQAJAAIAAAAAAAYAAQAJAAIAAAAAAAcAAQAJAAIAAAAAAAgAAQAJAAIAAAAAAAkAAQAJAAIAAAAAAAoAAQAJAAIAAAAAAAsAAQAJAAIAAAAAAAwAAQAJAAIAAAAAAA0AAQAJAAIAAAAAAA4AAQAJAAIAAAABAA4AAQAGAAEAAAACAA4AAQAKAAAAAAADAA4AAQAKAAAAAAAEAA4AAQAKAAAAAAAFAA4AAQAKAAAAAAAGAA4AAQAKAAAAAAATAA4AAQAJAAIAAAASAA4AAQAFAAEAAAARAA4AAQAKAAAAAAAQAA4AAQAKAAAAAAAPAA4AAQAKAAAAAAAOAA4AAQAKAAAAAAANAA4AAQAKAAAAAAATAA0AAQAJAAIAAAATAAwAAQAJAAIAAAATAAsAAQAJAAIAAAATAAoAAQAJAAIAAAATAAkAAQAJAAIAAAATAAgAAQAJAAIAAAATAAcAAQAJAAIAAAATAAYAAQAJAAIAAAATAAUAAQAJAAIAAAATAAQAAQAJAAIAAAATAAMAAQAJAAIAAAATAAIAAQAJAAIAAAATAAEAAQAJAAIAAAATAAAAAQAJAAIAAAASAAAAAQAFAAIAAAARAAAAAQAJAAMAAAAQAAAAAQAJAAMAAAAPAAAAAQAJAAMAAAAOAAAAAQAJAAMAAAANAAAAAQAJAAMAAAAMAAAAAQAIAAMAAAAHAAAAAQALAAMAAAAGAAAAAQAJAAMAAAAFAAAAAQAJAAMAAAAEAAAAAQAJAAMAAAADAAAAAQAJAAMAAAACAAAAAQAJAAMAAAABAAAAAQAGAAIAAAAUAAAAAQALAAIAAAAUAAEAAQALAAIAAAAUAAIAAQALAAIAAAAUAAMAAQALAAIAAAAUAAQAAQALAAIAAAAUAAUAAQALAAIAAAAUAAYAAQALAAIAAAAUAAcAAQALAAIAAAAUAAgAAQALAAIAAAAUAAkAAQALAAIAAAAUAAoAAQALAAIAAAAUAAsAAQALAAIAAAAUAAwAAQALAAIAAAAUAA0AAQALAAIAAAAUAA4AAQALAAIAAAAUAA8AAQALAAMAAAATAA8AAQAJAAMAAAAQAA8AAQAJAAMAAAAPAA8AAQAJAAMAAAAOAA8AAQAJAAMAAAANAA8AAQAJAAMAAAARAA8AAQAJAAMAAAASAA8AAQAJAAMAAAAUAP//AQALAAAAAAATAP//AQAKAAAAAAARAP//AQAKAAAAAAASAP//AQAKAAAAAAAQAP//AQAKAAAAAAAPAP//AQAKAAAAAAAOAP//AQAKAAAAAAANAP//AQAKAAAAAAAMAP//AQAIAAAAAAAHAP//AQALAAAAAAAGAP//AQAKAAAAAAAFAP//AQAKAAAAAAAEAP//AQAKAAAAAAADAP//AQAKAAAAAAACAP//AQAKAAAAAAABAP//AQAKAAAAAAAAAP//AQAKAAAAAAD/////AQAIAAAAAAD//wAAAQAIAAEAAAD//wEAAQAIAAEAAAD//wIAAQAIAAEAAAD//wMAAQAIAAEAAAD//wQAAQAIAAEAAAD//wUAAQAIAAEAAAD//wYAAQAIAAEAAAD//wcAAQAIAAEAAAD//wgAAQAIAAEAAAD//wkAAQAIAAEAAAD//woAAQAIAAEAAAD//wsAAQAIAAEAAAD//wwAAQAIAAEAAAD//w0AAQAIAAEAAAD//w4AAQAIAAEAAAD//w8AAQAIAAMAAAAAAA8AAQAJAAMAAAABAA8AAQAJAAMAAAACAA8AAQAJAAMAAAADAA8AAQAJAAMAAAAEAA8AAQAJAAMAAAAFAA8AAQAJAAMAAAAGAA8AAQAJAAMAAAAHAA4AAQALAAAAAAAHAA8AAQALAAMAAAAMAA4AAQAIAAAAAAAMAA8AAQAIAAMAAAABAAEAAQALAAIAAAABAAIAAQALAAIAAAACAAIAAQACAAUAAAADAAIAAQACAAUAAAAEAAIAAQACAAUAAAAFAAIAAQACAAUAAAACAAEAAQACAAQAAAADAAEAAQACAAQAAAAEAAEAAQACAAQAAAAFAAEAAQACAAQAAAAGAAEAAQACAAQAAAAHAAEAAQADAAQAAAAHAAIAAQADAAUAAAAGAAIAAQACAAUAAAAMAAIAAQABAAUAAAANAAIAAQACAAUAAAAOAAIAAQACAAUAAAAPAAIAAQACAAUAAAAQAAIAAQACAAUAAAASAAIAAQAIAAEAAAARAAIAAQACAAUAAAARAAEAAQACAAQAAAASAAEAAQAIAAEAAAAQAAEAAQACAAQAAAAPAAEAAQACAAQAAAAOAAEAAQACAAQAAAANAAEAAQACAAQAAAAMAAEAAQABAAQAAAABAAMAAQALAAIAAAABAAQAAQALAAIAAAABAAUAAQALAAIAAAABAAYAAQALAAIAAAABAAcAAQALAAIAAAABAAgAAQALAAIAAAABAAkAAQALAAIAAAABAAoAAQALAAIAAAABAAsAAQALAAIAAAABAAwAAQALAAIAAAABAA0AAQALAAIAAAASAAMAAQAIAAEAAAASAAQAAQAIAAEAAAASAAUAAQAIAAEAAAASAAYAAQAIAAEAAAASAAcAAQAIAAEAAAASAAgAAQAIAAEAAAASAAkAAQAIAAEAAAASAAoAAQAIAAEAAAASAAsAAQAIAAEAAAASAAwAAQAIAAEAAAASAA0AAQAIAAEAAAA=")
 tile_set = SubResource("TileSet_fc0e3")
-
-[node name="RoomScoreText" type="Node2D" parent="."]
-z_index = 4
-script = ExtResource("8_eb4e2")
 
 [node name="Walls" type="StaticBody2D" parent="."]
 
@@ -619,49 +613,5 @@ computer_visible = true
 paper_visible = true
 
 [node name="EnvironmentLight" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0, 0, 0, 1)
 script = ExtResource("10_yxq05")
-
-[node name="TouchControls" type="Node2D" parent="."]
-visible = false
-modulate = Color(1, 1, 1, 0.376471)
-z_index = 6
-position = Vector2(16, 136)
-script = ExtResource("15_5fovq")
-
-[node name="TouchScreenUp" type="TouchScreenButton" parent="TouchControls"]
-position = Vector2(32, 0)
-scale = Vector2(2, 2)
-texture_normal = ExtResource("15_2uaax")
-texture_pressed = ExtResource("16_5fovq")
-shape = SubResource("RectangleShape2D_fe325")
-passby_press = true
-action = "ui_up"
-
-[node name="TouchScreenUp2" type="TouchScreenButton" parent="TouchControls"]
-position = Vector2(0, 32)
-scale = Vector2(2, 2)
-texture_normal = ExtResource("15_2uaax")
-texture_pressed = ExtResource("16_5fovq")
-shape = SubResource("RectangleShape2D_2uaax")
-passby_press = true
-action = "ui_left"
-
-[node name="TouchScreenUp3" type="TouchScreenButton" parent="TouchControls"]
-position = Vector2(32, 64)
-scale = Vector2(2, 2)
-texture_normal = ExtResource("15_2uaax")
-texture_pressed = ExtResource("16_5fovq")
-shape = SubResource("RectangleShape2D_fe325")
-passby_press = true
-action = "ui_down"
-
-[node name="TouchScreenUp4" type="TouchScreenButton" parent="TouchControls"]
-position = Vector2(64, 32)
-scale = Vector2(2, 2)
-texture_normal = ExtResource("15_2uaax")
-texture_pressed = ExtResource("16_5fovq")
-shape = SubResource("RectangleShape2D_2uaax")
-passby_press = true
-action = "ui_right"

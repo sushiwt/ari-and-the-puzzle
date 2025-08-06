@@ -17,6 +17,9 @@ config/use_custom_user_dir=true
 config/features=PackedStringArray("4.4", "GL Compatibility")
 run/max_fps=60
 boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/fullsize=false
+boot_splash/use_filter=false
+boot_splash/image="uid://b0bx8xsv77igo"
 config/icon="uid://ba5nmyliq213f"
 
 [autoload]
@@ -30,13 +33,17 @@ window/size/viewport_height=240
 window/size/mode=2
 window/size/window_width_override=640
 window/size/window_height_override=480
-window/stretch/mode="canvas_items"
+window/stretch/mode="viewport"
 
 [editor]
 
 movie_writer/movie_file="C:/Users/sushi/Documents/Godot Games/ari-and-the-puzzle/basegame/movies/output.avi"
 movie_writer/disable_vsync=true
 movie_writer/fps=30
+
+[editor_plugins]
+
+enabled=PackedStringArray()
 
 [global_group]
 
