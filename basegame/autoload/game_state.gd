@@ -40,3 +40,4 @@ func reset_game_state():
 	player_detect_amount = 0
 	player_seen = 0
 	game_over = false
+	

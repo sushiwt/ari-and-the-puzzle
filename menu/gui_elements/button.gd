@@ -27,6 +27,9 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 		
 		if option == "play":
 			get_tree().change_scene_to_file("res://bank/game.tscn")
+			GameState.puzzle_requirement = 4
+			GameState.room = 0
+			GameState.score = 0
 		if option == "menu":
 			get_tree().change_scene_to_file("res://menu.tscn")
 		elif option == "settings":

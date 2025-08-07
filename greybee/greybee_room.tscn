@@ -1,0 +1,83 @@
+[gd_scene load_steps=11 format=3 uid="uid://4ua7i06cf6vs"]
+
+[ext_resource type="AudioStream" uid="uid://bo4jkb0p6jl8w" path="res://music/greybee.mp3" id="1_4fmby"]
+[ext_resource type="Script" uid="uid://oqbf8uxyyouc" path="res://greybee/greybee_room.gd" id="1_clexq"]
+[ext_resource type="PackedScene" uid="uid://crkjbf8g4gr6x" path="res://basegame/ui.tscn" id="2_00mef"]
+[ext_resource type="Texture2D" uid="uid://yg20ljineafx" path="res://greybee/sprite/square-ezgif.com-png-to-jpg-converter.jpg" id="2_5vg7a"]
+[ext_resource type="PackedScene" uid="uid://cveiyoy15wew4" path="res://player/player.tscn" id="2_tm4w3"]
+[ext_resource type="Texture2D" uid="uid://rqbcyssfqefk" path="res://greybee/sprite/greybee.jpg" id="3_tm4w3"]
+[ext_resource type="Script" uid="uid://gr6gkpoj6lwx" path="res://greybee/greybee.gd" id="4_jacl4"]
+
+[sub_resource type="Animation" id="Animation_clexq"]
+resource_name = "greybee"
+loop_mode = 1
+step = 0.0333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Greybee:flip_h")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.51),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_00mef"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Greybee:flip_h")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_skr5b"]
+_data = {
+&"RESET": SubResource("Animation_00mef"),
+&"greybee": SubResource("Animation_clexq")
+}
+
+[node name="GreybeeRoom" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_clexq")
+
+[node name="UI" parent="." instance=ExtResource("2_00mef")]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(0, -8)
+polygon = PackedVector2Array(0, 0, 0, 256, 320, 256, 320, 0, 352, 0, 352, 288, -32, 288, -32, 0)
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_4fmby")
+autoplay = true
+
+[node name="Square" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(160, 136)
+texture = ExtResource("2_5vg7a")
+
+[node name="Greybee" type="Sprite2D" parent="."]
+position = Vector2(159.625, 131.5)
+scale = Vector2(0.284783, 0.314516)
+texture = ExtResource("3_tm4w3")
+script = ExtResource("4_jacl4")
+
+[node name="Player" parent="." instance=ExtResource("2_tm4w3")]
+position = Vector2(160, 216)
+
+[node name="greybee" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_skr5b")
+}
+autoplay = "greybee"

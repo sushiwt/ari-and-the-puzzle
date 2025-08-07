@@ -5,7 +5,7 @@
 
 [sub_resource type="GDScript" id="GDScript_5ytev"]
 resource_name = "GameOverTransition"
-script/source = "extends Node2D
+script/source = "extends CanvasLayer
 
 var game_over_timer = 0
 
@@ -55,8 +55,7 @@ _data = {
 &"fade": SubResource("Animation_iihmr")
 }
 
-[node name="GameOverTransition" type="Node2D"]
-texture_filter = 1
+[node name="GameOverTransition" type="CanvasLayer"]
 script = SubResource("GDScript_5ytev")
 
 [node name="FoundMusic" type="AudioStreamPlayer" parent="."]

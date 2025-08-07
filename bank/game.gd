@@ -6,9 +6,9 @@ var game_over_scene = preload("res://basegame/game_over_transition.tscn")
 var table_layout = false
 
 func _ready() -> void:
-	GameState.puzzle_requirement = 4
-	GameState.room = 0
-	GameState.score = 0
+	#GameState.puzzle_requirement = 4
+	#GameState.room = 0
+	#GameState.score = 0
 	
 	start_game()
 
@@ -23,7 +23,13 @@ func _process(delta:float) -> void:
 		add_sibling(game_over_instance)
 	
 	if $Player.position.y <= 0:
-		start_game()
+		var random_location = randi_range(0,100)
+		print(random_location)
+		
+		if random_location <= 50:
+			get_tree().change_scene_to_file("res://greybee/greybee_room.tscn")
+		else:
+			start_game()
 
 func start_game():
 	GameState.room += 1
@@ -62,13 +68,9 @@ func start_game():
 	
 	# For Changing the Table Layouts. this is TEMPORARY.
 	table_layout = !table_layout
-	var obstacle_nodes = get_tree().get_nodes_in_group("Obstacle")
-	
 	if table_layout:
-		for node in obstacle_nodes:
-			node.position.x -= 320
+		$TableLayout.position.x -= 320
 	else:
-		for node in obstacle_nodes:
-			node.position.x += 320
+		$TableLayout.position.x += 320
 		
 		

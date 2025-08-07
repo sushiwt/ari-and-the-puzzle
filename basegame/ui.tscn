@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://crkjbf8g4gr6x"]
+
+[ext_resource type="Script" uid="uid://tyhc3gpeu5ef" path="res://bank/room_score_text.gd" id="1_08sml"]
+
+[node name="UI" type="CanvasLayer"]
+
+[node name="RoomScoreText" type="Node2D" parent="."]
+z_index = 4
+texture_filter = 1
+script = ExtResource("1_08sml")

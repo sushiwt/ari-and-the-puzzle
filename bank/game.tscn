@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://lnxo5m00x0rr" path="res://bank/game.gd" id="1_66eb5"]
 [ext_resource type="AudioStream" uid="uid://cnu57gedrmemc" path="res://music/heist.wav" id="1_cbuho"]
 [ext_resource type="Script" uid="uid://wop15xdkv05u" path="res://bank/music.gd" id="2_66eb5"]
+[ext_resource type="PackedScene" uid="uid://crkjbf8g4gr6x" path="res://basegame/ui.tscn" id="2_eb4e2"]
 [ext_resource type="AudioStream" uid="uid://bf3lbwx7gpyv1" path="res://music/heist_reverb.mp3" id="3_sqnqs"]
 [ext_resource type="Script" uid="uid://pbsajeotd8ns" path="res://bank/found_music.gd" id="4_djxs5"]
 [ext_resource type="Texture2D" uid="uid://sw6wefberkdo" path="res://bank/floor.png" id="5_eb4e2"]
@@ -10,10 +11,22 @@
 [ext_resource type="PackedScene" uid="uid://cveiyoy15wew4" path="res://player/player.tscn" id="7_2uaax"]
 [ext_resource type="PackedScene" uid="uid://drxjouvwainga" path="res://bank/props/table.tscn" id="8_5fovq"]
 [ext_resource type="Script" uid="uid://cewfjp2jwe7x4" path="res://bank/door.gd" id="8_djxs5"]
-[ext_resource type="Script" uid="uid://tyhc3gpeu5ef" path="res://bank/room_score_text.gd" id="8_eb4e2"]
 [ext_resource type="AudioStream" uid="uid://dupcfxxhriui5" path="res://music/explode.wav" id="10_djxs5"]
 [ext_resource type="Script" uid="uid://cx1blc061flhr" path="res://bank/environment_light.gd" id="10_yxq05"]
 [ext_resource type="Texture2D" uid="uid://bt2k840dmk7kl" path="res://bank/door.png" id="12_sqnqs"]
+
+[sub_resource type="Gradient" id="Gradient_fc0e3"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.805195, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.805195, 0.805195, 0.805195, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_7jktm"]
+gradient = SubResource("Gradient_fc0e3")
+width = 512
+height = 512
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.853211, 0.183486)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7jktm"]
 resource_name = "Floor"
@@ -471,30 +484,12 @@ sources/1 = SubResource("TileSetAtlasSource_feb5d")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_djxs5"]
 size = Vector2(64, 32)
 
-[sub_resource type="Gradient" id="Gradient_fc0e3"]
-interpolation_mode = 1
-offsets = PackedFloat32Array(0, 0.805195, 1)
-colors = PackedColorArray(1, 1, 1, 1, 0.805195, 0.805195, 0.805195, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_7jktm"]
-gradient = SubResource("Gradient_fc0e3")
-width = 512
-height = 512
-fill = 1
-fill_from = Vector2(0.5, 0.5)
-fill_to = Vector2(0.853211, 0.183486)
-
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
 texture_filter = 1
 script = ExtResource("1_66eb5")
 
-[node name="UI" type="CanvasLayer" parent="."]
-
-[node name="RoomScoreText" type="Node2D" parent="UI"]
-z_index = 4
-texture_filter = 1
-script = ExtResource("8_eb4e2")
+[node name="UI" parent="." instance=ExtResource("2_eb4e2")]
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_cbuho")
@@ -505,6 +500,87 @@ script = ExtResource("2_66eb5")
 stream = ExtResource("3_sqnqs")
 autoplay = true
 script = ExtResource("4_djxs5")
+
+[node name="Player" parent="." instance=ExtResource("7_2uaax")]
+position = Vector2(160, 216)
+
+[node name="PointLight2D" type="PointLight2D" parent="Player"]
+texture_filter = 1
+energy = 0.5
+texture = SubResource("GradientTexture2D_7jktm")
+texture_scale = 0.15
+
+[node name="TableLayout" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Table" parent="TableLayout" instance=ExtResource("8_5fovq")]
+position = Vector2(32, 48)
+table_width = 2
+table_height = 4
+
+[node name="Table2" parent="TableLayout" instance=ExtResource("8_5fovq")]
+position = Vector2(96, 96)
+computer_visible = true
+
+[node name="Table3" parent="TableLayout" instance=ExtResource("8_5fovq")]
+position = Vector2(192, 96)
+paper_visible = true
+
+[node name="Table4" parent="TableLayout" instance=ExtResource("8_5fovq")]
+position = Vector2(64, 152)
+computer_visible = true
+paper_visible = true
+
+[node name="Table6" parent="TableLayout" instance=ExtResource("8_5fovq")]
+position = Vector2(32, 208)
+paper_visible = true
+
+[node name="Table7" parent="TableLayout" instance=ExtResource("8_5fovq")]
+position = Vector2(256, 176)
+paper_visible = true
+table_width = 2
+table_height = 4
+
+[node name="Table5" parent="TableLayout" instance=ExtResource("8_5fovq")]
+position = Vector2(160, 152)
+computer_visible = true
+
+[node name="Table8" parent="TableLayout" instance=ExtResource("8_5fovq")]
+position = Vector2(576, 56)
+paper_visible = true
+table_width = 2
+table_height = 4
+
+[node name="Table9" parent="TableLayout" instance=ExtResource("8_5fovq")]
+position = Vector2(384, 96)
+paper_visible = true
+
+[node name="Table10" parent="TableLayout" instance=ExtResource("8_5fovq")]
+position = Vector2(480, 96)
+computer_visible = true
+paper_visible = true
+
+[node name="Table11" parent="TableLayout" instance=ExtResource("8_5fovq")]
+position = Vector2(416, 152)
+computer_visible = true
+
+[node name="Table12" parent="TableLayout" instance=ExtResource("8_5fovq")]
+position = Vector2(544, 208)
+paper_visible = true
+
+[node name="Table13" parent="TableLayout" instance=ExtResource("8_5fovq")]
+position = Vector2(352, 176)
+table_width = 2
+table_height = 4
+
+[node name="Table14" parent="TableLayout" instance=ExtResource("8_5fovq")]
+position = Vector2(512, 152)
+computer_visible = true
+paper_visible = true
+
+[node name="EnvironmentLight" type="CanvasModulate" parent="."]
+color = Color(0, 0, 0, 1)
+script = ExtResource("10_yxq05")
 
 [node name="FloorTileMapLayer" type="TileMapLayer" parent="."]
 z_index = -1
@@ -537,81 +613,3 @@ texture = ExtResource("12_sqnqs")
 
 [node name="DoorAudio" type="AudioStreamPlayer" parent="Door"]
 stream = ExtResource("10_djxs5")
-
-[node name="Player" parent="." instance=ExtResource("7_2uaax")]
-position = Vector2(160, 216)
-
-[node name="PointLight2D" type="PointLight2D" parent="Player"]
-texture_filter = 1
-energy = 0.5
-texture = SubResource("GradientTexture2D_7jktm")
-texture_scale = 0.15
-
-[node name="Table" parent="." instance=ExtResource("8_5fovq")]
-position = Vector2(32, 48)
-table_width = 2
-table_height = 4
-
-[node name="Table2" parent="." instance=ExtResource("8_5fovq")]
-position = Vector2(96, 96)
-computer_visible = true
-
-[node name="Table3" parent="." instance=ExtResource("8_5fovq")]
-position = Vector2(192, 96)
-paper_visible = true
-
-[node name="Table4" parent="." instance=ExtResource("8_5fovq")]
-position = Vector2(64, 152)
-computer_visible = true
-paper_visible = true
-
-[node name="Table6" parent="." instance=ExtResource("8_5fovq")]
-position = Vector2(32, 208)
-paper_visible = true
-
-[node name="Table7" parent="." instance=ExtResource("8_5fovq")]
-position = Vector2(256, 176)
-paper_visible = true
-table_width = 2
-table_height = 4
-
-[node name="Table5" parent="." instance=ExtResource("8_5fovq")]
-position = Vector2(160, 152)
-computer_visible = true
-
-[node name="Table8" parent="." instance=ExtResource("8_5fovq")]
-position = Vector2(576, 56)
-paper_visible = true
-table_width = 2
-table_height = 4
-
-[node name="Table9" parent="." instance=ExtResource("8_5fovq")]
-position = Vector2(384, 96)
-paper_visible = true
-
-[node name="Table10" parent="." instance=ExtResource("8_5fovq")]
-position = Vector2(480, 96)
-computer_visible = true
-paper_visible = true
-
-[node name="Table11" parent="." instance=ExtResource("8_5fovq")]
-position = Vector2(416, 152)
-computer_visible = true
-
-[node name="Table12" parent="." instance=ExtResource("8_5fovq")]
-position = Vector2(544, 208)
-paper_visible = true
-
-[node name="Table13" parent="." instance=ExtResource("8_5fovq")]
-position = Vector2(352, 176)
-table_width = 2
-table_height = 4
-
-[node name="Table14" parent="." instance=ExtResource("8_5fovq")]
-position = Vector2(512, 152)
-computer_visible = true
-paper_visible = true
-
-[node name="EnvironmentLight" type="CanvasModulate" parent="."]
-color = Color(0, 0, 0, 1)
-script = ExtResource("10_yxq05")
