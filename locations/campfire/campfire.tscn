@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://ffns7ii756od"]
 
-[ext_resource type="Texture2D" uid="uid://6axfoariuds1" path="res://campfire/sprite/trail.png" id="1_0g46y"]
-[ext_resource type="Texture2D" uid="uid://bisymyarc5mvr" path="res://campfire/sprite/path.png" id="2_2gjsw"]
+[ext_resource type="Texture2D" uid="uid://6axfoariuds1" path="res://locations/campfire/sprite/trail.png" id="1_0g46y"]
+[ext_resource type="Texture2D" uid="uid://bisymyarc5mvr" path="res://locations/campfire/sprite/path.png" id="2_2gjsw"]
 [ext_resource type="PackedScene" uid="uid://cveiyoy15wew4" path="res://player/player.tscn" id="3_4ixws"]
 
 [node name="Campfire" type="Node2D"]
@@ -22,3 +22,8 @@ position = Vector2(160, 24)
 limit_left = 0
 limit_top = 0
 limit_right = 320
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(144, -16, 144, 488, 128, 488, 128, -32, 192, -32, 192, 488, 176, 488, 176, -16)

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://rqbcyssfqefk"
-path="res://.godot/imported/greybee.jpg-7e7b034b3f49e2dfc3a62206822c9a75.ctex"
+uid="uid://dfvchkcx80y3j"
+path="res://.godot/imported/paper.png-b9590398fccbf0dfd050e04346f1b939.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://greybee/sprite/greybee.jpg"
-dest_files=["res://.godot/imported/greybee.jpg-7e7b034b3f49e2dfc3a62206822c9a75.ctex"]
+source_file="res://locations/bank/props/paper.png"
+dest_files=["res://.godot/imported/paper.png-b9590398fccbf0dfd050e04346f1b939.ctex"]
 
 [params]
 

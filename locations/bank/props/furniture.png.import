@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://yg20ljineafx"
-path="res://.godot/imported/square-ezgif.com-png-to-jpg-converter.jpg-4256c0e9867fa4cae8be11ef3fa1b1e0.ctex"
+uid="uid://dqro0py6mdw3u"
+path="res://.godot/imported/furniture.png-81d161930a03e783db76187c95665318.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://greybee/sprite/square-ezgif.com-png-to-jpg-converter.jpg"
-dest_files=["res://.godot/imported/square-ezgif.com-png-to-jpg-converter.jpg-4256c0e9867fa4cae8be11ef3fa1b1e0.ctex"]
+source_file="res://locations/bank/props/furniture.png"
+dest_files=["res://.godot/imported/furniture.png-81d161930a03e783db76187c95665318.ctex"]
 
 [params]
 

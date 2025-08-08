@@ -1,6 +1,6 @@
 extends Node2D
 
-var bank = preload("res://bank/bank.tscn")
+var bank = preload("res://locations/bank/bank.tscn")
 
 func _process(_delta:float) -> void:
 	if $Player.position.y <= 0:

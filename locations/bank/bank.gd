@@ -10,7 +10,7 @@ func _ready() -> void:
 	#GameState.room = 0
 	#GameState.score = 0
 	
-	start_game()
+	reset_room()
 
 func _process(delta:float) -> void:
 	if GameState.game_over:
@@ -27,11 +27,11 @@ func _process(delta:float) -> void:
 		print(random_location)
 		
 		if random_location <= 5:
-			get_tree().change_scene_to_file("res://greybee/greybee_room.tscn")
+			get_tree().change_scene_to_file("res://locations/greybee/greybee_room.tscn")
 		else:
-			start_game()
+			reset_room()
 
-func start_game():
+func reset_room():
 	GameState.room += 1
 	GameState.room_timer = 0
 	GameState.puzzles_collected = 0

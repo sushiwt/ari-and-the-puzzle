@@ -1,12 +1,12 @@
 [gd_scene load_steps=11 format=3 uid="uid://4ua7i06cf6vs"]
 
 [ext_resource type="AudioStream" uid="uid://bo4jkb0p6jl8w" path="res://music/greybee.mp3" id="1_4fmby"]
-[ext_resource type="Script" uid="uid://oqbf8uxyyouc" path="res://greybee/greybee_room.gd" id="1_clexq"]
+[ext_resource type="Script" uid="uid://oqbf8uxyyouc" path="res://locations/greybee/greybee_room.gd" id="1_clexq"]
 [ext_resource type="PackedScene" uid="uid://crkjbf8g4gr6x" path="res://basegame/ui.tscn" id="2_00mef"]
-[ext_resource type="Texture2D" uid="uid://yg20ljineafx" path="res://greybee/sprite/square-ezgif.com-png-to-jpg-converter.jpg" id="2_5vg7a"]
+[ext_resource type="Texture2D" uid="uid://yg20ljineafx" path="res://locations/greybee/sprite/square-ezgif.com-png-to-jpg-converter.jpg" id="2_5vg7a"]
 [ext_resource type="PackedScene" uid="uid://cveiyoy15wew4" path="res://player/player.tscn" id="2_tm4w3"]
-[ext_resource type="Texture2D" uid="uid://rqbcyssfqefk" path="res://greybee/sprite/greybee.jpg" id="3_tm4w3"]
-[ext_resource type="Script" uid="uid://gr6gkpoj6lwx" path="res://greybee/greybee.gd" id="4_jacl4"]
+[ext_resource type="Texture2D" uid="uid://rqbcyssfqefk" path="res://locations/greybee/sprite/greybee.jpg" id="3_tm4w3"]
+[ext_resource type="Script" uid="uid://gr6gkpoj6lwx" path="res://locations/greybee/greybee.gd" id="4_jacl4"]
 
 [sub_resource type="Animation" id="Animation_00mef"]
 length = 0.001

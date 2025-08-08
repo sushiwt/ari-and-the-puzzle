@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dlvab8u53xrh2"
-path="res://.godot/imported/wall.png-fba417e3afc37803e69c1aa5593653fb.ctex"
+uid="uid://yg20ljineafx"
+path="res://.godot/imported/square-ezgif.com-png-to-jpg-converter.jpg-297305430615180017b8eae225804a07.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://bank/sprite/wall.png"
-dest_files=["res://.godot/imported/wall.png-fba417e3afc37803e69c1aa5593653fb.ctex"]
+source_file="res://locations/greybee/sprite/square-ezgif.com-png-to-jpg-converter.jpg"
+dest_files=["res://.godot/imported/square-ezgif.com-png-to-jpg-converter.jpg-297305430615180017b8eae225804a07.ctex"]
 
 [params]
 

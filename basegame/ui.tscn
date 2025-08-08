@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://crkjbf8g4gr6x"]
 
-[ext_resource type="Script" uid="uid://tyhc3gpeu5ef" path="res://bank/scripts/room_score_text.gd" id="1_08sml"]
+[ext_resource type="Script" uid="uid://tyhc3gpeu5ef" path="res://locations/bank/scripts/room_score_text.gd" id="1_08sml"]
 
 [node name="UI" type="CanvasLayer"]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqro0py6mdw3u"
-path="res://.godot/imported/furniture.png-7afba32c83499c90c787d6d9576ffc53.ctex"
+uid="uid://bt2k840dmk7kl"
+path="res://.godot/imported/door.png-927666faece5f6395a14f292ac446f76.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://bank/props/furniture.png"
-dest_files=["res://.godot/imported/furniture.png-7afba32c83499c90c787d6d9576ffc53.ctex"]
+source_file="res://locations/bank/sprite/door.png"
+dest_files=["res://.godot/imported/door.png-927666faece5f6395a14f292ac446f76.ctex"]
 
 [params]
 

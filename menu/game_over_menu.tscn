@@ -8,8 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://d2d8sp0f0gkyt" path="res://menu/sprite/quit.png" id="5_x0w7j"]
 [ext_resource type="AudioStream" uid="uid://cmtdmr2oti8be" path="res://music/caught.wav" id="6_pu1q3"]
 [ext_resource type="FontFile" uid="uid://de8o0r0elchgg" path="res://basegame/fonts/minitext.ttf" id="7_uaxet"]
-[ext_resource type="Script" uid="uid://c27opd1gad1os" path="res://bank/scripts/room_label.gd" id="8_2up6k"]
-[ext_resource type="Script" uid="uid://c2urv47qwqa1m" path="res://bank/scripts/score_label.gd" id="9_jscf4"]
+[ext_resource type="Script" uid="uid://c27opd1gad1os" path="res://locations/bank/scripts/room_label.gd" id="8_2up6k"]
+[ext_resource type="Script" uid="uid://c2urv47qwqa1m" path="res://locations/bank/scripts/score_label.gd" id="9_jscf4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s4mg2"]
 size = Vector2(64, 16)

@@ -4,7 +4,7 @@ extends Area2D
 
 const DEFAULT_ALPHA = 0.75
 var original_position = Vector2.ZERO
-var bank = preload("res://bank/bank.tscn")
+var bank = preload("res://locations/bank/bank.tscn")
 
 var timer = 0
 @export var animation_offset = -64

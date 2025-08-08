@@ -1,10 +1,10 @@
 [gd_scene load_steps=11 format=3 uid="uid://drxjouvwainga"]
 
-[ext_resource type="Texture2D" uid="uid://vkyl22n41yo7" path="res://bank/props/table4x2.png" id="1_ebfiw"]
-[ext_resource type="Script" uid="uid://bie5w2t6p0wk7" path="res://bank/props/table.gd" id="1_ktg33"]
-[ext_resource type="Texture2D" uid="uid://dfvchkcx80y3j" path="res://bank/props/paper.png" id="2_ev4jt"]
-[ext_resource type="Texture2D" uid="uid://i3yp172ywpjt" path="res://bank/props/computer.png" id="2_exrhf"]
-[ext_resource type="Texture2D" uid="uid://cvky5t7txjee3" path="res://bank/props/computer_back.png" id="3_on648"]
+[ext_resource type="Texture2D" uid="uid://vkyl22n41yo7" path="res://locations/bank/props/table4x2.png" id="1_ebfiw"]
+[ext_resource type="Script" uid="uid://bie5w2t6p0wk7" path="res://locations/bank/props/table.gd" id="1_ktg33"]
+[ext_resource type="Texture2D" uid="uid://dfvchkcx80y3j" path="res://locations/bank/props/paper.png" id="2_ev4jt"]
+[ext_resource type="Texture2D" uid="uid://i3yp172ywpjt" path="res://locations/bank/props/computer.png" id="2_exrhf"]
+[ext_resource type="Texture2D" uid="uid://cvky5t7txjee3" path="res://locations/bank/props/computer_back.png" id="3_on648"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oi8yu"]
 size = Vector2(64, 32)

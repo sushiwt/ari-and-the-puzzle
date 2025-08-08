@@ -1,7 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://b4hofg1kgse0l"]
 
 [ext_resource type="AudioStream" uid="uid://yhot3kyjldep" path="res://music/theme.wav" id="1_nrnbx"]
-[ext_resource type="Texture2D" uid="uid://x7tdqx6r4rgm" path="res://menu/sprite/background.jpg" id="2_iqepy"]
 [ext_resource type="PackedScene" uid="uid://iefe3fpk1u25" path="res://menu/gui_elements/button.tscn" id="3_h1wq0"]
 [ext_resource type="Texture2D" uid="uid://cdrviwm2kq14v" path="res://menu/sprite/play.png" id="4_dwrpx"]
 [ext_resource type="Texture2D" uid="uid://b42p084vx6o6m" path="res://menu/sprite/settings.png" id="5_g7jxm"]
@@ -9,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://m1623m3kawup" path="res://menu/sprite/version.png" id="7_oxnod"]
 [ext_resource type="Texture2D" uid="uid://db6r5aycm80mw" path="res://menu/sprite/title.png" id="8_gd0jp"]
 [ext_resource type="Script" uid="uid://qjkwtrm5sbv8" path="res://menu/gui_elements/title.gd" id="9_4ndjb"]
+[ext_resource type="Texture2D" uid="uid://ba5nmyliq213f" path="res://icon.png" id="9_nrnbx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6fswf"]
 size = Vector2(64, 16)
@@ -23,13 +23,9 @@ texture_filter = 1
 stream = ExtResource("1_nrnbx")
 autoplay = true
 
-[node name="Background" type="Sprite2D" parent="."]
-position = Vector2(168, 236)
-texture = ExtResource("2_iqepy")
-
 [node name="BackgroundButtonCover" type="Polygon2D" parent="."]
 color = Color(0, 0, 0, 0.501961)
-polygon = PackedVector2Array(0, 152, 72, 152, 87, 152, 87, 207, 87, 240, 0, 240)
+polygon = PackedVector2Array(0, 152, 87, 152, 87, 207, 87, 240, 0, 240)
 
 [node name="PlayButton" parent="." instance=ExtResource("3_h1wq0")]
 position = Vector2(8, 160)
@@ -93,3 +89,9 @@ texture = ExtResource("7_oxnod")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Credits"]
 position = Vector2(32, 12)
 shape = SubResource("RectangleShape2D_bc54p")
+
+[node name="Icon" type="Sprite2D" parent="."]
+texture_repeat = 2
+position = Vector2(200, 104)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_nrnbx")
