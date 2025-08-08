@@ -1,14 +1,15 @@
-[gd_scene load_steps=11 format=3 uid="uid://dar0xa4ebivpb"]
+[gd_scene load_steps=12 format=3 uid="uid://dar0xa4ebivpb"]
 
 [ext_resource type="Texture2D" uid="uid://cnq88afelre7f" path="res://menu/sprite/game_over.png" id="1_4st0s"]
+[ext_resource type="Script" uid="uid://qjkwtrm5sbv8" path="res://menu/gui_elements/title.gd" id="2_2up6k"]
 [ext_resource type="PackedScene" uid="uid://iefe3fpk1u25" path="res://menu/gui_elements/button.tscn" id="2_ru24h"]
 [ext_resource type="Texture2D" uid="uid://yj0y57nhcndx" path="res://menu/sprite/retry.png" id="3_6afgx"]
 [ext_resource type="Texture2D" uid="uid://36chdrpm30d1" path="res://menu/sprite/menu.png" id="4_pu1q3"]
 [ext_resource type="Texture2D" uid="uid://d2d8sp0f0gkyt" path="res://menu/sprite/quit.png" id="5_x0w7j"]
 [ext_resource type="AudioStream" uid="uid://cmtdmr2oti8be" path="res://music/caught.wav" id="6_pu1q3"]
 [ext_resource type="FontFile" uid="uid://de8o0r0elchgg" path="res://basegame/fonts/minitext.ttf" id="7_uaxet"]
-[ext_resource type="Script" uid="uid://c27opd1gad1os" path="res://bank/room_label.gd" id="8_2up6k"]
-[ext_resource type="Script" uid="uid://c2urv47qwqa1m" path="res://bank/score_label.gd" id="9_jscf4"]
+[ext_resource type="Script" uid="uid://c27opd1gad1os" path="res://bank/scripts/room_label.gd" id="8_2up6k"]
+[ext_resource type="Script" uid="uid://c2urv47qwqa1m" path="res://bank/scripts/score_label.gd" id="9_jscf4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s4mg2"]
 size = Vector2(64, 16)
@@ -24,6 +25,7 @@ polygon = PackedVector2Array(320, 0, 320, 240, 0, 240, 0, 0, 0, 0)
 position = Vector2(88, 40)
 scale = Vector2(2, 2)
 texture = ExtResource("1_4st0s")
+script = ExtResource("2_2up6k")
 
 [node name="RetryButton" parent="." instance=ExtResource("2_ru24h")]
 position = Vector2(24, 120)

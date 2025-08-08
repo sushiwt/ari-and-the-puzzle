@@ -2,7 +2,7 @@ extends Node2D
 
 var font = preload("res://basegame/fonts/minitext.ttf")
 
-func _process(delta: float) -> void:
+func _process(_delta:float) -> void:
 	queue_redraw()
 
 func _draw() -> void:

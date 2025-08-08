@@ -44,15 +44,15 @@ func _draw() -> void:
 	var left_polygon =  PackedVector2Array([point3, point4, point4 + length, point3 + length])
 	var top_polygon = PackedVector2Array([point1, point2, point3, point4])
 	var bottom_polygon = PackedVector2Array([point1 + length, point2 + length, point3 + length, point4 + length])
-	
-	# Bottom Side Polygon
-	draw_polygon(bottom_polygon, polygon_color)
-	
-	# Side Polygons
-	draw_polygon(front_polygon, polygon_color, polygon_uv, front_texture)
-	draw_polygon(left_polygon, polygon_color)
-	draw_polygon(back_polygon, polygon_color)
-	draw_polygon(right_polygon, polygon_color)
+	#
+	## Bottom Side Polygon
+	#draw_polygon(bottom_polygon, polygon_color)
+	#
+	## Side Polygons
+	#draw_polygon(front_polygon, polygon_color, polygon_uv, front_texture)
+	#draw_polygon(left_polygon, polygon_color)
+	#draw_polygon(back_polygon, polygon_color)
+	#draw_polygon(right_polygon, polygon_color)
 	
 	# Bottom Side
 	if point1 < point2:
@@ -68,9 +68,6 @@ func _draw() -> void:
 	draw_line(point2, point2 + length, edge_color)
 	draw_line(point3, point3 + length, edge_color)
 	draw_line(point4, point4 + length, edge_color)
-
-	# Top Side Polygon
-	draw_polygon(top_polygon, polygon_color)
 	
 	# Top Side
 	draw_line(point1, point2, edge_color)
@@ -78,6 +75,10 @@ func _draw() -> void:
 	draw_line(point3, point4, edge_color)
 	draw_line(point4, point1, edge_color)
 
+
+	# Top Side Polygon
+	#draw_polygon(top_polygon, polygon_color)
+	
 
 func _on_sensor_area_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Player"):

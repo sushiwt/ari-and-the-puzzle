@@ -14,7 +14,7 @@ var player_detect_amount = 0
 
 var player_seen = 0
 
-func _process(delta: float) -> void:
+func _process(_delta:float) -> void:
 	room_timer += 1
 	
 	if player_detect_amount > 0:

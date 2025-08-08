@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://ffns7ii756od"]
+
+[ext_resource type="Texture2D" uid="uid://6axfoariuds1" path="res://campfire/sprite/trail.png" id="1_0g46y"]
+[ext_resource type="Texture2D" uid="uid://bisymyarc5mvr" path="res://campfire/sprite/path.png" id="2_2gjsw"]
+[ext_resource type="PackedScene" uid="uid://cveiyoy15wew4" path="res://player/player.tscn" id="3_4ixws"]
+
+[node name="Campfire" type="Node2D"]
+texture_filter = 1
+
+[node name="Trail" type="Sprite2D" parent="."]
+position = Vector2(160, 360)
+texture = ExtResource("1_0g46y")
+
+[node name="Path" type="Sprite2D" parent="."]
+position = Vector2(160, 120)
+texture = ExtResource("2_2gjsw")
+
+[node name="Player" parent="." instance=ExtResource("3_4ixws")]
+position = Vector2(160, 24)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+limit_left = 0
+limit_top = 0
+limit_right = 320

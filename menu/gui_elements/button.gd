@@ -4,6 +4,7 @@ extends Area2D
 
 const DEFAULT_ALPHA = 0.75
 var original_position = Vector2.ZERO
+var bank = preload("res://bank/bank.tscn")
 
 var timer = 0
 @export var animation_offset = -64
@@ -26,7 +27,7 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 		print("You pressed it!")
 		
 		if option == "play":
-			get_tree().change_scene_to_file("res://bank/game.tscn")
+			get_tree().change_scene_to_packed(bank)
 			GameState.puzzle_requirement = 4
 			GameState.room = 0
 			GameState.score = 0

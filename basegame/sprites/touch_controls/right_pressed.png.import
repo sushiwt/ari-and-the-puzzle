@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://sw6wefberkdo"
-path="res://.godot/imported/floor.png-7448cfbab48834a981c484ff568d9f32.ctex"
+uid="uid://btdssmc6e8unn"
+path="res://.godot/imported/right_pressed.png-982e225ff0858ed32b4785d130c56615.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://bank/floor.png"
-dest_files=["res://.godot/imported/floor.png-7448cfbab48834a981c484ff568d9f32.ctex"]
+source_file="res://basegame/sprites/touch_controls/right_pressed.png"
+dest_files=["res://.godot/imported/right_pressed.png-982e225ff0858ed32b4785d130c56615.ctex"]
 
 [params]
 

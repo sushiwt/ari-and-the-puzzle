@@ -9,7 +9,7 @@ var use_spd
 var player_state = "idle"
 var player_direction = "Down"
 
-func _process(delta: float) -> void:
+func _process(_delta:float) -> void:
 	use_spd = WALK_SPEED
 	mvmt_vector = Vector2.ZERO
 	player_state = "idle"

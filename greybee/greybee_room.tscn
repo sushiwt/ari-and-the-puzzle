@@ -8,6 +8,21 @@
 [ext_resource type="Texture2D" uid="uid://rqbcyssfqefk" path="res://greybee/sprite/greybee.jpg" id="3_tm4w3"]
 [ext_resource type="Script" uid="uid://gr6gkpoj6lwx" path="res://greybee/greybee.gd" id="4_jacl4"]
 
+[sub_resource type="Animation" id="Animation_00mef"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Greybee:flip_h")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
 [sub_resource type="Animation" id="Animation_clexq"]
 resource_name = "greybee"
 loop_mode = 1
@@ -23,21 +38,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
-}
-
-[sub_resource type="Animation" id="Animation_00mef"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Greybee:flip_h")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_skr5b"]
@@ -60,6 +60,7 @@ polygon = PackedVector2Array(0, 0, 0, 256, 320, 256, 320, 0, 352, 0, 352, 288, -
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_4fmby")
+volume_db = 10.0
 autoplay = true
 
 [node name="Square" type="Sprite2D" parent="."]

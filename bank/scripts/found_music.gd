@@ -1,6 +1,6 @@
 extends AudioStreamPlayer
 
-func _process(delta: float) -> void:
+func _process(_delta:float) -> void:
 	if GameState.player_contacted:
 		volume_db = 0
 	else:

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bt2k840dmk7kl"
-path="res://.godot/imported/door.png-108df578f10a49459c0f99ee23e59c31.ctex"
+uid="uid://dxb2cbr14alkk"
+path="res://.godot/imported/down.png-207ae228433537b44d7e9ac97c65b7f7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://bank/door.png"
-dest_files=["res://.godot/imported/door.png-108df578f10a49459c0f99ee23e59c31.ctex"]
+source_file="res://basegame/sprites/touch_controls/down.png"
+dest_files=["res://.godot/imported/down.png-207ae228433537b44d7e9ac97c65b7f7.ctex"]
 
 [params]
 

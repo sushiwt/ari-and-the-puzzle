@@ -30,7 +30,6 @@ GameState="*res://basegame/autoload/game_state.gd"
 
 window/size/viewport_width=320
 window/size/viewport_height=240
-window/size/mode=2
 window/size/window_width_override=640
 window/size/window_height_override=480
 window/stretch/mode="viewport"
@@ -71,6 +70,7 @@ back={
 [input_devices]
 
 pointing/emulate_touch_from_mouse=true
+pointing/emulate_mouse_from_touch=false
 
 [layer_names]
 

@@ -26,7 +26,7 @@ func _process(delta:float) -> void:
 		var random_location = randi_range(0,100)
 		print(random_location)
 		
-		if random_location <= 50:
+		if random_location <= 5:
 			get_tree().change_scene_to_file("res://greybee/greybee_room.tscn")
 		else:
 			start_game()
