@@ -1,0 +1,11 @@
+~ start
+Greybee: * bahahaha
+Greybee: * did you know that i love bees
+Greybee: * im making a video game and such
+Greybee: * you should check it out on https:/
+Greybee: * bahaha. hard drives am i right
+do change_dialogue_start("stop")
+=> stop
+~ stop
+Greybee: * leave me alone now please bahahah
+=> END

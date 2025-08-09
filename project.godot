@@ -25,6 +25,11 @@ config/icon="uid://ba5nmyliq213f"
 [autoload]
 
 GameState="*res://basegame/autoload/game_state.gd"
+DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+
+[dialogue_manager]
+
+runtime/balloon_path="res://dialogue/balloon/balloon.tscn"
 
 [display]
 
@@ -42,16 +47,17 @@ movie_writer/fps=30
 
 [editor_plugins]
 
-enabled=PackedStringArray()
+enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
 
 [global_group]
 
 Player=""
 Enemy=""
+Dialogue=""
 
 [input]
 
-jump={
+dialogue_confirm={
 "deadzone": 0.2,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":90,"key_label":0,"unicode":122,"location":0,"echo":false,"script":null)
 ]
@@ -67,10 +73,9 @@ back={
 ]
 }
 
-[input_devices]
+[internationalization]
 
-pointing/emulate_touch_from_mouse=true
-pointing/emulate_mouse_from_touch=false
+locale/translations_pot_files=PackedStringArray("res://dialogue/dialogue/greybee.dialogue", "res://dialogue/dialogue/untitled.dialogue")
 
 [layer_names]
 

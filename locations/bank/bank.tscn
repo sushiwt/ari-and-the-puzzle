@@ -493,12 +493,10 @@ script = ExtResource("1_2kap2")
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_ljojd")
-autoplay = true
 script = ExtResource("4_gphkf")
 
 [node name="MusicReverb" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_tf3mn")
-autoplay = true
 script = ExtResource("6_uesyi")
 
 [node name="Player" parent="." instance=ExtResource("7_hhyei")]

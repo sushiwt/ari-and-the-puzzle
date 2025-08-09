@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://o4trd2rn4x07"]
+
+[ext_resource type="Script" uid="uid://crdwfwg8qvgmq" path="res://dialogue/talkable.gd" id="1_4qv6i"]
+
+[node name="TalkableComponent" type="Area2D"]
+collision_layer = 16
+collision_mask = 0
+script = ExtResource("1_4qv6i")

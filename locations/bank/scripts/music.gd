@@ -2,6 +2,9 @@ extends AudioStreamPlayer
 
 var found_sound = load("res://music/found.mp3")
 
+func _ready() -> void:
+	play()
+
 func _process(_delta:float) -> void:
 	#pitch_scale = 1 - (GameState.player_seen * 0.05)
 	if GameState.player_contacted:

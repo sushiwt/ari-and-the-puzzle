@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://c1du8ajwi4xwx"
+path="res://.godot/imported/greybee.dialogue-42a59f41283f6698590ad6a287f16199.tres"
+
+[deps]
+
+source_file="res://dialogue/dialogue/greybee.dialogue"
+dest_files=["res://.godot/imported/greybee.dialogue-42a59f41283f6698590ad6a287f16199.tres"]
+
+[params]
+
+defaults=true

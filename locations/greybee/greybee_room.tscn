@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://4ua7i06cf6vs"]
+[gd_scene load_steps=15 format=3 uid="uid://4ua7i06cf6vs"]
 
 [ext_resource type="AudioStream" uid="uid://bo4jkb0p6jl8w" path="res://music/greybee.mp3" id="1_4fmby"]
 [ext_resource type="Script" uid="uid://oqbf8uxyyouc" path="res://locations/greybee/greybee_room.gd" id="1_clexq"]
@@ -7,13 +7,21 @@
 [ext_resource type="PackedScene" uid="uid://cveiyoy15wew4" path="res://player/player.tscn" id="2_tm4w3"]
 [ext_resource type="Texture2D" uid="uid://rqbcyssfqefk" path="res://locations/greybee/sprite/greybee.jpg" id="3_tm4w3"]
 [ext_resource type="Script" uid="uid://gr6gkpoj6lwx" path="res://locations/greybee/greybee.gd" id="4_jacl4"]
+[ext_resource type="PackedScene" uid="uid://o4trd2rn4x07" path="res://dialogue/talkable.tscn" id="7_cl5oe"]
+[ext_resource type="Resource" uid="uid://c1du8ajwi4xwx" path="res://dialogue/dialogue/greybee.dialogue" id="8_0d0if"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i7r5c"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cl5oe"]
+size = Vector2(56.183, 50.8718)
 
 [sub_resource type="Animation" id="Animation_00mef"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Greybee:flip_h")
+tracks/0/path = NodePath("Greybee/GreybeeSprite:flip_h")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -30,7 +38,7 @@ step = 0.0333
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Greybee:flip_h")
+tracks/0/path = NodePath("Greybee/GreybeeSprite:flip_h")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -68,11 +76,26 @@ z_index = -1
 position = Vector2(160, 136)
 texture = ExtResource("2_5vg7a")
 
-[node name="Greybee" type="Sprite2D" parent="."]
+[node name="Greybee" type="StaticBody2D" parent="."]
 position = Vector2(159.625, 131.5)
 scale = Vector2(0.284783, 0.314516)
+
+[node name="GreybeeSprite" type="Sprite2D" parent="Greybee"]
 texture = ExtResource("3_tm4w3")
 script = ExtResource("4_jacl4")
+
+[node name="GreybeeArea" parent="Greybee" instance=ExtResource("7_cl5oe")]
+position = Vector2(-26.7747, 14.3077)
+scale = Vector2(3.51145, 3.17949)
+dialogue_resource = ExtResource("8_0d0if")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Greybee/GreybeeArea"]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_i7r5c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Greybee"]
+position = Vector2(1.31696, 39.7436)
+shape = SubResource("RectangleShape2D_cl5oe")
 
 [node name="Player" parent="." instance=ExtResource("2_tm4w3")]
 position = Vector2(160, 216)

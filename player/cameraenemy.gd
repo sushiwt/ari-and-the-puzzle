@@ -1,90 +1,42 @@
 extends Node2D
 
-var char_sin:float = 0.0
-
-var width = 16
-var height = 16
-var length = Vector2(0,8)
-var point1 = Vector2.ZERO
-var point2 = Vector2.ZERO
-var point3 = Vector2.ZERO
-var point4 = Vector2.ZERO
-
-@export var direction = 0.0
-
-var edge_color = Color("#2F2F2F")
-var solid_color = Color("#847e87")
-var front_texture = load("res://enemies/camera/sprite/front.png")
-var polygon_color = PackedColorArray([solid_color, solid_color, solid_color, solid_color])
-var polygon_uv =  PackedVector2Array([Vector2(1,1), Vector2(1,0), Vector2(0,0), Vector2(0,1)])
-
-const TOTAL_RAYS := 19
-const ANGLE_INCREMENT := deg_to_rad(2)  # 2 degrees in radians
+@export var direction = 90.0
 
 func _ready():
+	$DrawnCamera.char_sin = deg_to_rad(direction)
 	$Sensor.rotation_degrees = direction - 134.9
-	char_sin = deg_to_rad(direction)
+	$Top.rotation_degrees = direction
+	$Bottom.rotation_degrees = direction 
+	
+	$FrontMarker.rotation_degrees = direction - 90.0
+	$FrontMarker/Front.rotation_degrees = -direction 
+	$FrontMarker/Front.skew = deg_to_rad(direction)
 	
 
 func _process(delta:float) -> void:
-	char_sin += 0.01
 	$Sensor.rotation += 0.01
-		
-	point1 = Vector2((cos(char_sin + (PI / 3)) * width), (sin(char_sin + ((1 * PI) / 3)) * height))
-	point2 = Vector2((cos(char_sin + ((5 * PI) / 3)) * width), (sin(char_sin + ((5 * PI) / 3))  * height))
-	point3 = Vector2((cos(char_sin + ((4 * PI) / 3)) * width), (sin(char_sin + ((4 * PI) / 3)) * height))
-	point4 = Vector2((cos(char_sin + ((2 * PI) / 3)) * width), (sin(char_sin + ((2 * PI) / 3)) * height))
 	
-	queue_redraw()
+	$Top.rotation += 0.01
+	$Bottom.rotation += 0.01
 	
-func _draw() -> void:
-	var back_polygon =  PackedVector2Array([point4, point1, point1 + length, point4 + length])
-	var right_polygon =  PackedVector2Array([point1, point2, point2 + length, point1 + length])
-	var front_polygon =  PackedVector2Array([point2, point3, point3 + length, point2 + length])
-	var left_polygon =  PackedVector2Array([point3, point4, point4 + length, point3 + length])
-	var top_polygon = PackedVector2Array([point1, point2, point3, point4])
-	var bottom_polygon = PackedVector2Array([point1 + length, point2 + length, point3 + length, point4 + length])
-	#
-	## Bottom Side Polygon
-	#draw_polygon(bottom_polygon, polygon_color)
-	#
-	## Side Polygons
-	#draw_polygon(front_polygon, polygon_color, polygon_uv, front_texture)
-	#draw_polygon(left_polygon, polygon_color)
-	#draw_polygon(back_polygon, polygon_color)
-	#draw_polygon(right_polygon, polygon_color)
+	$FrontMarker.rotation += 0.01
+	$FrontMarker/Front.rotation -= 0.01
+	$FrontMarker/Front.skew += 0.01
 	
-	# Bottom Side
-	if point1 < point2:
-		draw_line(point1 + length, point2 + length, edge_color)
-	if point2 < point3:
-		draw_line(point2 + length, point3 + length, edge_color)
-	if point3 < point4:
-		draw_line(point3 + length, point4 + length, edge_color)
-	if point4 < point1:
-		draw_line(point4 + length, point1 + length, edge_color)
+	$FrontMarker.position.x = (sin($DrawnCamera.char_sin) * 3)
+	$FrontMarker.position.y = (cos($DrawnCamera.char_sin) * -4) + 4
 	
-	draw_line(point1, point1 + length, edge_color)
-	draw_line(point2, point2 + length, edge_color)
-	draw_line(point3, point3 + length, edge_color)
-	draw_line(point4, point4 + length, edge_color)
-	
-	# Top Side
-	draw_line(point1, point2, edge_color)
-	draw_line(point2, point3, edge_color)
-	draw_line(point3, point4, edge_color)
-	draw_line(point4, point1, edge_color)
-
-
-	# Top Side Polygon
-	#draw_polygon(top_polygon, polygon_color)
-	
-
 func _on_sensor_area_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Player"):
 		if GameState.room_timer < 60:
-			char_sin = 0
+			$DrawnCamera.char_sin = 0
 			$Sensor.rotation_degrees = -134.9
+			$Top.rotation_degrees = 0
+			$Bottom.rotation_degrees = 0 
+			
+			$FrontMarker.rotation_degrees = -90.0
+			$FrontMarker/Front.rotation_degrees = 0 
+			$FrontMarker/Front.skew = 0
 		
 		GameState.player_detect_amount += 1
 
