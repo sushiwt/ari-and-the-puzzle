@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1n5ao0wf0oj4"]
+
+[ext_resource type="Script" uid="uid://csoh4ata5wx02" path="res://basegame/you_cant_go_back.gd" id="1_le8gx"]
+[ext_resource type="FontFile" uid="uid://de8o0r0elchgg" path="res://basegame/fonts/minitext.ttf" id="2_mbooo"]
+
+[node name="YouCantGoBack" type="CanvasLayer"]
+script = ExtResource("1_le8gx")
+
+[node name="YouCantGoBack" type="Label" parent="."]
+offset_left = 119.0
+offset_top = -32.0
+offset_right = 287.0
+offset_bottom = -4.0
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("2_mbooo")
+theme_override_font_sizes/font_size = 32
+text = "You can't go back."

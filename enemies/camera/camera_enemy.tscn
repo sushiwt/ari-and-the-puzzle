@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://k5cmujoq1kpm" path="res://enemies/camera/sprite/light.png" id="2_6iqcr"]
 [ext_resource type="Texture2D" uid="uid://cnrpl5elw8qg5" path="res://player/sprite/shadow.png" id="4_2wa53"]
 [ext_resource type="Texture2D" uid="uid://oyjr85ftefp1" path="res://enemies/camera/sprite/top.png" id="4_3ob6m"]
-[ext_resource type="Script" uid="uid://bqmqdrmn0wc8v" path="res://enemies/camera/drawn_camera.gd" id="5_3ob6m"]
+[ext_resource type="Texture2D" uid="uid://cdl3pub5mlu7c" path="res://enemies/camera/sprite/back.png" id="4_egkxf"]
 [ext_resource type="Texture2D" uid="uid://dk1bysesr16i6" path="res://enemies/camera/sprite/front.png" id="5_sdt6t"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_w7mfc"]
@@ -19,17 +19,14 @@ script = ExtResource("1_wi8dh")
 position = Vector2(0, 8)
 texture = ExtResource("4_3ob6m")
 
-[node name="DrawnCamera" type="Node2D" parent="."]
-script = ExtResource("5_3ob6m")
-
 [node name="BackMarker" type="Marker2D" parent="."]
-visible = false
-rotation = -1.5708
+position = Vector2(0, 8)
+rotation = 1.5708
 
 [node name="Back" type="Sprite2D" parent="BackMarker"]
 position = Vector2(10, -2.28882e-05)
 scale = Vector2(0.5, 1)
-texture = ExtResource("5_sdt6t")
+texture = ExtResource("4_egkxf")
 
 [node name="FrontMarker" type="Marker2D" parent="."]
 rotation = -1.57079

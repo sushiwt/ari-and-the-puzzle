@@ -17,7 +17,6 @@ var polygon_color = PackedColorArray([solid_color, solid_color, solid_color, sol
 var polygon_uv =  PackedVector2Array([Vector2(1,1), Vector2(1,0), Vector2(0,0), Vector2(0,1)])
 
 func _process(delta:float) -> void:
-	char_sin += 0.01
 	
 	point1 = Vector2((cos(char_sin + (PI / 3)) * width), (sin(char_sin + ((1 * PI) / 3)) * height))
 	point2 = Vector2((cos(char_sin + ((5 * PI) / 3)) * width), (sin(char_sin + ((5 * PI) / 3))  * height))

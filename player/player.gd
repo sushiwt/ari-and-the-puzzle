@@ -18,6 +18,11 @@ var rot_map = {
 	Vector2(0, 1): 0
 }
 
+func _ready() -> void:
+	$TouchControls.visible = false
+	if OS.has_feature("web_android") || OS.has_feature("web_ios"):
+		$TouchControls.visible = true
+
 func _process(_delta:float) -> void:
 	if Input.is_action_just_pressed("dialogue_confirm") && !gui_exists:
 		var talkables = talkable_finder.get_overlapping_areas()
@@ -30,6 +35,10 @@ func _process(_delta:float) -> void:
 	use_spd = WALK_SPEED
 	mvmt_vector = Vector2.ZERO
 	player_state = "idle"
+	
+	if Settings.slide_on_walls:
+		if is_on_ceiling() || is_on_floor() || is_on_wall():
+			use_spd = RUN_SPEED
 	
 	if !gui_exists:
 		if Input.is_action_pressed("ui_left"):

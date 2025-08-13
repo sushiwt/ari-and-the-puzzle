@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://ffns7ii756od"]
+[gd_scene load_steps=13 format=3 uid="uid://ffns7ii756od"]
 
 [ext_resource type="Texture2D" uid="uid://6axfoariuds1" path="res://locations/campfire/sprite/trail.png" id="1_0g46y"]
 [ext_resource type="Script" uid="uid://dqj6bjurkqtgk" path="res://locations/campfire/campfire.gd" id="1_4fjnm"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://o4trd2rn4x07" path="res://dialogue/talkable.tscn" id="7_4dvq6"]
 [ext_resource type="Resource" uid="uid://bl32xr6gs7g3j" path="res://dialogue/dialogue/untitled.dialogue" id="8_4dvq6"]
 [ext_resource type="Texture2D" uid="uid://dvuxn8ffbi873" path="res://locations/campfire/sprite/campfire.png" id="9_m1u5h"]
+[ext_resource type="AudioStream" uid="uid://b1wcauutkpob6" path="res://music/j.wav" id="11_hgrvk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m1u5h"]
 size = Vector2(23, 19)
@@ -72,3 +73,6 @@ polygon = PackedVector2Array(144, -16, 144, 488, 0, 560, 0, 1128, 88, 1114, 168,
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Walls"]
 polygon = PackedVector2Array(209, 921, 209, 980, 238, 989, 242, 951, 251, 914, 260, 996, 274, 982, 293, 980, 293, 921, 292, 921, 276, 905, 252, 857, 250, 857, 226, 905, 210, 921)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_hgrvk")

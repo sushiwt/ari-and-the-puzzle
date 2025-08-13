@@ -8,5 +8,4 @@ func _ready() -> void:
 	value = volume
 	
 func _process(_delta:float) -> void:
-	
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index(bus), value)

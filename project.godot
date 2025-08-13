@@ -26,6 +26,7 @@ config/icon="uid://ba5nmyliq213f"
 
 GameState="*res://basegame/autoload/game_state.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+Settings="*res://basegame/autoload/settings.gd"
 
 [dialogue_manager]
 
@@ -75,7 +76,7 @@ back={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://dialogue/dialogue/greybee.dialogue", "res://dialogue/dialogue/untitled.dialogue")
+locale/translations_pot_files=PackedStringArray("res://dialogue/dialogue/greybee.dialogue", "res://dialogue/dialogue/untitled.dialogue", "res://dialogue/dialogue/floorpaper.dialogue")
 
 [layer_names]
 

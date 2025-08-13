@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://b6axptfmp0vwm"]
+
+[ext_resource type="Texture2D" uid="uid://dfvchkcx80y3j" path="res://locations/bank/props/paper.png" id="1_yn2gh"]
+[ext_resource type="PackedScene" uid="uid://o4trd2rn4x07" path="res://dialogue/talkable.tscn" id="2_yn2gh"]
+[ext_resource type="Resource" uid="uid://dt8j1jrj8gl5f" path="res://dialogue/dialogue/floorpaper.dialogue" id="3_us26i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7lfsj"]
+size = Vector2(16, 16)
+
+[node name="FloorPaper" type="Node2D"]
+z_index = -1
+texture_filter = 1
+
+[node name="Paper" type="Sprite2D" parent="."]
+texture = ExtResource("1_yn2gh")
+
+[node name="TalkableComponent" parent="." instance=ExtResource("2_yn2gh")]
+dialogue_resource = ExtResource("3_us26i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TalkableComponent"]
+shape = SubResource("RectangleShape2D_7lfsj")

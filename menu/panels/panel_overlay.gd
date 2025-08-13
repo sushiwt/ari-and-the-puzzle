@@ -20,3 +20,7 @@ func _on_panel_background_gui_input(event: InputEvent) -> void:
 
 func exit():
 	queue_free()
+
+
+func _on_debug_menu_button_button_down() -> void:
+	get_tree().change_scene_to_file("res://menu/debug_menu.tscn")

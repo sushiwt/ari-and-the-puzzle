@@ -74,6 +74,7 @@ position = Vector2(0, 13)
 shape = SubResource("RectangleShape2D_2ieo8")
 
 [node name="TouchControls" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="DPad" type="Node2D" parent="TouchControls"]
 position = Vector2(0, 240)

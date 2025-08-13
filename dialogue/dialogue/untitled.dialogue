@@ -1,3 +1,6 @@
 ~ start
-J: * What is there to talk about? Go away.
+J: * 
+J: [next=auto]* tomorrow is going to be another da
+do glitch_effect()
+do wait(2763)
 => END

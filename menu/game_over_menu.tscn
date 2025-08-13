@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://dar0xa4ebivpb"]
+[gd_scene load_steps=24 format=3 uid="uid://dar0xa4ebivpb"]
 
 [ext_resource type="Texture2D" uid="uid://cnq88afelre7f" path="res://menu/sprite/game_over.png" id="1_4st0s"]
+[ext_resource type="Texture2D" uid="uid://dl1hffbuypft0" path="res://basegame/sprites/game_over_frame.png" id="1_jscf4"]
 [ext_resource type="Script" uid="uid://qjkwtrm5sbv8" path="res://menu/gui_elements/title.gd" id="2_2up6k"]
 [ext_resource type="PackedScene" uid="uid://iefe3fpk1u25" path="res://menu/gui_elements/button.tscn" id="2_ru24h"]
 [ext_resource type="Texture2D" uid="uid://yj0y57nhcndx" path="res://menu/sprite/retry.png" id="3_6afgx"]
@@ -10,25 +11,118 @@
 [ext_resource type="FontFile" uid="uid://de8o0r0elchgg" path="res://basegame/fonts/minitext.ttf" id="7_uaxet"]
 [ext_resource type="Script" uid="uid://c27opd1gad1os" path="res://locations/bank/scripts/room_label.gd" id="8_2up6k"]
 [ext_resource type="Script" uid="uid://c2urv47qwqa1m" path="res://locations/bank/scripts/score_label.gd" id="9_jscf4"]
+[ext_resource type="Texture2D" uid="uid://cavbcdgigkojh" path="res://basegame/sprites/game_over_bigari.png" id="10_2bik7"]
+[ext_resource type="Texture2D" uid="uid://dgwr7tnhtd5q" path="res://basegame/sprites/game_over_background.png" id="12_ku476"]
+[ext_resource type="Script" uid="uid://ctt4gsf5qq3nr" path="res://menu/scrolling_background.gd" id="13_2bik7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s4mg2"]
 size = Vector2(64, 16)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_e2nvf"]
+atlas = ExtResource("10_2bik7")
+region = Rect2(0, 0, 86, 105)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a43ih"]
+atlas = ExtResource("10_2bik7")
+region = Rect2(86, 0, 86, 105)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_glmhg"]
+atlas = ExtResource("10_2bik7")
+region = Rect2(172, 0, 86, 105)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8q7p7"]
+atlas = ExtResource("10_2bik7")
+region = Rect2(258, 0, 86, 105)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ofpsk"]
+atlas = ExtResource("10_2bik7")
+region = Rect2(344, 0, 86, 105)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xh7rk"]
+atlas = ExtResource("10_2bik7")
+region = Rect2(430, 0, 86, 105)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tapts"]
+atlas = ExtResource("10_2bik7")
+region = Rect2(516, 0, 86, 105)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s1xdq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e2nvf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a43ih")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_glmhg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8q7p7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ofpsk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xh7rk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tapts")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
 [node name="GameOverMenu" type="Node2D"]
 texture_filter = 1
 
-[node name="Polygon2D" type="Polygon2D" parent="."]
-color = Color(0, 0, 0, 1)
-polygon = PackedVector2Array(320, 0, 320, 240, 0, 240, 0, 0, 0, 0)
+[node name="ScrollingBackground" type="Sprite2D" parent="."]
+modulate = Color(0.501961, 0.501961, 0.501961, 1)
+scale = Vector2(2, 2)
+texture = ExtResource("12_ku476")
+centered = false
+script = ExtResource("13_2bik7")
+
+[node name="ScrollingBackground2" type="Sprite2D" parent="."]
+modulate = Color(0.501961, 0.501961, 0.501961, 1)
+position = Vector2(128, 0)
+scale = Vector2(2, 2)
+texture = ExtResource("12_ku476")
+centered = false
+script = ExtResource("13_2bik7")
+
+[node name="ScrollingBackground3" type="Sprite2D" parent="."]
+modulate = Color(0.501961, 0.501961, 0.501961, 1)
+position = Vector2(256, 0)
+scale = Vector2(2, 2)
+texture = ExtResource("12_ku476")
+centered = false
+script = ExtResource("13_2bik7")
+
+[node name="ScrollingBackground4" type="Sprite2D" parent="."]
+modulate = Color(0.501961, 0.501961, 0.501961, 1)
+position = Vector2(384, 0)
+scale = Vector2(2, 2)
+texture = ExtResource("12_ku476")
+centered = false
+script = ExtResource("13_2bik7")
+
+[node name="GameOverFrame" type="Sprite2D" parent="."]
+position = Vector2(160, 120)
+scale = Vector2(2, 2)
+texture = ExtResource("1_jscf4")
 
 [node name="GameOver" type="Sprite2D" parent="."]
-position = Vector2(88, 40)
+position = Vector2(80, 40)
 scale = Vector2(2, 2)
 texture = ExtResource("1_4st0s")
 script = ExtResource("2_2up6k")
 
 [node name="RetryButton" parent="." instance=ExtResource("2_ru24h")]
-position = Vector2(24, 120)
+position = Vector2(16, 176)
+animation_delay = 15
 
 [node name="Retry" type="Sprite2D" parent="RetryButton"]
 position = Vector2(32, 8)
@@ -39,8 +133,9 @@ position = Vector2(32, 8)
 shape = SubResource("RectangleShape2D_s4mg2")
 
 [node name="MenuButton" parent="." instance=ExtResource("2_ru24h")]
-position = Vector2(24, 136)
+position = Vector2(16, 192)
 option = "menu"
+animation_delay = 30
 
 [node name="Retry" type="Sprite2D" parent="MenuButton"]
 position = Vector2(32, 8)
@@ -51,8 +146,9 @@ position = Vector2(32, 8)
 shape = SubResource("RectangleShape2D_s4mg2")
 
 [node name="QuitButton" parent="." instance=ExtResource("2_ru24h")]
-position = Vector2(24, 152)
+position = Vector2(16, 208)
 option = "quit"
+animation_delay = 45
 
 [node name="Retry" type="Sprite2D" parent="QuitButton"]
 position = Vector2(32, 8)
@@ -62,26 +158,37 @@ texture = ExtResource("5_x0w7j")
 position = Vector2(32, 8)
 shape = SubResource("RectangleShape2D_s4mg2")
 
+[node name="BigAri" type="AnimatedSprite2D" parent="."]
+position = Vector2(208, 136)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_s1xdq")
+autoplay = "default"
+frame_progress = 0.427841
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_pu1q3")
 autoplay = true
 
 [node name="RoomLabel" type="Label" parent="."]
 z_index = 2
-offset_left = 24.0
+offset_left = 16.0
 offset_top = 72.0
-offset_right = 86.0
+offset_right = 78.0
 offset_bottom = 96.0
 theme_override_fonts/font = ExtResource("7_uaxet")
 text = "Room Label"
 script = ExtResource("8_2up6k")
+animation_offset = -128
+animation_delay = 15
 
 [node name="ScoreLabel" type="Label" parent="."]
 z_index = 2
-offset_left = 24.0
+offset_left = 16.0
 offset_top = 88.0
-offset_right = 88.0
+offset_right = 80.0
 offset_bottom = 112.0
 theme_override_fonts/font = ExtResource("7_uaxet")
 text = "Score Label"
 script = ExtResource("9_jscf4")
+animation_offset = -128
+animation_delay = 15

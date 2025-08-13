@@ -3,6 +3,7 @@ extends CanvasModulate
 var light_timer = 1
 
 func _ready() -> void:
+	visible = true
 	color.r = 0.5 - light_timer
 	color.g = 0.5 - light_timer
 	color.b = 0.5 - light_timer

@@ -36,7 +36,7 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 		elif option == "settings":
 			var settings_scene = preload("res://menu/panels/settings.tscn") # Load the scene file
 			var settings_instance = settings_scene.instantiate() # Create an instance of the scene
-			add_sibling(settings_instance)
+			get_parent().add_sibling(settings_instance)
 		elif option == "quit":
 			get_tree().quit()
 		elif option == "credits":

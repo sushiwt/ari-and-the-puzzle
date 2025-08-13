@@ -74,7 +74,16 @@ Big Ari art by syntaxxari
 
 Thanks for playing <3"
 
+[node name="DebugMenuButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 131.0
+offset_top = 93.0
+offset_right = 166.0
+offset_bottom = 105.0
+flat = true
+
 [connection signal="gui_input" from="PanelBackground" to="." method="_on_panel_background_gui_input"]
 [connection signal="gui_input" from="PanelShadow" to="." method="_on_panel_background_gui_input"]
 [connection signal="mouse_entered" from="PanelContainer" to="." method="_on_panel_container_mouse_entered"]
 [connection signal="mouse_exited" from="PanelContainer" to="." method="_on_panel_container_mouse_exited"]
+[connection signal="button_down" from="DebugMenuButton" to="." method="_on_debug_menu_button_button_down"]

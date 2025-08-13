@@ -3,7 +3,10 @@ class_name Location extends Node2D
 var puzzle = preload("res://basegame/puzzle.tscn")
 var camera_enemy = preload("res://enemies/camera/camera_enemy.tscn")
 var game_over_scene = preload("res://basegame/game_over_transition.tscn")
+var you_cant_go_back = preload("res://basegame/you_cant_go_back.tscn")
 var table_layout = false
+
+var ycgb_toggle = false
 
 func _ready() -> void:
 	#GameState.puzzle_requirement = 4
@@ -32,8 +35,15 @@ func _process(delta:float) -> void:
 		else:
 			reset_room()
 	
-	if $Player.position.y >= 240 && GameState.room == 15:
-		get_tree().change_scene_to_file("res://locations/campfire/campfire.tscn")
+	if $Player.position.y >= 240:
+		if GameState.room == 5:
+			get_tree().change_scene_to_file("res://locations/campfire/campfire.tscn")
+		elif ycgb_toggle == false:
+			var ycgb_instance = you_cant_go_back.instantiate()
+			add_child(ycgb_instance)
+			ycgb_toggle = true
+	else:
+		ycgb_toggle = false
 	
 
 func reset_room():

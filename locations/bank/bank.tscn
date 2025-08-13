@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://ckq1qrj8313lj"]
+[gd_scene load_steps=24 format=4 uid="uid://ckq1qrj8313lj"]
 
 [ext_resource type="Script" uid="uid://lnxo5m00x0rr" path="res://locations/bank/bank.gd" id="1_2kap2"]
 [ext_resource type="PackedScene" uid="uid://crkjbf8g4gr6x" path="res://basegame/ui.tscn" id="2_h7frc"]
@@ -14,6 +14,8 @@
 [ext_resource type="Script" uid="uid://cewfjp2jwe7x4" path="res://locations/bank/scripts/door.gd" id="12_esnap"]
 [ext_resource type="Texture2D" uid="uid://bt2k840dmk7kl" path="res://locations/bank/sprite/door.png" id="13_45kbu"]
 [ext_resource type="AudioStream" uid="uid://dupcfxxhriui5" path="res://music/explode.wav" id="14_3186w"]
+[ext_resource type="PackedScene" uid="uid://b6axptfmp0vwm" path="res://locations/bank/floor_paper.tscn" id="15_fwghd"]
+[ext_resource type="Script" uid="uid://bfkexhp7bwbmb" path="res://locations/bank/floor_paper.gd" id="16_0vked"]
 
 [sub_resource type="Gradient" id="Gradient_fc0e3"]
 interpolation_mode = 1
@@ -576,6 +578,7 @@ computer_visible = true
 paper_visible = true
 
 [node name="EnvironmentLight" type="CanvasModulate" parent="."]
+visible = false
 color = Color(0, 0, 0, 1)
 script = ExtResource("9_0dciq")
 
@@ -610,3 +613,7 @@ texture = ExtResource("13_45kbu")
 
 [node name="DoorAudio" type="AudioStreamPlayer" parent="Door"]
 stream = ExtResource("14_3186w")
+
+[node name="FloorPaper" parent="." instance=ExtResource("15_fwghd")]
+position = Vector2(272, 128)
+script = ExtResource("16_0vked")

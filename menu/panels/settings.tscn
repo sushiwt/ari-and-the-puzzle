@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bxomscsa0kltd"]
+[gd_scene load_steps=13 format=3 uid="uid://bxomscsa0kltd"]
 
 [ext_resource type="Script" uid="uid://b0mnxxteyq6gb" path="res://menu/panels/panel_overlay.gd" id="1_x8as2"]
 [ext_resource type="Texture2D" uid="uid://dtlidpg357uty" path="res://menu/sprite/panel.png" id="2_u5gwn"]
@@ -7,6 +7,8 @@
 [ext_resource type="Script" uid="uid://b8fs5an6lan14" path="res://menu/panels/volume.gd" id="5_elxc5"]
 [ext_resource type="Texture2D" uid="uid://cawsrykx0685r" path="res://menu/sprite/checkbox_full.png" id="6_fuc8l"]
 [ext_resource type="Texture2D" uid="uid://bp1juqp50e601" path="res://menu/sprite/checkbox_empty.png" id="7_fmqj4"]
+[ext_resource type="Script" uid="uid://1qtulnba8tn2" path="res://menu/panels/big_ari_checkbox.gd" id="8_mlxts"]
+[ext_resource type="Script" uid="uid://dwtsiecrviuyk" path="res://menu/panels/wall_checkbox.gd" id="8_u5gwn"]
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_mottj"]
 color = Color(0.133333, 0.12549, 0.203922, 1)
@@ -119,6 +121,7 @@ offset_bottom = 82.0
 theme_override_styles/focus = SubResource("StyleBoxEmpty_fredc")
 theme_override_icons/checked = ExtResource("6_fuc8l")
 theme_override_icons/unchecked = ExtResource("7_fmqj4")
+script = ExtResource("8_mlxts")
 
 [node name="BigAriLabel2" type="Label" parent="PanelContainer/NinePatchRect"]
 layout_mode = 0
@@ -131,7 +134,7 @@ theme_override_fonts/font = ExtResource("3_mlxts")
 theme_override_font_sizes/font_size = 32
 text = "Slide on walls"
 
-[node name="BigAriCheckbox2" type="CheckBox" parent="PanelContainer/NinePatchRect"]
+[node name="WallCheckbox" type="CheckBox" parent="PanelContainer/NinePatchRect"]
 layout_mode = 0
 offset_left = 101.0
 offset_top = 76.0
@@ -140,6 +143,7 @@ offset_bottom = 100.0
 theme_override_styles/focus = SubResource("StyleBoxEmpty_fredc")
 theme_override_icons/checked = ExtResource("6_fuc8l")
 theme_override_icons/unchecked = ExtResource("7_fmqj4")
+script = ExtResource("8_u5gwn")
 
 [connection signal="gui_input" from="PanelBackground" to="." method="_on_panel_background_gui_input"]
 [connection signal="gui_input" from="PanelShadow" to="." method="_on_panel_background_gui_input"]

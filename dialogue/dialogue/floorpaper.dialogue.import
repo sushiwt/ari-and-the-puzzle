@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dt8j1jrj8gl5f"
+path="res://.godot/imported/floorpaper.dialogue-5997055242cafc2e5b7702f5e0d92649.tres"
+
+[deps]
+
+source_file="res://dialogue/dialogue/floorpaper.dialogue"
+dest_files=["res://.godot/imported/floorpaper.dialogue-5997055242cafc2e5b7702f5e0d92649.tres"]
+
+[params]
+
+defaults=true

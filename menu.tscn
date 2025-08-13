@@ -1,14 +1,25 @@
-[gd_scene load_steps=12 format=3 uid="uid://b4hofg1kgse0l"]
+[gd_scene load_steps=14 format=3 uid="uid://b4hofg1kgse0l"]
 
 [ext_resource type="AudioStream" uid="uid://yhot3kyjldep" path="res://music/theme.wav" id="1_nrnbx"]
+[ext_resource type="Texture2D" uid="uid://bv4ngv7gap4tg" path="res://menu/sprite/background.png" id="2_nrnbx"]
 [ext_resource type="PackedScene" uid="uid://iefe3fpk1u25" path="res://menu/gui_elements/button.tscn" id="3_h1wq0"]
+[ext_resource type="Script" uid="uid://b0w8t72rqclx1" path="res://menu/gui_elements/background.gd" id="3_iqepy"]
 [ext_resource type="Texture2D" uid="uid://cdrviwm2kq14v" path="res://menu/sprite/play.png" id="4_dwrpx"]
 [ext_resource type="Texture2D" uid="uid://b42p084vx6o6m" path="res://menu/sprite/settings.png" id="5_g7jxm"]
 [ext_resource type="Texture2D" uid="uid://d2d8sp0f0gkyt" path="res://menu/sprite/quit.png" id="6_jspdm"]
 [ext_resource type="Texture2D" uid="uid://m1623m3kawup" path="res://menu/sprite/version.png" id="7_oxnod"]
 [ext_resource type="Texture2D" uid="uid://db6r5aycm80mw" path="res://menu/sprite/title.png" id="8_gd0jp"]
 [ext_resource type="Script" uid="uid://qjkwtrm5sbv8" path="res://menu/gui_elements/title.gd" id="9_4ndjb"]
-[ext_resource type="Texture2D" uid="uid://ba5nmyliq213f" path="res://icon.png" id="9_nrnbx"]
+
+[sub_resource type="GDScript" id="GDScript_nrnbx"]
+resource_name = "ButtonResizer"
+script/source = "extends Node2D
+
+func _ready() -> void:
+	if OS.has_feature(\"web_android\") || OS.has_feature(\"web_ios\"):
+		scale = Vector2(2.0,2.0)
+	
+"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6fswf"]
 size = Vector2(64, 16)
@@ -23,51 +34,64 @@ texture_filter = 1
 stream = ExtResource("1_nrnbx")
 autoplay = true
 
-[node name="BackgroundButtonCover" type="Polygon2D" parent="."]
+[node name="Background" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.501961)
+texture_repeat = 2
+position = Vector2(320, 120)
+scale = Vector2(2, 2)
+texture = ExtResource("2_nrnbx")
+script = ExtResource("3_iqepy")
+
+[node name="MenuButtons" type="Node2D" parent="."]
+position = Vector2(0, 240)
+script = SubResource("GDScript_nrnbx")
+
+[node name="BackgroundButtonCover" type="Polygon2D" parent="MenuButtons"]
+position = Vector2(0, -240)
 color = Color(0, 0, 0, 0.501961)
 polygon = PackedVector2Array(0, 152, 87, 152, 87, 207, 87, 240, 0, 240)
 
-[node name="PlayButton" parent="." instance=ExtResource("3_h1wq0")]
-position = Vector2(8, 160)
+[node name="PlayButton" parent="MenuButtons" instance=ExtResource("3_h1wq0")]
+position = Vector2(8, -80)
 animation_delay = 45
 
-[node name="Play" type="Sprite2D" parent="PlayButton"]
+[node name="Play" type="Sprite2D" parent="MenuButtons/PlayButton"]
 position = Vector2(32, 8)
 texture = ExtResource("4_dwrpx")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayButton"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MenuButtons/PlayButton"]
 position = Vector2(32, 8)
 shape = SubResource("RectangleShape2D_6fswf")
 
-[node name="SettingsButton" parent="." instance=ExtResource("3_h1wq0")]
-position = Vector2(8, 176)
+[node name="SettingsButton" parent="MenuButtons" instance=ExtResource("3_h1wq0")]
+position = Vector2(8, -64)
 option = "settings"
 animation_delay = 30
 
-[node name="Settings" type="Sprite2D" parent="SettingsButton"]
+[node name="Settings" type="Sprite2D" parent="MenuButtons/SettingsButton"]
 position = Vector2(32, 8)
 texture = ExtResource("5_g7jxm")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SettingsButton"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MenuButtons/SettingsButton"]
 position = Vector2(32, 8)
 shape = SubResource("RectangleShape2D_6fswf")
 
-[node name="QuitButton" parent="." instance=ExtResource("3_h1wq0")]
-position = Vector2(8, 192)
+[node name="QuitButton" parent="MenuButtons" instance=ExtResource("3_h1wq0")]
+position = Vector2(8, -48)
 option = "quit"
 animation_delay = 15
 
-[node name="Quit" type="Sprite2D" parent="QuitButton"]
+[node name="Quit" type="Sprite2D" parent="MenuButtons/QuitButton"]
 position = Vector2(32, 8)
 texture = ExtResource("6_jspdm")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="QuitButton"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MenuButtons/QuitButton"]
 position = Vector2(32, 8)
 shape = SubResource("RectangleShape2D_6fswf")
 
-[node name="Title" type="Sprite2D" parent="."]
+[node name="Title" type="Sprite2D" parent="MenuButtons"]
 texture_filter = 1
-position = Vector2(48, 224)
+position = Vector2(48, -16)
 texture = ExtResource("8_gd0jp")
 script = ExtResource("9_4ndjb")
 animation_offset = -128
@@ -89,9 +113,3 @@ texture = ExtResource("7_oxnod")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Credits"]
 position = Vector2(32, 12)
 shape = SubResource("RectangleShape2D_bc54p")
-
-[node name="Icon" type="Sprite2D" parent="."]
-texture_repeat = 2
-position = Vector2(200, 104)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("9_nrnbx")

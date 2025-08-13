@@ -7,6 +7,9 @@ func _process(delta:float) -> void:
 		position = position.lerp(Vector2(position.x, -128), 0.1)
 		
 		if !play_audio:
+			var big_ari = preload("res://locations/bank/big_ari_complete.tscn").instantiate()
+			add_sibling(big_ari)
+			
 			$DoorAudio.play()
 			GameState.score += 100
 			play_audio = true

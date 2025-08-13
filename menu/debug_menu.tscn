@@ -1,0 +1,43 @@
+[gd_scene load_steps=2 format=3 uid="uid://dm06700tjcnos"]
+
+[ext_resource type="Script" uid="uid://dv53kb44jo5cw" path="res://menu/debug_menu.gd" id="1_432hc"]
+
+[node name="DebugMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_432hc")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 103.0
+offset_bottom = 31.0
+text = "Welcome to the Debug Menu!"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 8.0
+offset_top = 48.0
+offset_right = 237.0
+offset_bottom = 71.0
+text = "Go to Scene:"
+
+[node name="Button" type="Button" parent="."]
+offset_left = 240.0
+offset_top = 72.0
+offset_right = 311.0
+offset_bottom = 103.0
+text = "Confirm"
+
+[node name="LineEdit" type="LineEdit" parent="."]
+offset_left = 8.0
+offset_top = 72.0
+offset_right = 232.0
+offset_bottom = 103.0
+text = "res://locations/"
+placeholder_text = "res://locations/"
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
