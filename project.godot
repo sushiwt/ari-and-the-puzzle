@@ -11,6 +11,12 @@ config_version=5
 [application]
 
 config/name="Ari And The Puzzle"
+config/name_localized={
+"ceb_PH": "Ari ug ang Puzzle",
+"ja_JP": "アリとパズル"
+}
+config/description="A game about dodging security"
+config/version="1.3"
 config/tags=PackedStringArray("passion_projects")
 run/main_scene="uid://b4hofg1kgse0l"
 config/use_custom_user_dir=true

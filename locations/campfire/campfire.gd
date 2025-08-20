@@ -8,8 +8,6 @@ var viewport_image: Image
 var texture = ImageTexture.new()
 
 func _ready() -> void:
-	GameState.room -= 1
-	
 	# TODO find a better deletion state
 	GameState.score -= GameState.puzzles_collected * 100
 	

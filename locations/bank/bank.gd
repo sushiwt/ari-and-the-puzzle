@@ -29,14 +29,14 @@ func _process(delta:float) -> void:
 		var random_location = randi_range(0,100)
 		print(random_location)
 		
-		if random_location <= 1 && GameState.the_boolean_that_checks_if_youve_entered_the_greybuzgian_room == false:
+		if random_location <= 5 && GameState.room >= 5 && GameState.the_boolean_that_checks_if_youve_entered_the_greybuzgian_room == false:
 			GameState.the_boolean_that_checks_if_youve_entered_the_greybuzgian_room = true
 			get_tree().change_scene_to_file("res://locations/greybee/greybee_room.tscn")
 		else:
 			reset_room()
 	
 	if $Player.position.y >= 240:
-		if GameState.room == 5:
+		if GameState.room == 8:
 			get_tree().change_scene_to_file("res://locations/campfire/campfire.tscn")
 		elif ycgb_toggle == false:
 			var ycgb_instance = you_cant_go_back.instantiate()

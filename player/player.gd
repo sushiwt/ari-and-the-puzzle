@@ -29,6 +29,8 @@ func _process(_delta:float) -> void:
 		if talkables.size() > 0:
 			talkables[0].action()
 			return
+			
+	GameState.paused = gui_exists
 	
 	gui_exists = true if get_tree().get_nodes_in_group("Dialogue").size() > 0 else false
 	

@@ -1,9 +1,11 @@
-[gd_scene load_steps=24 format=4 uid="uid://ckq1qrj8313lj"]
+[gd_scene load_steps=26 format=4 uid="uid://ckq1qrj8313lj"]
 
 [ext_resource type="Script" uid="uid://lnxo5m00x0rr" path="res://locations/bank/bank.gd" id="1_2kap2"]
 [ext_resource type="PackedScene" uid="uid://crkjbf8g4gr6x" path="res://basegame/ui.tscn" id="2_h7frc"]
+[ext_resource type="Script" uid="uid://c0udno5io2jde" path="res://locations/bank/tooltip.gd" id="3_740ry"]
 [ext_resource type="AudioStream" uid="uid://cnu57gedrmemc" path="res://music/heist.wav" id="3_ljojd"]
 [ext_resource type="Script" uid="uid://wop15xdkv05u" path="res://locations/bank/scripts/music.gd" id="4_gphkf"]
+[ext_resource type="FontFile" uid="uid://de8o0r0elchgg" path="res://basegame/fonts/minitext.ttf" id="4_ydv7j"]
 [ext_resource type="AudioStream" uid="uid://bf3lbwx7gpyv1" path="res://music/heist_reverb.mp3" id="5_tf3mn"]
 [ext_resource type="Script" uid="uid://pbsajeotd8ns" path="res://locations/bank/scripts/found_music.gd" id="6_uesyi"]
 [ext_resource type="PackedScene" uid="uid://cveiyoy15wew4" path="res://player/player.tscn" id="7_hhyei"]
@@ -492,6 +494,28 @@ texture_filter = 1
 script = ExtResource("1_2kap2")
 
 [node name="UI" parent="." instance=ExtResource("2_h7frc")]
+
+[node name="ColorRect" type="ColorRect" parent="UI"]
+offset_top = 184.0
+offset_right = 104.0
+offset_bottom = 232.0
+color = Color(0, 0, 0, 0.282353)
+script = ExtResource("3_740ry")
+
+[node name="CreatorLabel" type="Label" parent="UI"]
+texture_filter = 1
+offset_left = 8.0
+offset_top = 192.0
+offset_right = 184.0
+offset_bottom = 272.0
+scale = Vector2(0.5, 0.5)
+theme_override_constants/line_spacing = -4
+theme_override_fonts/font = ExtResource("4_ydv7j")
+theme_override_font_sizes/font_size = 32
+text = "Controls:
+Arrow keys - Move
+Z - Interact"
+script = ExtResource("3_740ry")
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_ljojd")

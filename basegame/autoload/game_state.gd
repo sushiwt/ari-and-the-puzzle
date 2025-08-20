@@ -6,6 +6,8 @@ var score = 0
 var puzzles_collected = 0
 var puzzle_requirement = 4
 
+var paused = false
+
 var room_timer = 0
 var game_over = false
 

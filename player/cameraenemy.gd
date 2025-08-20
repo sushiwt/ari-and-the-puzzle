@@ -22,25 +22,26 @@ func _ready():
 	
 
 func _process(delta:float) -> void:
-	char_sin += degree_change_amount
-	$Sensor.rotation += degree_change_amount
-	
-	$Top.rotation += degree_change_amount
-	$Bottom.rotation += degree_change_amount
-	
-	$FrontMarker.rotation += degree_change_amount
-	$FrontMarker/Front.rotation -= degree_change_amount
-	$FrontMarker/Front.skew += degree_change_amount
-	
-	$FrontMarker.position.x = (sin(char_sin) * 3)
-	$FrontMarker.position.y = (cos(char_sin) * -4) + 4
-	
-	$BackMarker.rotation += degree_change_amount
-	$BackMarker/Back.rotation -= degree_change_amount
-	$BackMarker/Back.skew += degree_change_amount
-	
-	$BackMarker.position.x = (sin(char_sin) * -3)
-	$BackMarker.position.y = (cos(char_sin) * 4) + 4
+	if GameState.paused == false:
+		char_sin += degree_change_amount
+		$Sensor.rotation += degree_change_amount
+		
+		$Top.rotation += degree_change_amount
+		$Bottom.rotation += degree_change_amount
+		
+		$FrontMarker.rotation += degree_change_amount
+		$FrontMarker/Front.rotation -= degree_change_amount
+		$FrontMarker/Front.skew += degree_change_amount
+		
+		$FrontMarker.position.x = (sin(char_sin) * 3)
+		$FrontMarker.position.y = (cos(char_sin) * -4) + 4
+		
+		$BackMarker.rotation += degree_change_amount
+		$BackMarker/Back.rotation -= degree_change_amount
+		$BackMarker/Back.skew += degree_change_amount
+		
+		$BackMarker.position.x = (sin(char_sin) * -3)
+		$BackMarker.position.y = (cos(char_sin) * 4) + 4
 	
 func _on_sensor_area_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Player"):
