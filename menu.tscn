@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://b4hofg1kgse0l"]
+[gd_scene load_steps=20 format=3 uid="uid://b4hofg1kgse0l"]
 
 [ext_resource type="AudioStream" uid="uid://yhot3kyjldep" path="res://music/theme.wav" id="1_nrnbx"]
 [ext_resource type="Texture2D" uid="uid://bv4ngv7gap4tg" path="res://menu/sprite/background.png" id="2_nrnbx"]
@@ -10,6 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://m1623m3kawup" path="res://menu/sprite/version.png" id="7_oxnod"]
 [ext_resource type="Texture2D" uid="uid://db6r5aycm80mw" path="res://menu/sprite/title.png" id="8_gd0jp"]
 [ext_resource type="Script" uid="uid://qjkwtrm5sbv8" path="res://menu/gui_elements/title.gd" id="9_4ndjb"]
+[ext_resource type="FontFile" uid="uid://de8o0r0elchgg" path="res://basegame/fonts/minitext.ttf" id="11_h1wq0"]
+[ext_resource type="Texture2D" uid="uid://b26lyakfmk84u" path="res://menu/sprite/medal.png" id="12_dwrpx"]
+[ext_resource type="Script" uid="uid://cpw8jj2ysyv6h" path="res://menu/medal.gd" id="13_g7jxm"]
 
 [sub_resource type="GDScript" id="GDScript_nrnbx"]
 resource_name = "ButtonResizer"
@@ -25,7 +28,50 @@ func _ready() -> void:
 size = Vector2(64, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bc54p"]
-size = Vector2(64, 24)
+size = Vector2(64, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g7jxm"]
+atlas = ExtResource("12_dwrpx")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jspdm"]
+atlas = ExtResource("12_dwrpx")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oxnod"]
+animations = [{
+"frames": [{
+"duration": 4.0,
+"texture": SubResource("AtlasTexture_g7jxm")
+}, {
+"duration": 5.0,
+"texture": SubResource("AtlasTexture_g7jxm")
+}, {
+"duration": 0.1,
+"texture": SubResource("AtlasTexture_jspdm")
+}, {
+"duration": 4.0,
+"texture": SubResource("AtlasTexture_g7jxm")
+}, {
+"duration": 0.1,
+"texture": SubResource("AtlasTexture_jspdm")
+}, {
+"duration": 15.0,
+"texture": SubResource("AtlasTexture_g7jxm")
+}, {
+"duration": 0.1,
+"texture": SubResource("AtlasTexture_jspdm")
+}, {
+"duration": 8.0,
+"texture": SubResource("AtlasTexture_g7jxm")
+}, {
+"duration": 0.1,
+"texture": SubResource("AtlasTexture_jspdm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
 
 [node name="Menu" type="Node2D"]
 texture_filter = 1
@@ -97,7 +143,8 @@ script = ExtResource("9_4ndjb")
 animation_offset = -128
 
 [node name="BackgroundButtonCover2" type="Polygon2D" parent="."]
-position = Vector2(256, 0)
+position = Vector2(256, -160)
+scale = Vector2(1, 1.66667)
 color = Color(0, 0, 0, 0.501961)
 polygon = PackedVector2Array(0, 216, 64, 216, 64, 240, 0, 240)
 
@@ -110,6 +157,26 @@ animation_offset = 128
 position = Vector2(24, 8)
 texture = ExtResource("7_oxnod")
 
+[node name="DemoLabel" type="Label" parent="Credits"]
+offset_left = 21.0
+offset_top = -11.0
+offset_right = 93.0
+offset_bottom = 20.0
+scale = Vector2(0.5, 0.5)
+theme_override_constants/line_spacing = -4
+theme_override_fonts/font = ExtResource("11_h1wq0")
+theme_override_font_sizes/font_size = 32
+text = "(Demo)"
+horizontal_alignment = 2
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Credits"]
-position = Vector2(32, 12)
+position = Vector2(32, 4)
 shape = SubResource("RectangleShape2D_bc54p")
+
+[node name="Medal" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(232, 216)
+sprite_frames = SubResource("SpriteFrames_oxnod")
+autoplay = "default"
+frame_progress = 0.152989
+script = ExtResource("13_g7jxm")

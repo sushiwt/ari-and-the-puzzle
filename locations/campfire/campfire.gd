@@ -1,6 +1,6 @@
 extends Node2D
 
-var bank = preload("res://locations/bank/bank.tscn")
+var end_of_demo = preload("res://basegame/end_of_demo.tscn")
 var glitch_effect_check = false
 var glitch_effect_timer = 0
 
@@ -16,7 +16,7 @@ func _ready() -> void:
 
 func _process(delta:float) -> void:
 	if $Player.position.y <= 0 or glitch_effect_timer >= 120:
-		get_tree().change_scene_to_packed(bank)
+		get_tree().change_scene_to_packed(end_of_demo)
 	
 	if glitch_effect_check:
 		glitch_effect_timer += 1

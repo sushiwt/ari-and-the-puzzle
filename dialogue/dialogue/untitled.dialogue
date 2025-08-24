@@ -1,28 +1,33 @@
 ~ start
-% => dwell
-% => riddle
-~ dwell
-J: * in my life, i've done things that i regret a lot
-J: * i keep thinking about whatd happen if i did anything else
-J: * but i feel as though there's no point in doing that
-J: * no point in dwelling to past mistakes
-=> endtext
-~ riddle
-J: * hey ari
-J: * riddle me this
-J: * i take kings and candles at the same slow pace
-J: * i touch every creature, yet never leave a trace
-J: * i am promised, not scheduled
-J: * feared, but inevitable
-J: * what am i?
-=> endtext
-~ endtext
-J: *
-J: <{invalid version, cannot be printed}>
-J: * i'll be waiting 
-J: * we have things to do
-J: *
-J: [next=auto]* tomorrow is going to be another da
+if GameState.finished_room_15 == false
+	% => dwell
+	% => riddle
+	~ dwell
+	J: * in my life, i've done things that i regret a lot
+	J: * i keep thinking about whatd happen if i did anything else
+	J: * but i feel as though there's no point in doing that
+	J: * no point in dwelling to past mistakes
+	=> endtext
+	~ riddle
+	J: * hey ari
+	J: * heres a riddle for you
+	J: * i take kings and candles at the same slow pace
+	J: * i touch every creature, yet never leave a trace
+	J: * i am promised, not scheduled
+	J: * feared, but inevitable
+	J: * what am i?
+	=> endtext
+	~ endtext
+	J: *
+	J: <{invalid version, cannot be printed}>
+	J: * i'll be waiting 
+	J: * we have things to do
+	J: *
+	J: [next=auto]* tomorrow is going to be another da
+else:
+	J: * why did you come back
+	J: * there's nothing for you here
+	J: [next=auto]* please wait for m
 do glitch_effect()
 do wait(2763)
 => END

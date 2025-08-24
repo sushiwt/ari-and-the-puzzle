@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Ari And The Puzzle"
+config/name="Ari And The Puzzle (Demo)"
 config/name_localized={
 "ceb_PH": "Ari ug ang Puzzle",
 "ja_JP": "アリとパズル"

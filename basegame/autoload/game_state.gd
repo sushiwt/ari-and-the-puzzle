@@ -18,6 +18,8 @@ var player_seen = 0
 
 var the_boolean_that_checks_if_youve_entered_the_greybuzgian_room = false
 
+var finished_room_15 = false
+
 func _process(_delta:float) -> void:
 	room_timer += 1
 	

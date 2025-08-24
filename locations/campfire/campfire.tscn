@@ -13,7 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://b1wcauutkpob6" path="res://music/j.wav" id="11_hgrvk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m1u5h"]
-size = Vector2(23, 19)
+size = Vector2(23.9337, 26.0313)
 
 [node name="Campfire" type="Node2D"]
 texture_filter = 1
@@ -48,14 +48,14 @@ position = Vector2(188, 1112)
 texture = ExtResource("6_mk5xf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="J"]
-position = Vector2(187.5, 1113.5)
+position = Vector2(188, 1120)
 shape = SubResource("RectangleShape2D_m1u5h")
 
 [node name="TalkableComponent" parent="J" instance=ExtResource("7_4dvq6")]
 dialogue_resource = ExtResource("8_4dvq6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="J/TalkableComponent"]
-position = Vector2(187.5, 1113.5)
+position = Vector2(188, 1117)
 shape = SubResource("RectangleShape2D_m1u5h")
 
 [node name="Player" parent="." instance=ExtResource("3_4ixws")]

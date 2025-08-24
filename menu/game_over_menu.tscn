@@ -113,6 +113,8 @@ script = ExtResource("13_2bik7")
 position = Vector2(160, 120)
 scale = Vector2(2, 2)
 texture = ExtResource("1_jscf4")
+script = ExtResource("2_2up6k")
+animation_offset = -32
 
 [node name="GameOver" type="Sprite2D" parent="."]
 position = Vector2(80, 40)
@@ -164,6 +166,8 @@ scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_s1xdq")
 autoplay = "default"
 frame_progress = 0.427841
+script = ExtResource("2_2up6k")
+animation_offset = 128
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_pu1q3")
