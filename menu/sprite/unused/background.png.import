@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cavbcdgigkojh"
-path="res://.godot/imported/game_over_bigari.png-4a27fe7cebf5c8c5ad39ff08b6b4e331.ctex"
+uid="uid://bv4ngv7gap4tg"
+path="res://.godot/imported/background.png-ed0ce0a8e60ed7e48c56e627b43aa735.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://basegame/sprites/game_over_bigari.png"
-dest_files=["res://.godot/imported/game_over_bigari.png-4a27fe7cebf5c8c5ad39ff08b6b4e331.ctex"]
+source_file="res://menu/sprite/unused/background.png"
+dest_files=["res://.godot/imported/background.png-ed0ce0a8e60ed7e48c56e627b43aa735.ctex"]
 
 [params]
 

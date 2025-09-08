@@ -48,6 +48,7 @@ shape = SubResource("RectangleShape2D_2ihmi")
 [node name="TODO" type="Label" parent="."]
 visible = false
 z_index = 2
+layout_mode = 0
 offset_left = -80.0
 offset_top = -48.0
 offset_right = 341.0

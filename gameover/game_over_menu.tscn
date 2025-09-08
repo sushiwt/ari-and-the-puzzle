@@ -1,7 +1,6 @@
-[gd_scene load_steps=24 format=3 uid="uid://dar0xa4ebivpb"]
+[gd_scene load_steps=28 format=3 uid="uid://dar0xa4ebivpb"]
 
-[ext_resource type="Texture2D" uid="uid://cnq88afelre7f" path="res://menu/sprite/game_over.png" id="1_4st0s"]
-[ext_resource type="Texture2D" uid="uid://dl1hffbuypft0" path="res://basegame/sprites/game_over_frame.png" id="1_jscf4"]
+[ext_resource type="Texture2D" uid="uid://cnq88afelre7f" path="res://gameover/sprite/game_over.png" id="1_4st0s"]
 [ext_resource type="Script" uid="uid://qjkwtrm5sbv8" path="res://menu/gui_elements/title.gd" id="2_2up6k"]
 [ext_resource type="PackedScene" uid="uid://iefe3fpk1u25" path="res://menu/gui_elements/button.tscn" id="2_ru24h"]
 [ext_resource type="Texture2D" uid="uid://yj0y57nhcndx" path="res://menu/sprite/retry.png" id="3_6afgx"]
@@ -9,11 +8,14 @@
 [ext_resource type="Texture2D" uid="uid://d2d8sp0f0gkyt" path="res://menu/sprite/quit.png" id="5_x0w7j"]
 [ext_resource type="AudioStream" uid="uid://cmtdmr2oti8be" path="res://music/caught.wav" id="6_pu1q3"]
 [ext_resource type="FontFile" uid="uid://de8o0r0elchgg" path="res://basegame/fonts/minitext.ttf" id="7_uaxet"]
-[ext_resource type="Script" uid="uid://c27opd1gad1os" path="res://locations/bank/scripts/room_label.gd" id="8_2up6k"]
-[ext_resource type="Script" uid="uid://c2urv47qwqa1m" path="res://locations/bank/scripts/score_label.gd" id="9_jscf4"]
-[ext_resource type="Texture2D" uid="uid://cavbcdgigkojh" path="res://basegame/sprites/game_over_bigari.png" id="10_2bik7"]
-[ext_resource type="Texture2D" uid="uid://dgwr7tnhtd5q" path="res://basegame/sprites/game_over_background.png" id="12_ku476"]
-[ext_resource type="Script" uid="uid://ctt4gsf5qq3nr" path="res://menu/scrolling_background.gd" id="13_2bik7"]
+[ext_resource type="Script" uid="uid://c27opd1gad1os" path="res://gameover/scripts/room_label.gd" id="8_2up6k"]
+[ext_resource type="Script" uid="uid://c2urv47qwqa1m" path="res://gameover/scripts/score_label.gd" id="9_jscf4"]
+[ext_resource type="Texture2D" uid="uid://cavbcdgigkojh" path="res://gameover/sprite/unused/game_over_bigari.png" id="10_2bik7"]
+[ext_resource type="Texture2D" uid="uid://cvp7v2a1jk1hl" path="res://gameover/sprite/ari_caught_shadow.png" id="10_a43ih"]
+[ext_resource type="Texture2D" uid="uid://bqetp1dyju7yv" path="res://gameover/sprite/ari_caught.png" id="10_e2nvf"]
+[ext_resource type="Script" uid="uid://bgo668wxa74ya" path="res://gameover/scripts/gameover_bigari_light.gd" id="11_a43ih"]
+[ext_resource type="Texture2D" uid="uid://dgwr7tnhtd5q" path="res://gameover/sprite/game_over_background.png" id="12_ku476"]
+[ext_resource type="Script" uid="uid://cb6a6ggsrtgrw" path="res://basegame/alarm.gd" id="16_a43ih"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s4mg2"]
 size = Vector2(64, 16)
@@ -50,6 +52,14 @@ region = Rect2(516, 0, 86, 105)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("10_e2nvf")
+}],
+"loop": true,
+"name": &"bigari",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_e2nvf")
 }, {
 "duration": 1.0,
@@ -75,50 +85,31 @@ animations = [{
 "speed": 12.0
 }]
 
+[sub_resource type="Gradient" id="Gradient_e2nvf"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0.151515, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_a43ih"]
+gradient = SubResource("Gradient_e2nvf")
+width = 234
+height = 284
+fill = 1
+fill_from = Vector2(0.534188, 0.508547)
+fill_to = Vector2(0.82906, 0.824786)
+metadata/_snap_count = 2
+
 [node name="GameOverMenu" type="Node2D"]
 texture_filter = 1
 
 [node name="ScrollingBackground" type="Sprite2D" parent="."]
 modulate = Color(0.501961, 0.501961, 0.501961, 1)
-scale = Vector2(2, 2)
+z_index = -1
 texture = ExtResource("12_ku476")
 centered = false
-script = ExtResource("13_2bik7")
-
-[node name="ScrollingBackground2" type="Sprite2D" parent="."]
-modulate = Color(0.501961, 0.501961, 0.501961, 1)
-position = Vector2(128, 0)
-scale = Vector2(2, 2)
-texture = ExtResource("12_ku476")
-centered = false
-script = ExtResource("13_2bik7")
-
-[node name="ScrollingBackground3" type="Sprite2D" parent="."]
-modulate = Color(0.501961, 0.501961, 0.501961, 1)
-position = Vector2(256, 0)
-scale = Vector2(2, 2)
-texture = ExtResource("12_ku476")
-centered = false
-script = ExtResource("13_2bik7")
-
-[node name="ScrollingBackground4" type="Sprite2D" parent="."]
-modulate = Color(0.501961, 0.501961, 0.501961, 1)
-position = Vector2(384, 0)
-scale = Vector2(2, 2)
-texture = ExtResource("12_ku476")
-centered = false
-script = ExtResource("13_2bik7")
-
-[node name="GameOverFrame" type="Sprite2D" parent="."]
-position = Vector2(160, 120)
-scale = Vector2(2, 2)
-texture = ExtResource("1_jscf4")
-script = ExtResource("2_2up6k")
-animation_offset = -32
 
 [node name="GameOver" type="Sprite2D" parent="."]
-position = Vector2(80, 40)
-scale = Vector2(2, 2)
+position = Vector2(80, 32)
 texture = ExtResource("1_4st0s")
 script = ExtResource("2_2up6k")
 
@@ -161,13 +152,22 @@ position = Vector2(32, 8)
 shape = SubResource("RectangleShape2D_s4mg2")
 
 [node name="BigAri" type="AnimatedSprite2D" parent="."]
-position = Vector2(208, 136)
-scale = Vector2(2, 2)
+position = Vector2(232, 128)
 sprite_frames = SubResource("SpriteFrames_s1xdq")
-autoplay = "default"
-frame_progress = 0.427841
+animation = &"bigari"
+autoplay = "bigari"
 script = ExtResource("2_2up6k")
 animation_offset = 128
+
+[node name="AriCaughtShadow" type="Sprite2D" parent="BigAri"]
+z_index = -1
+position = Vector2(30, 15)
+texture = ExtResource("10_a43ih")
+
+[node name="PointLight2D" type="PointLight2D" parent="BigAri"]
+energy = 0.5
+texture = SubResource("GradientTexture2D_a43ih")
+script = ExtResource("11_a43ih")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_pu1q3")
@@ -176,9 +176,9 @@ autoplay = true
 [node name="RoomLabel" type="Label" parent="."]
 z_index = 2
 offset_left = 16.0
-offset_top = 72.0
+offset_top = 64.0
 offset_right = 78.0
-offset_bottom = 96.0
+offset_bottom = 88.0
 theme_override_fonts/font = ExtResource("7_uaxet")
 text = "Room Label"
 script = ExtResource("8_2up6k")
@@ -188,11 +188,17 @@ animation_delay = 15
 [node name="ScoreLabel" type="Label" parent="."]
 z_index = 2
 offset_left = 16.0
-offset_top = 88.0
+offset_top = 80.0
 offset_right = 80.0
-offset_bottom = 112.0
+offset_bottom = 104.0
 theme_override_fonts/font = ExtResource("7_uaxet")
 text = "Score Label"
 script = ExtResource("9_jscf4")
 animation_offset = -128
 animation_delay = 15
+
+[node name="Alarm" type="CanvasModulate" parent="."]
+position = Vector2(80, 40)
+scale = Vector2(2, 2)
+color = Color(0.501961, 0.501961, 1, 1)
+script = ExtResource("16_a43ih")

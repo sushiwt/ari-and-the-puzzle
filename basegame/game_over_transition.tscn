@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://b2pdjwvqvnb5t"]
 
 [ext_resource type="AudioStream" uid="uid://f0t5u3rcsxlf" path="res://music/found.mp3" id="1_5ytev"]
-[ext_resource type="Texture2D" uid="uid://cqd0551lsou8h" path="res://basegame/sprites/game_over_fade.png" id="2_j5qrw"]
+[ext_resource type="Texture2D" uid="uid://cqd0551lsou8h" path="res://gameover/sprite/unused/game_over_fade.png" id="2_j5qrw"]
 
 [sub_resource type="GDScript" id="GDScript_5ytev"]
 resource_name = "GameOverTransition"
@@ -15,7 +15,7 @@ func _process(delta:float) -> void:
 	if game_over_timer > 120:
 		GameState.reset_game_state()
 		queue_free()
-		get_tree().change_scene_to_file(\"res://menu/game_over_menu.tscn\")
+		get_tree().change_scene_to_file(\"res://gameover/game_over_menu.tscn\")
 "
 
 [sub_resource type="Animation" id="Animation_10ggt"]

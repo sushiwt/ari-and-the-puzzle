@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjkwejq77up8j"
-path="res://.godot/imported/greybee.jpg-fb68d0bbbd935620ec3adc2987339eee.ctex"
+uid="uid://cvp7v2a1jk1hl"
+path="res://.godot/imported/ari_caught_shadow.png-2826e74f6baddf934f126a1abd4e1196.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://locations/greybee/sprite/greybee.jpg"
-dest_files=["res://.godot/imported/greybee.jpg-fb68d0bbbd935620ec3adc2987339eee.ctex"]
+source_file="res://gameover/sprite/ari_caught_shadow.png"
+dest_files=["res://.godot/imported/ari_caught_shadow.png-2826e74f6baddf934f126a1abd4e1196.ctex"]
 
 [params]
 

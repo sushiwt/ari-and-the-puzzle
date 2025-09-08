@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dgwr7tnhtd5q"
-path="res://.godot/imported/game_over_background.png-f849d9098aee003a641a0a215345939f.ctex"
+uid="uid://bqetp1dyju7yv"
+path="res://.godot/imported/ari_caught.png-01564a40b4b0063d823f5c74614167a4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://basegame/sprites/game_over_background.png"
-dest_files=["res://.godot/imported/game_over_background.png-f849d9098aee003a641a0a215345939f.ctex"]
+source_file="res://gameover/sprite/ari_caught.png"
+dest_files=["res://.godot/imported/ari_caught.png-01564a40b4b0063d823f5c74614167a4.ctex"]
 
 [params]
 

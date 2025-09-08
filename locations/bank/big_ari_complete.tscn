@@ -30,6 +30,5 @@ script = SubResource("GDScript_8ya2q")
 [node name="CollectedAll" type="Sprite2D" parent="."]
 z_index = 10
 texture_filter = 1
-position = Vector2(386, 135)
-scale = Vector2(2, 2)
+position = Vector2(416, 136)
 texture = ExtResource("1_csj7i")

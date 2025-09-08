@@ -1,13 +1,12 @@
-[gd_scene load_steps=20 format=3 uid="uid://b4hofg1kgse0l"]
+[gd_scene load_steps=19 format=3 uid="uid://b4hofg1kgse0l"]
 
 [ext_resource type="AudioStream" uid="uid://yhot3kyjldep" path="res://music/theme.wav" id="1_nrnbx"]
-[ext_resource type="Texture2D" uid="uid://bv4ngv7gap4tg" path="res://menu/sprite/background.png" id="2_nrnbx"]
+[ext_resource type="Texture2D" uid="uid://5540h8u08fuj" path="res://menu/sprite/background.png" id="2_nrnbx"]
 [ext_resource type="PackedScene" uid="uid://iefe3fpk1u25" path="res://menu/gui_elements/button.tscn" id="3_h1wq0"]
 [ext_resource type="Script" uid="uid://b0w8t72rqclx1" path="res://menu/gui_elements/background.gd" id="3_iqepy"]
 [ext_resource type="Texture2D" uid="uid://cdrviwm2kq14v" path="res://menu/sprite/play.png" id="4_dwrpx"]
 [ext_resource type="Texture2D" uid="uid://b42p084vx6o6m" path="res://menu/sprite/settings.png" id="5_g7jxm"]
 [ext_resource type="Texture2D" uid="uid://d2d8sp0f0gkyt" path="res://menu/sprite/quit.png" id="6_jspdm"]
-[ext_resource type="Texture2D" uid="uid://m1623m3kawup" path="res://menu/sprite/version.png" id="7_oxnod"]
 [ext_resource type="Texture2D" uid="uid://db6r5aycm80mw" path="res://menu/sprite/title.png" id="8_gd0jp"]
 [ext_resource type="Script" uid="uid://qjkwtrm5sbv8" path="res://menu/gui_elements/title.gd" id="9_4ndjb"]
 [ext_resource type="FontFile" uid="uid://de8o0r0elchgg" path="res://basegame/fonts/minitext.ttf" id="11_h1wq0"]
@@ -28,7 +27,7 @@ func _ready() -> void:
 size = Vector2(64, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bc54p"]
-size = Vector2(64, 40)
+size = Vector2(72, 40)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g7jxm"]
 atlas = ExtResource("12_dwrpx")
@@ -81,10 +80,8 @@ stream = ExtResource("1_nrnbx")
 autoplay = true
 
 [node name="Background" type="Sprite2D" parent="."]
-modulate = Color(1, 1, 1, 0.501961)
 texture_repeat = 2
-position = Vector2(320, 120)
-scale = Vector2(2, 2)
+position = Vector2(160, 128)
 texture = ExtResource("2_nrnbx")
 script = ExtResource("3_iqepy")
 
@@ -146,16 +143,12 @@ animation_offset = -128
 position = Vector2(256, -160)
 scale = Vector2(1, 1.66667)
 color = Color(0, 0, 0, 0.501961)
-polygon = PackedVector2Array(0, 216, 64, 216, 64, 240, 0, 240)
+polygon = PackedVector2Array(-8, 216, 64, 216, 64, 240, -8, 240)
 
 [node name="Credits" parent="." instance=ExtResource("3_h1wq0")]
 position = Vector2(256, 216)
 option = "credits"
 animation_offset = 128
-
-[node name="Version" type="Sprite2D" parent="Credits"]
-position = Vector2(24, 8)
-texture = ExtResource("7_oxnod")
 
 [node name="DemoLabel" type="Label" parent="Credits"]
 offset_left = 21.0
@@ -169,8 +162,20 @@ theme_override_font_sizes/font_size = 32
 text = "(Demo)"
 horizontal_alignment = 2
 
+[node name="VersionLabel" type="Label" parent="Credits"]
+offset_left = 3.0
+offset_top = 5.0
+offset_right = 111.0
+offset_bottom = 36.0
+scale = Vector2(0.5, 0.5)
+theme_override_constants/line_spacing = -4
+theme_override_fonts/font = ExtResource("11_h1wq0")
+theme_override_font_sizes/font_size = 32
+text = "version 1.3.1"
+horizontal_alignment = 2
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Credits"]
-position = Vector2(32, 4)
+position = Vector2(28, 4)
 shape = SubResource("RectangleShape2D_bc54p")
 
 [node name="Medal" type="AnimatedSprite2D" parent="."]
