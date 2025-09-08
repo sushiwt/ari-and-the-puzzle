@@ -90,7 +90,7 @@ colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_a43ih"]
 gradient = SubResource("Gradient_e2nvf")
-width = 254
+width = 199
 height = 274
 fill = 1
 fill_from = Vector2(0.534188, 0.508547)
@@ -112,7 +112,7 @@ script = ExtResource("2_2up6k")
 animation_offset = 320
 
 [node name="BigAri" type="AnimatedSprite2D" parent="."]
-position = Vector2(232, 128)
+position = Vector2(216, 128)
 sprite_frames = SubResource("SpriteFrames_s1xdq")
 animation = &"bigari"
 autoplay = "bigari"
