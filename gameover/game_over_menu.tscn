@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://dar0xa4ebivpb"]
+[gd_scene load_steps=29 format=3 uid="uid://dar0xa4ebivpb"]
 
 [ext_resource type="Texture2D" uid="uid://cnq88afelre7f" path="res://gameover/sprite/game_over.png" id="1_4st0s"]
 [ext_resource type="Script" uid="uid://qjkwtrm5sbv8" path="res://menu/gui_elements/title.gd" id="2_2up6k"]
@@ -9,6 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://cmtdmr2oti8be" path="res://music/caught.wav" id="6_pu1q3"]
 [ext_resource type="FontFile" uid="uid://de8o0r0elchgg" path="res://basegame/fonts/minitext.ttf" id="7_uaxet"]
 [ext_resource type="Script" uid="uid://c27opd1gad1os" path="res://gameover/scripts/room_label.gd" id="8_2up6k"]
+[ext_resource type="Texture2D" uid="uid://cw3d3iptyjuva" path="res://gameover/sprite/box.png" id="8_lk17m"]
 [ext_resource type="Script" uid="uid://c2urv47qwqa1m" path="res://gameover/scripts/score_label.gd" id="9_jscf4"]
 [ext_resource type="Texture2D" uid="uid://cavbcdgigkojh" path="res://gameover/sprite/unused/game_over_bigari.png" id="10_2bik7"]
 [ext_resource type="Texture2D" uid="uid://cvp7v2a1jk1hl" path="res://gameover/sprite/ari_caught_shadow.png" id="10_a43ih"]
@@ -16,9 +17,6 @@
 [ext_resource type="Script" uid="uid://bgo668wxa74ya" path="res://gameover/scripts/gameover_bigari_light.gd" id="11_a43ih"]
 [ext_resource type="Texture2D" uid="uid://dgwr7tnhtd5q" path="res://gameover/sprite/game_over_background.png" id="12_ku476"]
 [ext_resource type="Script" uid="uid://cb6a6ggsrtgrw" path="res://basegame/alarm.gd" id="16_a43ih"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_s4mg2"]
-size = Vector2(64, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e2nvf"]
 atlas = ExtResource("10_2bik7")
@@ -92,12 +90,15 @@ colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_a43ih"]
 gradient = SubResource("Gradient_e2nvf")
-width = 234
-height = 284
+width = 254
+height = 274
 fill = 1
 fill_from = Vector2(0.534188, 0.508547)
 fill_to = Vector2(0.82906, 0.824786)
 metadata/_snap_count = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s4mg2"]
+size = Vector2(64, 16)
 
 [node name="GameOverMenu" type="Node2D"]
 texture_filter = 1
@@ -107,49 +108,8 @@ modulate = Color(0.501961, 0.501961, 0.501961, 1)
 z_index = -1
 texture = ExtResource("12_ku476")
 centered = false
-
-[node name="GameOver" type="Sprite2D" parent="."]
-position = Vector2(80, 32)
-texture = ExtResource("1_4st0s")
 script = ExtResource("2_2up6k")
-
-[node name="RetryButton" parent="." instance=ExtResource("2_ru24h")]
-position = Vector2(16, 176)
-animation_delay = 15
-
-[node name="Retry" type="Sprite2D" parent="RetryButton"]
-position = Vector2(32, 8)
-texture = ExtResource("3_6afgx")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RetryButton"]
-position = Vector2(32, 8)
-shape = SubResource("RectangleShape2D_s4mg2")
-
-[node name="MenuButton" parent="." instance=ExtResource("2_ru24h")]
-position = Vector2(16, 192)
-option = "menu"
-animation_delay = 30
-
-[node name="Retry" type="Sprite2D" parent="MenuButton"]
-position = Vector2(32, 8)
-texture = ExtResource("4_pu1q3")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MenuButton"]
-position = Vector2(32, 8)
-shape = SubResource("RectangleShape2D_s4mg2")
-
-[node name="QuitButton" parent="." instance=ExtResource("2_ru24h")]
-position = Vector2(16, 208)
-option = "quit"
-animation_delay = 45
-
-[node name="Retry" type="Sprite2D" parent="QuitButton"]
-position = Vector2(32, 8)
-texture = ExtResource("5_x0w7j")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="QuitButton"]
-position = Vector2(32, 8)
-shape = SubResource("RectangleShape2D_s4mg2")
+animation_offset = 320
 
 [node name="BigAri" type="AnimatedSprite2D" parent="."]
 position = Vector2(232, 128)
@@ -157,7 +117,7 @@ sprite_frames = SubResource("SpriteFrames_s1xdq")
 animation = &"bigari"
 autoplay = "bigari"
 script = ExtResource("2_2up6k")
-animation_offset = 128
+animation_offset = 256
 
 [node name="AriCaughtShadow" type="Sprite2D" parent="BigAri"]
 z_index = -1
@@ -173,12 +133,72 @@ script = ExtResource("11_a43ih")
 stream = ExtResource("6_pu1q3")
 autoplay = true
 
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+offset_left = 16.0
+offset_top = 120.0
+offset_right = 80.0
+offset_bottom = 184.0
+texture = ExtResource("8_lk17m")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="RetryButton" parent="." instance=ExtResource("2_ru24h")]
+position = Vector2(24, 128)
+animation_delay = 15
+
+[node name="Retry" type="Sprite2D" parent="RetryButton"]
+position = Vector2(32, 8)
+texture = ExtResource("3_6afgx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RetryButton"]
+position = Vector2(32, 8)
+shape = SubResource("RectangleShape2D_s4mg2")
+
+[node name="MenuButton" parent="." instance=ExtResource("2_ru24h")]
+position = Vector2(24, 144)
+option = "menu"
+animation_delay = 30
+
+[node name="Retry" type="Sprite2D" parent="MenuButton"]
+position = Vector2(32, 8)
+texture = ExtResource("4_pu1q3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MenuButton"]
+position = Vector2(32, 8)
+shape = SubResource("RectangleShape2D_s4mg2")
+
+[node name="QuitButton" parent="." instance=ExtResource("2_ru24h")]
+position = Vector2(24, 160)
+option = "quit"
+animation_delay = 45
+
+[node name="Retry" type="Sprite2D" parent="QuitButton"]
+position = Vector2(32, 8)
+texture = ExtResource("5_x0w7j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="QuitButton"]
+position = Vector2(32, 8)
+shape = SubResource("RectangleShape2D_s4mg2")
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="."]
+offset_left = 16.0
+offset_top = 60.0
+offset_right = 112.0
+offset_bottom = 108.0
+texture = ExtResource("8_lk17m")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
 [node name="RoomLabel" type="Label" parent="."]
 z_index = 2
-offset_left = 16.0
-offset_top = 64.0
-offset_right = 78.0
-offset_bottom = 88.0
+offset_left = 24.0
+offset_top = 68.0
+offset_right = 86.0
+offset_bottom = 92.0
 theme_override_fonts/font = ExtResource("7_uaxet")
 text = "Room Label"
 script = ExtResource("8_2up6k")
@@ -187,15 +207,20 @@ animation_delay = 15
 
 [node name="ScoreLabel" type="Label" parent="."]
 z_index = 2
-offset_left = 16.0
-offset_top = 80.0
-offset_right = 80.0
-offset_bottom = 104.0
+offset_left = 24.0
+offset_top = 84.0
+offset_right = 88.0
+offset_bottom = 108.0
 theme_override_fonts/font = ExtResource("7_uaxet")
 text = "Score Label"
 script = ExtResource("9_jscf4")
 animation_offset = -128
 animation_delay = 15
+
+[node name="GameOver" type="Sprite2D" parent="."]
+position = Vector2(80, 32)
+texture = ExtResource("1_4st0s")
+script = ExtResource("2_2up6k")
 
 [node name="Alarm" type="CanvasModulate" parent="."]
 position = Vector2(80, 40)

@@ -1,11 +1,3 @@
 ~ start
-Greybee: * bahahaha
-Greybee: * im so corupted
-Greybee: * help! bahahah
-Greybee: * jpeg compression 1 percent\
-Greybee: * i am  grey buzzy bees
-do change_dialogue_start("stop")
-=> stop
-~ stop
-Greybee: * leave me alone now please bahahah
+* You look around the room, only to see nothing but a gray rag.
 => END

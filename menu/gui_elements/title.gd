@@ -1,4 +1,4 @@
-class_name Title extends Node2D
+extends Node2D
 
 var original_position = Vector2.ZERO
 var timer = 0
