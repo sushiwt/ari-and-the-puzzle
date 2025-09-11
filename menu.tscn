@@ -1,6 +1,7 @@
-[gd_scene load_steps=19 format=3 uid="uid://b4hofg1kgse0l"]
+[gd_scene load_steps=20 format=3 uid="uid://b4hofg1kgse0l"]
 
 [ext_resource type="AudioStream" uid="uid://yhot3kyjldep" path="res://music/theme.wav" id="1_nrnbx"]
+[ext_resource type="Texture2D" uid="uid://biat1rvcam0or" path="res://menu/sprite/background_background.png" id="2_g7jxm"]
 [ext_resource type="Texture2D" uid="uid://5540h8u08fuj" path="res://menu/sprite/background.png" id="2_nrnbx"]
 [ext_resource type="PackedScene" uid="uid://iefe3fpk1u25" path="res://menu/gui_elements/button.tscn" id="3_h1wq0"]
 [ext_resource type="Script" uid="uid://b0w8t72rqclx1" path="res://menu/gui_elements/background.gd" id="3_iqepy"]
@@ -79,23 +80,41 @@ texture_filter = 1
 stream = ExtResource("1_nrnbx")
 autoplay = true
 
-[node name="Background" type="Sprite2D" parent="."]
-texture_repeat = 2
-position = Vector2(160, 128)
-texture = ExtResource("2_nrnbx")
+[node name="BackgroundBackground" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.466667)
+position = Vector2(320, 120)
+texture = ExtResource("2_g7jxm")
 script = ExtResource("3_iqepy")
 
+[node name="Background2" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 0.364706)
+texture_repeat = 2
+position = Vector2(188, 152)
+texture = ExtResource("2_nrnbx")
+script = ExtResource("9_4ndjb")
+animation_offset = 256
+weight = 0.05
+
+[node name="Background" type="Sprite2D" parent="."]
+texture_repeat = 2
+position = Vector2(160, 120)
+texture = ExtResource("2_nrnbx")
+script = ExtResource("9_4ndjb")
+animation_offset = 256
+weight = 0.05
+
 [node name="MenuButtons" type="Node2D" parent="."]
-position = Vector2(0, 240)
+position = Vector2(8, 232)
 script = SubResource("GDScript_nrnbx")
 
 [node name="BackgroundButtonCover" type="Polygon2D" parent="MenuButtons"]
 position = Vector2(0, -240)
 color = Color(0, 0, 0, 0.501961)
-polygon = PackedVector2Array(0, 152, 87, 152, 87, 207, 87, 240, 0, 240)
+polygon = PackedVector2Array(4, 152, 84, 152, 88, 156, 88, 236, 84, 240, 4, 240, 0, 236, 0, 156)
 
 [node name="PlayButton" parent="MenuButtons" instance=ExtResource("3_h1wq0")]
 position = Vector2(8, -80)
+animation_offset = -72
 animation_delay = 45
 
 [node name="Play" type="Sprite2D" parent="MenuButtons/PlayButton"]
@@ -109,6 +128,7 @@ shape = SubResource("RectangleShape2D_6fswf")
 [node name="SettingsButton" parent="MenuButtons" instance=ExtResource("3_h1wq0")]
 position = Vector2(8, -64)
 option = "settings"
+animation_offset = -72
 animation_delay = 30
 
 [node name="Settings" type="Sprite2D" parent="MenuButtons/SettingsButton"]
@@ -122,6 +142,7 @@ shape = SubResource("RectangleShape2D_6fswf")
 [node name="QuitButton" parent="MenuButtons" instance=ExtResource("3_h1wq0")]
 position = Vector2(8, -48)
 option = "quit"
+animation_offset = -72
 animation_delay = 15
 
 [node name="Quit" type="Sprite2D" parent="MenuButtons/QuitButton"]
@@ -140,13 +161,13 @@ script = ExtResource("9_4ndjb")
 animation_offset = -128
 
 [node name="BackgroundButtonCover2" type="Polygon2D" parent="."]
-position = Vector2(256, -160)
+position = Vector2(248, -168)
 scale = Vector2(1, 1.66667)
 color = Color(0, 0, 0, 0.501961)
-polygon = PackedVector2Array(-8, 216, 64, 216, 64, 240, -8, 240)
+polygon = PackedVector2Array(-4, 216, 60, 216, 64, 218.4, 64, 237.6, 60, 240, -4, 240, -8, 237.6, -8, 218.4)
 
 [node name="Credits" parent="." instance=ExtResource("3_h1wq0")]
-position = Vector2(256, 216)
+position = Vector2(248, 208)
 option = "credits"
 animation_offset = 128
 
@@ -180,7 +201,7 @@ shape = SubResource("RectangleShape2D_bc54p")
 
 [node name="Medal" type="AnimatedSprite2D" parent="."]
 visible = false
-position = Vector2(232, 216)
+position = Vector2(24, 24)
 sprite_frames = SubResource("SpriteFrames_oxnod")
 autoplay = "default"
 frame_progress = 0.152989

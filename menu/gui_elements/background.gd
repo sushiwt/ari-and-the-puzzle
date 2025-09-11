@@ -1,4 +1,6 @@
 extends Sprite2D
 
+@export var position_change = 0.05
+
 func _process(_delta:float) -> void:
-	position.x -= 0.01
+	position.x -= position_change
