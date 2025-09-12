@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bm4borgsywyu5"]
+
+[ext_resource type="Script" uid="uid://cja6v76pjua2j" path="res://splash/splash.gd" id="1_boi4q"]
+[ext_resource type="FontFile" uid="uid://de8o0r0elchgg" path="res://basegame/fonts/minitext.ttf" id="2_n34ou"]
+
+[node name="Splash" type="Node2D"]
+script = ExtResource("1_boi4q")
+
+[node name="SplashMessage" type="Label" parent="."]
+texture_filter = 1
+offset_left = 32.0
+offset_top = 168.0
+offset_right = 356.0
+offset_bottom = 192.0
+scale = Vector2(2, 2)
+theme_override_constants/line_spacing = -4
+theme_override_fonts/font = ExtResource("2_n34ou")
+text = "Click the screen 
+to start the game."

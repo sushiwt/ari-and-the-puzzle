@@ -146,6 +146,7 @@ patch_margin_bottom = 3
 
 [node name="RetryButton" parent="." instance=ExtResource("2_ru24h")]
 position = Vector2(24, 128)
+animation_offset = -67
 animation_delay = 15
 
 [node name="Retry" type="Sprite2D" parent="RetryButton"]

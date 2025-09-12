@@ -33,6 +33,7 @@ config/icon="uid://ba5nmyliq213f"
 GameState="*res://basegame/autoload/game_state.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 Settings="*res://basegame/autoload/settings.gd"
+Boot="*res://basegame/autoload/boot.gd"
 
 [dialogue_manager]
 
@@ -61,6 +62,8 @@ enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
 Player=""
 Enemy=""
 Dialogue=""
+Obstacle=""
+"Camera Checker"=""
 
 [input]
 

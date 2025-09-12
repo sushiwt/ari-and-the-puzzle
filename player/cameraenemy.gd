@@ -44,8 +44,12 @@ func _process(delta:float) -> void:
 		$BackMarker.position.y = (cos(char_sin) * 4) + 4
 	
 func _on_sensor_area_area_entered(area: Area2D) -> void:
-	if area.is_in_group("Player"):
+	if area.is_in_group("Camera Checker"):
 		if GameState.room_timer < 60:
+			position.x = randi_range(32, 288)
+			position.y = randi_range(48, 208)
+			print("camera position.changed..")
+			
 			char_sin = 0
 			$Sensor.rotation_degrees = -134.9
 			$Top.rotation_degrees = 0
@@ -58,6 +62,8 @@ func _on_sensor_area_area_entered(area: Area2D) -> void:
 			$BackMarker.rotation_degrees = 90.0
 			$BackMarker/Back.rotation_degrees = 0 
 			$BackMarker/Back.skew = 0
+			
+	if area.is_in_group("Player"):
 		
 		GameState.player_detect_amount += 1
 
@@ -65,3 +71,8 @@ func _on_sensor_area_area_entered(area: Area2D) -> void:
 func _on_sensor_area_area_exited(area: Area2D) -> void:
 	if area.is_in_group("Player"):
 		GameState.player_detect_amount -= 1
+
+
+func _on_shadow_area_body_entered(body: Node2D) -> void:
+	if body.is_in_group("Obstacle"):
+		$Shadow.z_index = -2

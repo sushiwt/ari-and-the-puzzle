@@ -16,7 +16,7 @@ func _process(delta:float) -> void:
 			queue_free()
 
 func _on_area_entered(area: Area2D) -> void:
-	if area.is_in_group("Player"):
+	if area.is_in_group("Player") && puzzle_collected == false:
 		scale = Vector2(1.0,1.0)
 		GameState.puzzles_collected += 1
 		GameState.score += 100

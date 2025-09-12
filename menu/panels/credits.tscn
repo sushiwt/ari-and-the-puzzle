@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://c50yb01iiuqfh"]
+[gd_scene load_steps=5 format=3 uid="uid://c50yb01iiuqfh"]
 
 [ext_resource type="Script" uid="uid://b0mnxxteyq6gb" path="res://menu/panels/panel_overlay.gd" id="1_nidem"]
 [ext_resource type="Texture2D" uid="uid://dtlidpg357uty" path="res://menu/sprite/panel.png" id="2_viegw"]
 [ext_resource type="FontFile" uid="uid://de8o0r0elchgg" path="res://basegame/fonts/minitext.ttf" id="3_1qbs2"]
+[ext_resource type="Texture2D" uid="uid://c1bv7nubayr4l" path="res://menu/sprite/back.png" id="4_qlpoj"]
 
 [node name="Credits" type="Control"]
 z_index = 10
@@ -81,6 +82,11 @@ offset_top = 93.0
 offset_right = 166.0
 offset_bottom = 105.0
 flat = true
+
+[node name="Back" type="Sprite2D" parent="."]
+position = Vector2(4, 4)
+texture = ExtResource("4_qlpoj")
+centered = false
 
 [connection signal="gui_input" from="PanelBackground" to="." method="_on_panel_background_gui_input"]
 [connection signal="gui_input" from="PanelShadow" to="." method="_on_panel_background_gui_input"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bxomscsa0kltd"]
+[gd_scene load_steps=14 format=3 uid="uid://bxomscsa0kltd"]
 
 [ext_resource type="Script" uid="uid://b0mnxxteyq6gb" path="res://menu/panels/panel_overlay.gd" id="1_x8as2"]
 [ext_resource type="Texture2D" uid="uid://dtlidpg357uty" path="res://menu/sprite/panel.png" id="2_u5gwn"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bp1juqp50e601" path="res://menu/sprite/checkbox_empty.png" id="7_fmqj4"]
 [ext_resource type="Script" uid="uid://1qtulnba8tn2" path="res://menu/panels/big_ari_checkbox.gd" id="8_mlxts"]
 [ext_resource type="Script" uid="uid://dwtsiecrviuyk" path="res://menu/panels/wall_checkbox.gd" id="8_u5gwn"]
+[ext_resource type="Texture2D" uid="uid://c1bv7nubayr4l" path="res://menu/sprite/back.png" id="10_dm5nv"]
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_mottj"]
 color = Color(0.133333, 0.12549, 0.203922, 1)
@@ -144,6 +145,11 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_fredc")
 theme_override_icons/checked = ExtResource("6_fuc8l")
 theme_override_icons/unchecked = ExtResource("7_fmqj4")
 script = ExtResource("8_u5gwn")
+
+[node name="Back" type="Sprite2D" parent="."]
+position = Vector2(4, 4)
+texture = ExtResource("10_dm5nv")
+centered = false
 
 [connection signal="gui_input" from="PanelBackground" to="." method="_on_panel_background_gui_input"]
 [connection signal="gui_input" from="PanelShadow" to="." method="_on_panel_background_gui_input"]

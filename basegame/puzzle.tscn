@@ -8,6 +8,7 @@
 size = Vector2(32, 32)
 
 [node name="Puzzle" type="Area2D"]
+z_index = 4
 texture_filter = 1
 script = ExtResource("1_4s4rb")
 

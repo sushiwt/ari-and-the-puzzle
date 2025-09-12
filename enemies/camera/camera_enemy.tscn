@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://ddedo2oeuftiv"]
+[gd_scene load_steps=9 format=3 uid="uid://ddedo2oeuftiv"]
 
 [ext_resource type="Script" uid="uid://cjgqmf715ubu7" path="res://player/cameraenemy.gd" id="1_wi8dh"]
 [ext_resource type="Texture2D" uid="uid://k5cmujoq1kpm" path="res://enemies/camera/sprite/light.png" id="2_6iqcr"]
@@ -9,6 +9,9 @@
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_w7mfc"]
 blend_mode = 1
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sdt6t"]
+size = Vector2(6.75, 3)
 
 [node name="CameraEnemy" type="Node2D" groups=["Enemy"]]
 z_index = 3
@@ -61,10 +64,18 @@ polygon = PackedVector2Array(1.27559, 1.26998, 45.0223, 22.811, 42.9113, 27.4826
 texture = ExtResource("4_3ob6m")
 
 [node name="Shadow" type="Sprite2D" parent="."]
-z_index = -2
+z_index = -3
 texture_filter = 1
 position = Vector2(0, 48)
 texture = ExtResource("4_2wa53")
 
+[node name="ShadowArea" type="Area2D" parent="."]
+position = Vector2(0, 48)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShadowArea"]
+position = Vector2(0, 14)
+shape = SubResource("RectangleShape2D_sdt6t")
+
 [connection signal="area_entered" from="Sensor/SensorArea" to="." method="_on_sensor_area_area_entered"]
 [connection signal="area_exited" from="Sensor/SensorArea" to="." method="_on_sensor_area_area_exited"]
+[connection signal="body_entered" from="ShadowArea" to="." method="_on_shadow_area_body_entered"]

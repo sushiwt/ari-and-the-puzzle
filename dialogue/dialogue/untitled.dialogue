@@ -1,7 +1,6 @@
 ~ start
 if GameState.finished_room_15 == false
 	% => dwell
-	% => riddle
 	~ dwell
 	J: * in my life, i've done things that i regret a lot
 	J: * i keep thinking about whatd happen if i did anything else
