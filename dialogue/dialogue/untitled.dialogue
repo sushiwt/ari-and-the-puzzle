@@ -2,8 +2,8 @@
 if GameState.finished_room_15 == false
 	% => dwell
 	~ dwell
-	J: * in my life, i've done things that i regret a lot
-	J: * i keep thinking about whatd happen if i did anything else
+	J: * in my life, i've done things \nthat i regret a lot
+	J: * i keep thinking about whatd \nhappen if i did anything else
 	J: * but i feel as though there's no point in doing that
 	J: * no point in dwelling to past mistakes
 	=> endtext
@@ -27,6 +27,4 @@ else:
 	J: * why did you come back
 	J: * there's nothing for you here
 	J: [next=auto]* please wait for m
-do glitch_effect()
-do wait(2763)
 => END

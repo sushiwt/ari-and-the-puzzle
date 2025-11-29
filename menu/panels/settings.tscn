@@ -99,7 +99,7 @@ theme_override_styles/slider = SubResource("StyleBoxLine_mottj")
 theme_override_styles/grabber_area = SubResource("StyleBoxLine_fredc")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_fredc")
 min_value = -72.0
-max_value = 6.0
+max_value = 0.0
 script = ExtResource("5_elxc5")
 
 [node name="BigAriLabel" type="Label" parent="PanelContainer/NinePatchRect"]

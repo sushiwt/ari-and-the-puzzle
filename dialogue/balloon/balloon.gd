@@ -130,7 +130,7 @@ func apply_dialogue_line() -> void:
 ## Go to the next line
 func next(next_id: String) -> void:
 	self.dialogue_line = await resource.get_next_dialogue_line(next_id, temporary_game_states)
-
+	
 
 #region Signals
 
@@ -173,6 +173,22 @@ func _on_responses_menu_response_selected(response: DialogueResponse) -> void:
 	next(response.next_id)
 
 func _on_dialogue_label_spoke(letter: String, letter_index: int, speed: float) -> void:
+	var nodes_in_group = get_tree().get_nodes_in_group("NPC")
+	
+	if nodes_in_group.size() > 0:
+		print("Nodes found in group ", nodes_in_group.size())
+		var node_speaking = 0
+		
+		for i in nodes_in_group.size():
+			if nodes_in_group[i].name == dialogue_line.character:
+				node_speaking = i
+		
+		print($Balloon.global_position)
+		
+		$Balloon.global_position = (nodes_in_group[node_speaking].global_position) - get_viewport().get_camera_2d().get_screen_center_position()
+	else:
+		print("No nodes found in group")
+
 	if dialogue_line.character == "J":
 		$DialoguePlayer.stream = load("res://music/j.wav")
 	elif dialogue_line.character == "Greybee":

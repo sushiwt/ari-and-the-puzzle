@@ -497,18 +497,18 @@ script = ExtResource("1_2kap2")
 [node name="UI" parent="." instance=ExtResource("2_h7frc")]
 
 [node name="ColorRect" type="ColorRect" parent="UI"]
-offset_top = 184.0
+offset_top = 187.0
 offset_right = 104.0
-offset_bottom = 240.0
+offset_bottom = 243.0
 color = Color(0, 0, 0, 0.282353)
 script = ExtResource("3_740ry")
 
 [node name="CreatorLabel" type="Label" parent="UI"]
 texture_filter = 1
-offset_left = 8.0
-offset_top = 192.0
-offset_right = 184.0
-offset_bottom = 272.0
+offset_left = 10.0
+offset_top = 195.0
+offset_right = 186.0
+offset_bottom = 275.0
 scale = Vector2(0.5, 0.5)
 theme_override_constants/line_spacing = -4
 theme_override_fonts/font = ExtResource("4_ydv7j")

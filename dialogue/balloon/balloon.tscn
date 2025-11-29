@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://dyr8tsk3ol3rd"]
+[gd_scene load_steps=14 format=4 uid="uid://dyr8tsk3ol3rd"]
 
 [ext_resource type="Script" uid="uid://ccdqfvqp5idx0" path="res://dialogue/balloon/balloon.gd" id="1_s2gbs"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_hfvdi"]
@@ -90,6 +90,26 @@ MarginContainer/constants/margin_right = 8
 MarginContainer/constants/margin_top = 4
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_i6nbm")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t3c2s"]
+bg_color = Color(0, 0, 0, 1)
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.20152655, 0.20152661, 0.20152643, 1)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5xxl0"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.20152655, 0.20152661, 0.20152643, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+anti_aliasing = false
+
 [sub_resource type="AudioStreamWAV" id="AudioStreamWAV_5xxl0"]
 data = PackedByteArray("cW9hZgAACNQBAKxECNQDoAAAAAAAAAAAAAAAAOAAQABcACxV90SCATJSsLVUN1FxO52EKoXfWfA2LvA9xKJ4Xjrl3BAHhaRaNppWCpoNAVBAV9UCwSivCj6Tleab3ionOCd7qUAosvEy0qnBZ8KnqDqRRN3hJYn1OUSmONfXUF429QSJTuN3hzlzqhYcudxsRz5hxuFqxkJPCvmCHCwgwzwDaXwXG+6KMCiGpqNlL5c5d5d4Sjc7ukIILlQDADjARqcCVNEEymVIyFUCmCFUZzwVDgsZ3jVlOD5sShz5peU4451K8zPCd0BMoKLVzZ3EOy3BieEgPeE7F9UQzGXqEUcLCYTepQcqNkSvUS2PciFGlXjYWiC4ST3Vzc+DJMLOOz75pyvNGjU54SdxKNwrn1jAaJTCb3hDQIMJotNA3UI295d8bF1KHC383hO7z3sURynUOFxkxtI+lUjUE3Dd0DKqYRbyrOH3RFNVGUpUxuNAQSm91K9UWjjpgXzDAXy8RokOMlEpvOw53jYSiUGSJTO43ce7UNzoSNpVKphBphwx5c2qkWEV80BV3SaZCIaaO6mXdI3MWBctLuHvnvOMvURAYVRBcqVTPGxovcQgvVpCiQTKmgWlY0M++sbjKJVjQAMxggkgpuNA5Y0wCAVYwTG4DzsBFi8nN4ueKoNXWMo2F4indTuYPEJlTKBcJaIVRBoNWFUJypo2hdUWJ4h91DHgqRXRQHzFRMJixfUJhFg0F5OEXvqiUjZuA8TnSLDxNtIUJdAXWUgyDOZ9Q82J8TVIhXgXzJ3lPO4WPUBVIr42GJ0hQk2UAD++qs8YYR+XPURknXcxiH43unutwii4wEcYcYDRVjAaNlEAg/FmcwsydxvqDPDr8jXnwaJALgFUOi6hFeFeACg93jdypWl0vEJJVhYRcsqAO7iKmWWXH4s83G83B8GjREIJTBDjKLTRM+Ez7mPdXLw7A91cSQRuCjlBVzepQu8IRxphpVBpokEwSQxPuETPj0SZRBIKaFhIM3NH4q7ohy46UV5PGh859TlJ33TVgYJlOH4zqOwEjd4/mrLuN00AVz3zIAN1EoAIRoFoWEtBgOVArDYQGEwqgTTAIIO6IKbiQtEokpotOWM3q0CQCd2iZTMs+JsIO7W8P5oWEWAfA/M5983uiAQV8THzVl3lEs++P7w2Amwgkbs0J1Op1Pqdzjr1I3IAIIBAMgfEGwA2ED4yQR8SCQGmmDBlBIIDRIIO")
 format = 3
@@ -109,21 +129,30 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_qq3yp")
 
+[node name="Panel" type="Panel" parent="Balloon"]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 70.75
+offset_right = 176.0
+offset_bottom = 86.75
+rotation = 0.7853982
+theme_override_styles/panel = SubResource("StyleBoxFlat_t3c2s")
+
 [node name="MarginContainer" type="MarginContainer" parent="Balloon"]
 layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
+anchors_preset = -1
 anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -240.0
-offset_bottom = -168.0
+anchor_bottom = 0.369
 grow_horizontal = 2
-grow_vertical = 0
+grow_vertical = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="Balloon/MarginContainer"]
 clip_children = 2
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
 mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_5xxl0")
 
 [node name="MarginContainer" type="MarginContainer" parent="Balloon/MarginContainer/PanelContainer"]
 layout_mode = 2
@@ -144,11 +173,13 @@ scroll_active = false
 
 [node name="DialogueLabel" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource("2_hfvdi")]
 unique_name_in_owner = true
+clip_contents = false
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/normal_font = ExtResource("3_5xxl0")
 theme_override_font_sizes/normal_font_size = 16
 text = "Dialogue..."
+autowrap_mode = 0
 
 [node name="ResponsesMenu" type="VBoxContainer" parent="Balloon"]
 unique_name_in_owner = true
@@ -158,10 +189,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -116.5
-offset_top = -9.0
-offset_right = 116.5
-offset_bottom = 9.0
+offset_left = -120.0
+offset_top = 80.0
+offset_right = 113.0
+offset_bottom = 98.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 8

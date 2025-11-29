@@ -1,0 +1,53 @@
+[gd_scene load_steps=7 format=3 uid="uid://byxq8lbmbwb4u"]
+
+[ext_resource type="PackedScene" uid="uid://cveiyoy15wew4" path="res://player/player.tscn" id="1_e5pn8"]
+[ext_resource type="Texture2D" uid="uid://c70fc0d52i3mj" path="res://locations/campfire/sprite/blob.png" id="2_w5bgv"]
+[ext_resource type="PackedScene" uid="uid://o4trd2rn4x07" path="res://dialogue/talkable.tscn" id="3_q6tgd"]
+[ext_resource type="Resource" uid="uid://dgtcpyr3u0oal" path="res://locations/npc_test/dialogue/a.dialogue" id="4_e5pn8"]
+[ext_resource type="Resource" uid="uid://daq4jkc3wvklg" path="res://locations/npc_test/dialogue/b.dialogue" id="4_w5bgv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2d0gl"]
+size = Vector2(23.9337, 26.0313)
+
+[node name="NPC_Test" type="Node2D"]
+texture_filter = 1
+
+[node name="B" type="StaticBody2D" parent="." groups=["NPC"]]
+position = Vector2(69, 135)
+
+[node name="Blob" type="Sprite2D" parent="B"]
+position = Vector2(0, -1)
+texture = ExtResource("2_w5bgv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="B"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_2d0gl")
+
+[node name="TalkableComponent" parent="B" instance=ExtResource("3_q6tgd")]
+dialogue_resource = ExtResource("4_w5bgv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="B/TalkableComponent"]
+shape = SubResource("RectangleShape2D_2d0gl")
+
+[node name="A" type="StaticBody2D" parent="." groups=["NPC"]]
+position = Vector2(248, 130)
+
+[node name="Blob" type="Sprite2D" parent="A"]
+position = Vector2(0, -1)
+texture = ExtResource("2_w5bgv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="A"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_2d0gl")
+
+[node name="TalkableComponent" parent="A" instance=ExtResource("3_q6tgd")]
+dialogue_resource = ExtResource("4_e5pn8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="A/TalkableComponent"]
+shape = SubResource("RectangleShape2D_2d0gl")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(160, 120)
+
+[node name="Player" parent="." instance=ExtResource("1_e5pn8")]
+position = Vector2(156, 157)
