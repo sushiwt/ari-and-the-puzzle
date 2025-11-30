@@ -15,47 +15,65 @@ size = Vector2(6.75, 3)
 
 [node name="CameraEnemy" type="Node2D" groups=["Enemy"]]
 z_index = 3
+y_sort_enabled = true
 texture_filter = 1
+position = Vector2(49, 33)
 script = ExtResource("1_wi8dh")
-
-[node name="Bottom" type="Sprite2D" parent="."]
-position = Vector2(0, 8)
-texture = ExtResource("4_3ob6m")
-
-[node name="BackMarker" type="Marker2D" parent="."]
-position = Vector2(0, 8)
-rotation = 1.5708
-
-[node name="Back" type="Sprite2D" parent="BackMarker"]
-position = Vector2(10, -2.28882e-05)
-scale = Vector2(0.5, 1)
-texture = ExtResource("4_egkxf")
+direction = 180.0
 
 [node name="FrontMarker" type="Marker2D" parent="."]
 rotation = -1.57079
 
 [node name="Front" type="Sprite2D" parent="FrontMarker"]
-position = Vector2(10, -2.28882e-05)
+position = Vector2(-4, 2.5097524e-05)
 scale = Vector2(0.5, 1)
 texture = ExtResource("5_sdt6t")
 
+[node name="BackMarker" type="Marker2D" parent="."]
+rotation = 1.5708
+
+[node name="Back" type="Sprite2D" parent="BackMarker"]
+position = Vector2(4, -1.2612351e-05)
+scale = Vector2(0.5, 1)
+texture = ExtResource("4_egkxf")
+
+[node name="LeftMarker" type="Marker2D" parent="."]
+rotation = 1.5707964
+
+[node name="Left" type="Sprite2D" parent="LeftMarker"]
+position = Vector2(4, -1.7484555e-07)
+scale = Vector2(0.5, 1)
+skew = -1.569051
+texture = ExtResource("4_3ob6m")
+
+[node name="RightMarker" type="Marker2D" parent="."]
+rotation = 1.5707964
+
+[node name="Right" type="Sprite2D" parent="RightMarker"]
+position = Vector2(4, -1.7484555e-07)
+scale = Vector2(0.5, 1)
+skew = -1.569051
+texture = ExtResource("4_3ob6m")
+
 [node name="Sensor" type="Marker2D" parent="."]
+z_index = 7
+z_as_relative = false
 rotation = -2.35399
 scale = Vector2(1.66667, 1.66667)
 
 [node name="Marker2D" type="Marker2D" parent="Sensor"]
-position = Vector2(7.64421, 3.37725)
+position = Vector2(6.7956767, 3.3791342)
 scale = Vector2(0.15, 0.15)
 
 [node name="Light" type="Sprite2D" parent="Sensor"]
 material = SubResource("CanvasItemMaterial_w7mfc")
-position = Vector2(7.6442, 3.37723)
+position = Vector2(7.267762, 3.1775172)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_6iqcr")
 offset = Vector2(256, 256)
 
 [node name="SensorArea" type="Area2D" parent="Sensor"]
-position = Vector2(7.64419, 3.37726)
+position = Vector2(7.267752, 3.1775472)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sensor/SensorArea"]
 polygon = PackedVector2Array(1.27559, 1.26998, 45.0223, 22.811, 42.9113, 27.4826, 37.4118, 34.7072, 34.8718, 37.2584, 27.6715, 42.7897, 23.0093, 44.9213)

@@ -10,7 +10,7 @@ func _ready() -> void:
 	original_position = position
 	position.x += animation_offset
 
-func _process(delta:float) -> void:
+func _process(_delta:float) -> void:
 	if timer > animation_delay:
 		position = position.lerp(original_position, weight)
 	

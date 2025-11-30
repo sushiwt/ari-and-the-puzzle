@@ -59,7 +59,7 @@ func _process(_delta:float) -> void:
 	#if is_on_wall() || is_on_floor() || is_on_ceiling():
 		#use_spd = RUN_SPEED
 	
-	velocity = mvmt_vector * use_spd
+	velocity = mvmt_vector * use_spd 
 	
 	move_and_slide()
 	

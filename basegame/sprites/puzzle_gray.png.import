@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0b56gis3i87i"
-path="res://.godot/imported/cliff.png-48094b654f7ff3a50f253b28a5d7823c.ctex"
+uid="uid://cvlruqsf2f8ip"
+path="res://.godot/imported/puzzle_gray.png-4f9c549d5ea8054c32c31d26d2a33747.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://locations/campfire/sprite/cliff.png"
-dest_files=["res://.godot/imported/cliff.png-48094b654f7ff3a50f253b28a5d7823c.ctex"]
+source_file="res://basegame/sprites/puzzle_gray.png"
+dest_files=["res://.godot/imported/puzzle_gray.png-4f9c549d5ea8054c32c31d26d2a33747.ctex"]
 
 [params]
 

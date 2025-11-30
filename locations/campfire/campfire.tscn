@@ -42,7 +42,7 @@ region_enabled = true
 region_rect = Rect2(0, 0, 320, 240)
 
 [node name="J" type="StaticBody2D" parent="." groups=["NPC"]]
-position = Vector2(190, 1098)
+position = Vector2(184, 1104)
 
 [node name="Blob" type="Sprite2D" parent="J"]
 position = Vector2(0, -1)

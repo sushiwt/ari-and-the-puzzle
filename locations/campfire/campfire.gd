@@ -14,7 +14,7 @@ func _ready() -> void:
 	if GameState.puzzles_collected == GameState.puzzle_requirement:
 		GameState.score -= 100
 
-func _process(delta:float) -> void:
+func _process(_delta:float) -> void:
 	if $Player.position.y <= 0 or glitch_effect_timer >= 120:
 		get_tree().change_scene_to_packed(end_of_demo)
 	
@@ -24,7 +24,7 @@ func _process(delta:float) -> void:
 		
 		if glitch_effect_timer <= 60:
 			var texturerect = TextureRect.new()
-			texturerect.texture = texture.create_from_image(viewport_image)
+			texturerect.texture = ImageTexture.create_from_image(viewport_image)
 			texturerect.global_position = Vector2(glitch_effect_timer * 2 , $Player/Camera2D.global_position.y + glitch_effect_timer * 2 - 120)
 			add_child(texturerect)
 

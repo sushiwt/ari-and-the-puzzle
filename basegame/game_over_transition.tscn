@@ -9,7 +9,7 @@ script/source = "extends CanvasLayer
 
 var game_over_timer = 0
 
-func _process(delta:float) -> void:
+func _process(_delta:float) -> void:
 	game_over_timer += 1
 	
 	if game_over_timer > 120:

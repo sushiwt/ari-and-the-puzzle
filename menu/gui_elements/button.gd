@@ -20,7 +20,7 @@ func _ready() -> void:
 		$Quit.texture = preload("res://menu/sprite/more.png") 
 	
 
-func _process(delta:float) -> void:
+func _process(_delta:float) -> void:
 	if timer > animation_delay:
 		position = position.lerp(original_position, 0.1)
 	

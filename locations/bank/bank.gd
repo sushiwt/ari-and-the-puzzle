@@ -15,7 +15,7 @@ func _ready() -> void:
 	
 	reset_room()
 
-func _process(delta:float) -> void:
+func _process(_delta:float) -> void:
 	if GameState.game_over:
 		process_mode = Node.PROCESS_MODE_DISABLED
 		

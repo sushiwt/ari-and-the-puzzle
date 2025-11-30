@@ -9,39 +9,35 @@ func _ready():
 	char_sin = deg_to_rad(direction)
 	$Sensor.rotation_degrees = direction - 134.9
 	$Top.rotation_degrees = direction
-	$Bottom.rotation_degrees = direction 
 	
-	$FrontMarker.rotation_degrees = direction - 90.0
-	$FrontMarker/Front.rotation_degrees = -direction 
 	$FrontMarker/Front.skew = deg_to_rad(direction)
-	
-	$BackMarker.rotation_degrees = direction + 90.0
-	$BackMarker/Back.rotation_degrees = -direction - 180
 	$BackMarker/Back.skew = deg_to_rad(direction)
-	
+	$LeftMarker/Left.skew = deg_to_rad(direction - 90)
+	$RightMarker/Right.skew = deg_to_rad(direction - 90)
 	
 
 func _process(_delta:float) -> void:
 	if GameState.paused == false:
 		char_sin += degree_change_amount
 		$Sensor.rotation += degree_change_amount
-		
 		$Top.rotation += degree_change_amount
-		$Bottom.rotation += degree_change_amount
 		
-		$FrontMarker.rotation += degree_change_amount
-		$FrontMarker/Front.rotation -= degree_change_amount
 		$FrontMarker/Front.skew += degree_change_amount
+		$FrontMarker.position.x = (sin(char_sin) * 14)
+		$FrontMarker.position.y = (cos(char_sin) * -14)
 		
-		$FrontMarker.position.x = (sin(char_sin) * 3)
-		$FrontMarker.position.y = (cos(char_sin) * -4) + 4
-		
-		$BackMarker.rotation += degree_change_amount
-		$BackMarker/Back.rotation -= degree_change_amount
 		$BackMarker/Back.skew += degree_change_amount
+		$BackMarker.position.x = (sin(char_sin) * -14)
+		$BackMarker.position.y = (cos(char_sin) * 14) 
 		
-		$BackMarker.position.x = (sin(char_sin) * -3)
-		$BackMarker.position.y = (cos(char_sin) * 4) + 4
+		$LeftMarker/Left.skew += degree_change_amount
+		$LeftMarker.position.x = (cos(char_sin) * 8)
+		$LeftMarker.position.y = (sin(char_sin) * 8)
+		
+		$RightMarker/Right.skew += degree_change_amount
+		$RightMarker.position.x = (cos(char_sin) * -8)
+		$RightMarker.position.y = (sin(char_sin) * -8)
+		
 	
 func _on_sensor_area_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Camera Checker"):
@@ -53,15 +49,11 @@ func _on_sensor_area_area_entered(area: Area2D) -> void:
 			char_sin = 0
 			$Sensor.rotation_degrees = -134.9
 			$Top.rotation_degrees = 0
-			$Bottom.rotation_degrees = 0 
 			
-			$FrontMarker.rotation_degrees = -90.0
-			$FrontMarker/Front.rotation_degrees = 0 
 			$FrontMarker/Front.skew = 0
-		
-			$BackMarker.rotation_degrees = 90.0
-			$BackMarker/Back.rotation_degrees = 0 
 			$BackMarker/Back.skew = 0
+			$LeftMarker/Left.skew = deg_to_rad(-90)
+			$RightMarker/Right.skew = deg_to_rad(-90)
 			
 	if area.is_in_group("Player"):
 		

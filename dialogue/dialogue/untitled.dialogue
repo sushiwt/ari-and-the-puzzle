@@ -4,8 +4,8 @@ if GameState.finished_room_15 == false
 	~ dwell
 	J: * in my life, i've done things \nthat i regret a lot
 	J: * i keep thinking about whatd \nhappen if i did anything else
-	J: * but i feel as though there's no point in doing that
-	J: * no point in dwelling to past mistakes
+	J: * but i feel as though there's \n no point in doing that
+	J: * no point in dwelling \nto past mistakes
 	=> endtext
 	~ riddle
 	J: * hey ari
@@ -27,4 +27,6 @@ else:
 	J: * why did you come back
 	J: * there's nothing for you here
 	J: [next=auto]* please wait for m
+do glitch_effect()
+do wait(2763)
 => END

@@ -103,6 +103,28 @@ func apply_dialogue_line() -> void:
 
 	responses_menu.hide()
 	responses_menu.responses = dialogue_line.responses
+	# Cheks to see if NPCS exist in the scene via the NPC group
+	# If there are NPCS who are speaking now, change the position 
+	# of the balloon to the speaking NPC.
+	var nodes_in_group = get_tree().get_nodes_in_group("NPC")
+	
+	if nodes_in_group.size() > 0:
+		print("Nodes found in group ", nodes_in_group.size())
+		var node_speaking = -1
+		
+		for i in nodes_in_group.size():
+			if nodes_in_group[i].name == dialogue_line.character:
+				node_speaking = i
+		
+		balloon.global_position = Vector2.ZERO
+		$Balloon/SpeechArrow.visible = false
+		
+		if node_speaking != -1:
+			balloon.global_position = (nodes_in_group[node_speaking].global_position) - get_viewport().get_camera_2d().get_screen_center_position()
+			$Balloon/SpeechArrow.visible = true
+		
+	else:
+		print("No nodes found in group")
 
 	# Show our balloon
 	balloon.show()
@@ -172,23 +194,7 @@ func _on_balloon_gui_input(event: InputEvent) -> void:
 func _on_responses_menu_response_selected(response: DialogueResponse) -> void:
 	next(response.next_id)
 
-func _on_dialogue_label_spoke(letter: String, letter_index: int, speed: float) -> void:
-	var nodes_in_group = get_tree().get_nodes_in_group("NPC")
-	
-	if nodes_in_group.size() > 0:
-		print("Nodes found in group ", nodes_in_group.size())
-		var node_speaking = 0
-		
-		for i in nodes_in_group.size():
-			if nodes_in_group[i].name == dialogue_line.character:
-				node_speaking = i
-		
-		print($Balloon.global_position)
-		
-		$Balloon.global_position = (nodes_in_group[node_speaking].global_position) - get_viewport().get_camera_2d().get_screen_center_position()
-	else:
-		print("No nodes found in group")
-
+func _on_dialogue_label_spoke(_letter: String, _letter_index: int, _speed: float) -> void:
 	if dialogue_line.character == "J":
 		$DialoguePlayer.stream = load("res://music/j.wav")
 	elif dialogue_line.character == "Greybee":

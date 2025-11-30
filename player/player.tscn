@@ -54,7 +54,7 @@ shape = SubResource("CircleShape2D_yllr7")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerCatchArea"]
 shape = SubResource("RectangleShape2D_g1dw6")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="PlayerShadow" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(0, 14)
 texture = ExtResource("2_g1dw6")
@@ -63,7 +63,9 @@ texture = ExtResource("2_g1dw6")
 texture_filter = 1
 position = Vector2(0, 14)
 sprite_frames = ExtResource("2_rkbax")
-animation = &"idleLeft"
+animation = &"runLeft"
+frame = 6
+frame_progress = 0.42794573
 offset = Vector2(0, -24)
 
 [node name="PlayerCollision" type="CollisionShape2D" parent="."]

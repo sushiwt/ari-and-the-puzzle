@@ -6,7 +6,7 @@ extends StaticBody2D
 @export var table_width = 4
 @export var table_height = 2
 
-func _process(delta:float) -> void:
+func _process(_delta:float) -> void:
 	#$LightOccluder2D.occluder.polygon = PackedVector2Array([Vector2(0,-16), 
 															#Vector2(table_width * 16, -16),
 															#Vector2(table_width * 16, (table_height * 16) - 14),

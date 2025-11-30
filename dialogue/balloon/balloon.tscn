@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=4 uid="uid://dyr8tsk3ol3rd"]
+[gd_scene load_steps=15 format=4 uid="uid://dyr8tsk3ol3rd"]
 
 [ext_resource type="Script" uid="uid://ccdqfvqp5idx0" path="res://dialogue/balloon/balloon.gd" id="1_s2gbs"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_hfvdi"]
+[ext_resource type="FontFile" uid="uid://b76gdd2d35tm1" path="res://basegame/fonts/mars.ttf" id="2_t3c2s"]
 [ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_1j1j0"]
 [ext_resource type="FontFile" uid="uid://de8o0r0elchgg" path="res://basegame/fonts/minitext.ttf" id="3_5xxl0"]
 
@@ -129,7 +130,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_qq3yp")
 
-[node name="Panel" type="Panel" parent="Balloon"]
+[node name="SpeechArrow" type="Panel" parent="Balloon"]
 layout_mode = 0
 offset_left = 160.0
 offset_top = 70.75
@@ -166,6 +167,7 @@ visible = false
 modulate = Color(1, 1, 1, 0.501961)
 layout_mode = 2
 mouse_filter = 1
+theme_override_fonts/normal_font = ExtResource("2_t3c2s")
 bbcode_enabled = true
 text = "Character"
 fit_content = true

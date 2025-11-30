@@ -3,7 +3,7 @@ extends CanvasLayer
 func _ready() -> void:
 	$YouCantGoBack.modulate.a = 2
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	$YouCantGoBack.position = $YouCantGoBack.position.lerp(Vector2(119, 8), 0.1)
 	
 	$YouCantGoBack.modulate.b -= 0.01

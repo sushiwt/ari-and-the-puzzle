@@ -7,7 +7,7 @@ var player_area: Node2D
 func _ready() -> void:
 	$PuzzleSprite.frame = puzzle_frame
 
-func _process(delta:float) -> void:
+func _process(_delta:float) -> void:
 	if puzzle_collected:
 		position = position.lerp(player_area.global_position, 0.1)
 		scale -= Vector2(0.1,0.1)

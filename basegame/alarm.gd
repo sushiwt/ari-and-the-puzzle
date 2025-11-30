@@ -2,7 +2,7 @@ extends CanvasModulate
 
 var timer = 0
 
-func _process(delta:float) -> void:
+func _process(_delta:float) -> void:
 	timer += 1
 	
 	if timer >= 60:

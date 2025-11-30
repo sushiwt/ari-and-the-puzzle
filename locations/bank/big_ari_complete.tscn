@@ -12,7 +12,7 @@ func _ready() -> void:
 	else:
 		visible = true
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	$CollectedAll.position = $CollectedAll.position.lerp(Vector2(160, 135), 0.1)
 	
 	if $CollectedAll.position.x <= 180:
