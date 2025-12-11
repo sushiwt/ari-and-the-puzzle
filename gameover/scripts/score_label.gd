@@ -10,9 +10,10 @@ func _ready() -> void:
 	position.x += animation_offset
 	text = ""
 	
-	## Sets the high score and the room you were in
-	#if GameState.score > GameState.high_score:
-		#text = "NEW "
+	if GameState.score > GameState.high_score:
+		text = "NEW "
+		GameState.high_score = GameState.score
+		GameState.furthest_room = GameState.room
 		
 	text += "Score: " + str(GameState.score).pad_zeros(6)
 	
