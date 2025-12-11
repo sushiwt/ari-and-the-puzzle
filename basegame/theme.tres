@@ -1,0 +1,46 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://bsuwwjtlqccxr"]
+
+[ext_resource type="FontFile" uid="uid://de8o0r0elchgg" path="res://basegame/fonts/minitext.ttf" id="1_qvvjp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tlphw"]
+bg_color = Color(0, 0, 0, 0.49803922)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xu6ch"]
+bg_color = Color(0, 0, 0, 0.49803922)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qvvjp"]
+bg_color = Color(0, 0, 0, 0.49803922)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e3ude"]
+bg_color = Color(0, 0, 0, 0.5019608)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 1
+expand_margin_left = 8.0
+expand_margin_top = 8.0
+expand_margin_right = 8.0
+expand_margin_bottom = 8.0
+anti_aliasing = false
+
+[resource]
+Button/colors/font_color = Color(1, 1, 1, 0.7529412)
+Button/colors/font_focus_color = Color(1, 1, 1, 1)
+Button/colors/font_hover_color = Color(1, 1, 1, 1)
+Button/colors/icon_normal_color = Color(1, 1, 1, 0.7529412)
+Button/fonts/font = ExtResource("1_qvvjp")
+Button/styles/focus = SubResource("StyleBoxFlat_tlphw")
+Button/styles/hover = SubResource("StyleBoxFlat_tlphw")
+Button/styles/normal = SubResource("StyleBoxFlat_xu6ch")
+Button/styles/pressed = SubResource("StyleBoxFlat_qvvjp")
+Label/constants/line_spacing = 1
+Label/fonts/font = ExtResource("1_qvvjp")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_e3ude")

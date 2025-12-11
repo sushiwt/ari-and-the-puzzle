@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=3 uid="uid://32eekuimy3a4"]
+
+[ext_resource type="FontFile" uid="uid://de8o0r0elchgg" path="res://basegame/fonts/minitext.ttf" id="1_jns8n"]
+[ext_resource type="Script" uid="uid://vt0hxijab2gh" path="res://basegame/demo/end_of_demo.gd" id="2_rq4qd"]
+[ext_resource type="Theme" uid="uid://bsuwwjtlqccxr" path="res://basegame/theme.tres" id="3_x7c2s"]
+[ext_resource type="Texture2D" uid="uid://bhvkdake5t066" path="res://menu/buttons/sprite/menu.png" id="4_8blb3"]
+
+[node name="EndOfDemo" type="Label"]
+visible = false
+texture_filter = 1
+offset_left = 80.0
+offset_top = 48.0
+offset_right = 368.0
+offset_bottom = 268.0
+theme_override_constants/line_spacing = -4
+theme_override_fonts/font = ExtResource("1_jns8n")
+theme_override_font_sizes/font_size = 16
+text = "Unfortunately, you've reached the 
+limit on what I can show you for 
+the Demo.
+
+You've earned yourself a new badge 
+for passing Room 15. You'll find it in 
+the main menu.
+
+For more updates, follow
+@sushiwth on X/Twitter.
+
+Thanks for playing <3"
+script = ExtResource("2_rq4qd")
+
+[node name="TODO" type="Label" parent="."]
+visible = false
+z_index = 2
+layout_mode = 0
+offset_left = -80.0
+offset_top = -48.0
+offset_right = 341.0
+offset_bottom = -17.0
+theme_override_colors/font_color = Color(0.325441, 0.325441, 0.325441, 1)
+theme_override_font_sizes/font_size = 8
+text = "// TODO: create logic for checking if player completed room 15 for this scene to be usable"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_top = 132.0
+offset_right = 8.0
+offset_bottom = 140.0
+theme = ExtResource("3_x7c2s")
+text = "Menu"
+icon = ExtResource("4_8blb3")

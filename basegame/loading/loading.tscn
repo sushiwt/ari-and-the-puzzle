@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://o1oxgw2gjhq"]
+
+[ext_resource type="Script" uid="uid://daho1o1esaqck" path="res://basegame/loading/loading.gd" id="1_o16uj"]
+[ext_resource type="Texture2D" uid="uid://bxkmgtipfxqae" path="res://basegame/sprites/loading.png" id="1_x0jkt"]
+
+[node name="loading" type="CanvasLayer"]
+script = ExtResource("1_o16uj")
+
+[node name="Loading" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(8, 16)
+scale = Vector2(2, 2)
+texture = ExtResource("1_x0jkt")
+centered = false
+
+[node name="LoadingBar" type="ColorRect" parent="."]
+offset_bottom = 8.0

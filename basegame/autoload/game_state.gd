@@ -3,6 +3,9 @@ extends Node
 var room = 0
 var score = 0
 
+var furthest_room = 0
+var high_score = 0
+
 var puzzles_collected = 0
 var puzzle_requirement = 4
 
@@ -19,6 +22,8 @@ var player_seen = 0
 var the_boolean_that_checks_if_youve_entered_the_greybuzgian_room = false
 
 var finished_room_15 = false
+
+var focused_ui_element: Button
 
 func _process(_delta:float) -> void:
 	room_timer += 1

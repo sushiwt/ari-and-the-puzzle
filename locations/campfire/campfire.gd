@@ -1,6 +1,6 @@
 extends Node2D
 
-var end_of_demo = preload("res://basegame/end_of_demo.tscn")
+var end_of_demo = preload("res://basegame/demo/end_of_demo.tscn")
 var glitch_effect_check = false
 var glitch_effect_timer = 0
 

@@ -15,7 +15,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	$CollectedAll.position = $CollectedAll.position.lerp(Vector2(160, 135), 0.1)
 	
-	if $CollectedAll.position.x <= 180:
+	if $CollectedAll.position.x >= 140:
 		$CollectedAll.modulate.a -= 0.02
 	
 	if $CollectedAll.modulate.a <= 0:
@@ -30,5 +30,5 @@ script = SubResource("GDScript_8ya2q")
 [node name="CollectedAll" type="Sprite2D" parent="."]
 z_index = 10
 texture_filter = 1
-position = Vector2(416, 136)
+position = Vector2(-88, 128)
 texture = ExtResource("1_csj7i")

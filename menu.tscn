@@ -1,35 +1,40 @@
-[gd_scene load_steps=21 format=3 uid="uid://b4hofg1kgse0l"]
+[gd_scene load_steps=26 format=3 uid="uid://b4hofg1kgse0l"]
 
 [ext_resource type="AudioStream" uid="uid://yhot3kyjldep" path="res://music/theme.wav" id="1_nrnbx"]
 [ext_resource type="Texture2D" uid="uid://biat1rvcam0or" path="res://menu/sprite/background_background.png" id="2_g7jxm"]
-[ext_resource type="Script" uid="uid://bh51cw4n1luxl" path="res://menu/music.gd" id="2_jspdm"]
+[ext_resource type="Script" uid="uid://bh51cw4n1luxl" path="res://menu/scripts/music.gd" id="2_jspdm"]
 [ext_resource type="Texture2D" uid="uid://5540h8u08fuj" path="res://menu/sprite/background.png" id="2_nrnbx"]
-[ext_resource type="PackedScene" uid="uid://iefe3fpk1u25" path="res://menu/gui_elements/button.tscn" id="3_h1wq0"]
-[ext_resource type="Script" uid="uid://b0w8t72rqclx1" path="res://menu/gui_elements/background.gd" id="3_iqepy"]
-[ext_resource type="Texture2D" uid="uid://cdrviwm2kq14v" path="res://menu/sprite/play.png" id="4_dwrpx"]
-[ext_resource type="Texture2D" uid="uid://b42p084vx6o6m" path="res://menu/sprite/settings.png" id="5_g7jxm"]
-[ext_resource type="Texture2D" uid="uid://d2d8sp0f0gkyt" path="res://menu/sprite/quit.png" id="6_jspdm"]
-[ext_resource type="Texture2D" uid="uid://db6r5aycm80mw" path="res://menu/sprite/title.png" id="8_gd0jp"]
-[ext_resource type="Script" uid="uid://qjkwtrm5sbv8" path="res://menu/gui_elements/title.gd" id="9_4ndjb"]
-[ext_resource type="FontFile" uid="uid://de8o0r0elchgg" path="res://basegame/fonts/minitext.ttf" id="11_h1wq0"]
+[ext_resource type="Script" uid="uid://b0w8t72rqclx1" path="res://menu/scripts/gui_elements/background.gd" id="3_iqepy"]
+[ext_resource type="Script" uid="uid://bt83xncec8om7" path="res://menu/buttons/ui.gd" id="9_3ls4m"]
+[ext_resource type="Script" uid="uid://qjkwtrm5sbv8" path="res://menu/scripts/gui_elements/title.gd" id="9_4ndjb"]
 [ext_resource type="Texture2D" uid="uid://b26lyakfmk84u" path="res://menu/sprite/medal.png" id="12_dwrpx"]
-[ext_resource type="Script" uid="uid://cpw8jj2ysyv6h" path="res://menu/medal.gd" id="13_g7jxm"]
+[ext_resource type="Script" uid="uid://cpw8jj2ysyv6h" path="res://menu/scripts/medal.gd" id="13_g7jxm"]
+[ext_resource type="Script" uid="uid://dl7s40dqxtvxf" path="res://menu/buttons/credits.gd" id="14_oil5j"]
+[ext_resource type="Texture2D" uid="uid://b1ucr63846oyc" path="res://menu/buttons/sprite/more.png" id="14_w25hu"]
+[ext_resource type="Script" uid="uid://d1otcxnkqhqi0" path="res://menu/buttons/more.gd" id="15_5h80m"]
+[ext_resource type="Theme" uid="uid://bsuwwjtlqccxr" path="res://basegame/theme.tres" id="15_oxnod"]
+[ext_resource type="Script" uid="uid://b40qrbyokdlfu" path="res://menu/buttons/play.gd" id="16_gd0jp"]
+[ext_resource type="Texture2D" uid="uid://bpfnu667ssohr" path="res://menu/buttons/sprite/play.png" id="16_td6mg"]
+[ext_resource type="Script" uid="uid://bawc6qbpxkos3" path="res://menu/buttons/settings.gd" id="17_3ls4m"]
+[ext_resource type="Script" uid="uid://cjkbhn5lqfgih" path="res://menu/buttons/quit.gd" id="18_5h80m"]
+[ext_resource type="Texture2D" uid="uid://d3cikhkby4vi" path="res://menu/buttons/sprite/settings.png" id="18_guify"]
+[ext_resource type="Texture2D" uid="uid://cy7j4vos04j18" path="res://menu/buttons/sprite/quit.png" id="20_oil5j"]
+[ext_resource type="Texture2D" uid="uid://bb7nvifnw46k8" path="res://menu/buttons/sprite/title.png" id="22_guify"]
 
-[sub_resource type="GDScript" id="GDScript_nrnbx"]
-resource_name = "ButtonResizer"
-script/source = "extends Node2D
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_guify"]
+bg_color = Color(0, 0, 0, 0.5019608)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 1
+expand_margin_left = 4.0
+expand_margin_top = 5.0
+expand_margin_right = 8.0
+expand_margin_bottom = 4.0
+anti_aliasing = false
 
-func _ready() -> void:
-	if OS.has_feature(\"web_android\") || OS.has_feature(\"web_ios\"):
-		scale = Vector2(2.0,2.0)
-	
-"
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6fswf"]
-size = Vector2(64, 16)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bc54p"]
-size = Vector2(72, 40)
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oil5j"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g7jxm"]
 atlas = ExtResource("12_dwrpx")
@@ -104,101 +109,108 @@ script = ExtResource("9_4ndjb")
 animation_offset = 256
 weight = 0.05
 
-[node name="MenuButtons" type="Node2D" parent="."]
-position = Vector2(8, 232)
-script = SubResource("GDScript_nrnbx")
+[node name="Credits" type="PanelContainer" parent="."]
+offset_left = 244.0
+offset_top = 200.0
+offset_right = 304.0
+offset_bottom = 228.0
+theme = ExtResource("15_oxnod")
+theme_override_styles/panel = SubResource("StyleBoxFlat_guify")
+script = ExtResource("9_3ls4m")
+animation_offset = 80
 
-[node name="BackgroundButtonCover" type="Polygon2D" parent="MenuButtons"]
-position = Vector2(0, -240)
-color = Color(0, 0, 0, 0.501961)
-polygon = PackedVector2Array(4, 152, 84, 152, 88, 156, 88, 236, 84, 240, 4, 240, 0, 236, 0, 156)
+[node name="VBoxContainer" type="VBoxContainer" parent="Credits"]
+layout_mode = 2
+theme_override_constants/separation = -1
 
-[node name="PlayButton" parent="MenuButtons" instance=ExtResource("3_h1wq0")]
-position = Vector2(8, -80)
-animation_offset = -72
-animation_delay = 45
-
-[node name="Play" type="Sprite2D" parent="MenuButtons/PlayButton"]
-position = Vector2(32, 8)
-texture = ExtResource("4_dwrpx")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MenuButtons/PlayButton"]
-position = Vector2(32, 8)
-shape = SubResource("RectangleShape2D_6fswf")
-
-[node name="SettingsButton" parent="MenuButtons" instance=ExtResource("3_h1wq0")]
-position = Vector2(8, -64)
-option = "settings"
-animation_offset = -72
-animation_delay = 30
-
-[node name="Settings" type="Sprite2D" parent="MenuButtons/SettingsButton"]
-position = Vector2(32, 8)
-texture = ExtResource("5_g7jxm")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MenuButtons/SettingsButton"]
-position = Vector2(32, 8)
-shape = SubResource("RectangleShape2D_6fswf")
-
-[node name="QuitButton" parent="MenuButtons" instance=ExtResource("3_h1wq0")]
-position = Vector2(8, -48)
-option = "quit"
-animation_offset = -72
-animation_delay = 15
-
-[node name="Quit" type="Sprite2D" parent="MenuButtons/QuitButton"]
-position = Vector2(32, 8)
-texture = ExtResource("6_jspdm")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MenuButtons/QuitButton"]
-position = Vector2(32, 8)
-shape = SubResource("RectangleShape2D_6fswf")
-
-[node name="Title" type="Sprite2D" parent="MenuButtons"]
-texture_filter = 1
-position = Vector2(48, -16)
-texture = ExtResource("8_gd0jp")
-script = ExtResource("9_4ndjb")
-animation_offset = -128
-
-[node name="BackgroundButtonCover2" type="Polygon2D" parent="."]
-position = Vector2(248, -168)
-scale = Vector2(1, 1.66667)
-color = Color(0, 0, 0, 0.501961)
-polygon = PackedVector2Array(-4, 216, 60, 216, 64, 218.4, 64, 237.6, 60, 240, -4, 240, -8, 237.6, -8, 218.4)
-
-[node name="Credits" parent="." instance=ExtResource("3_h1wq0")]
-position = Vector2(248, 208)
-option = "credits"
-animation_offset = 128
-
-[node name="DemoLabel" type="Label" parent="Credits"]
-offset_left = 21.0
-offset_top = -11.0
-offset_right = 93.0
-offset_bottom = 20.0
-scale = Vector2(0.5, 0.5)
-theme_override_constants/line_spacing = -4
-theme_override_fonts/font = ExtResource("11_h1wq0")
-theme_override_font_sizes/font_size = 32
+[node name="DemoLabel" type="Label" parent="Credits/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.7529412)
 text = "(Demo)"
 horizontal_alignment = 2
 
-[node name="VersionLabel" type="Label" parent="Credits"]
-offset_left = -72.0
-offset_top = 5.0
-offset_right = 186.0
-offset_bottom = 36.0
-scale = Vector2(0.5, 0.5)
-theme_override_constants/line_spacing = -4
-theme_override_fonts/font = ExtResource("11_h1wq0")
-theme_override_font_sizes/font_size = 32
-text = "version 1.3.2"
-horizontal_alignment = 2
+[node name="CreditsButton" type="Button" parent="Credits/VBoxContainer"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../../../MenuButtons/VBoxContainer/Quit")
+focus_next = NodePath("../../../MenuButtons/VBoxContainer/Play")
+focus_previous = NodePath("../../../MenuButtons/VBoxContainer/Quit")
+text = " version 1.3.2"
+flat = true
+alignment = 2
+script = ExtResource("14_oil5j")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Credits"]
-position = Vector2(28, 4)
-shape = SubResource("RectangleShape2D_bc54p")
+[node name="MenuButtons" type="PanelContainer" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 208.0
+offset_right = 88.0
+offset_bottom = 224.0
+grow_vertical = 0
+size_flags_vertical = 4
+theme = ExtResource("15_oxnod")
+script = ExtResource("9_3ls4m")
+animation_offset = -96
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuButtons"]
+layout_mode = 2
+size_flags_vertical = 8
+focus_mode = 2
+focus_behavior_recursive = 2
+theme_override_constants/separation = 0
+alignment = 2
+
+[node name="Play" type="Button" parent="MenuButtons/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("15_oxnod")
+text = "Play"
+icon = ExtResource("16_td6mg")
+flat = true
+alignment = 0
+script = ExtResource("16_gd0jp")
+
+[node name="Settings" type="Button" parent="MenuButtons/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("15_oxnod")
+text = "Settings "
+icon = ExtResource("18_guify")
+flat = true
+alignment = 0
+script = ExtResource("17_3ls4m")
+
+[node name="MoreGames" type="Button" parent="MenuButtons/VBoxContainer"]
+layout_mode = 2
+focus_neighbor_right = NodePath("../../../Credits/VBoxContainer/CreditsButton")
+focus_next = NodePath("../../../Credits/VBoxContainer/CreditsButton")
+focus_previous = NodePath("../Settings")
+theme = ExtResource("15_oxnod")
+text = "More Games"
+icon = ExtResource("14_w25hu")
+flat = true
+alignment = 0
+script = ExtResource("15_5h80m")
+
+[node name="Quit" type="Button" parent="MenuButtons/VBoxContainer"]
+layout_mode = 2
+focus_neighbor_right = NodePath("../../../Credits/VBoxContainer/CreditsButton")
+focus_next = NodePath("../../../Credits/VBoxContainer/CreditsButton")
+focus_previous = NodePath("../Settings")
+theme = ExtResource("15_oxnod")
+text = "Quit"
+icon = ExtResource("20_oil5j")
+flat = true
+alignment = 0
+script = ExtResource("18_5h80m")
+
+[node name="HSeparator" type="HSeparator" parent="MenuButtons/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
+theme_override_styles/separator = SubResource("StyleBoxEmpty_oil5j")
+
+[node name="TextureRect" type="TextureRect" parent="MenuButtons/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("22_guify")
 
 [node name="Medal" type="AnimatedSprite2D" parent="."]
 visible = false
@@ -207,3 +219,9 @@ sprite_frames = SubResource("SpriteFrames_oxnod")
 autoplay = "default"
 frame_progress = 0.152989
 script = ExtResource("13_g7jxm")
+
+[connection signal="pressed" from="Credits/VBoxContainer/CreditsButton" to="Credits/VBoxContainer/CreditsButton" method="_on_pressed"]
+[connection signal="pressed" from="MenuButtons/VBoxContainer/Play" to="MenuButtons/VBoxContainer/Play" method="_on_pressed"]
+[connection signal="pressed" from="MenuButtons/VBoxContainer/Settings" to="MenuButtons/VBoxContainer/Settings" method="_on_pressed"]
+[connection signal="pressed" from="MenuButtons/VBoxContainer/MoreGames" to="MenuButtons/VBoxContainer/MoreGames" method="_on_pressed"]
+[connection signal="pressed" from="MenuButtons/VBoxContainer/Quit" to="MenuButtons/VBoxContainer/Quit" method="_on_pressed"]

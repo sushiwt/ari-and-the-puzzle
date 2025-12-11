@@ -8,9 +8,17 @@ var timer = 0
 func _ready() -> void:
 	original_position = position
 	position.x += animation_offset
+	text = ""
+	
+	## Sets the high score and the room you were in
+	#if GameState.score > GameState.high_score:
+		#text = "NEW "
+		
+	text += "Score: " + str(GameState.score).pad_zeros(6)
+	
+	
 
 func _process(_delta:float) -> void:
-	text = "Score: " + str(GameState.score).pad_zeros(6)
 	if timer > animation_delay:
 		position = position.lerp(original_position, 0.1)
 	

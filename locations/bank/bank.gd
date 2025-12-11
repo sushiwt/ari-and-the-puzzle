@@ -2,8 +2,8 @@ class_name Location extends Node2D
 
 var puzzle = preload("res://basegame/puzzle.tscn")
 var camera_enemy = preload("res://enemies/camera/camera_enemy.tscn")
-var game_over_scene = preload("res://basegame/game_over_transition.tscn")
-var you_cant_go_back = preload("res://basegame/you_cant_go_back.tscn")
+var game_over_scene = preload("res://gameover/game_over_transition.tscn")
+var you_cant_go_back = preload("res://locations/bank/you_cant_go_back.tscn")
 var table_layout = false
 
 var ycgb_toggle = false
@@ -25,6 +25,8 @@ func _process(_delta:float) -> void:
 		# ensures that the sound will play.
 		add_sibling(game_over_instance)
 	
+	
+	# Finished Room Code
 	if $Player.position.y <= 0:
 		var random_location = randi_range(0,100)
 		print(random_location)
@@ -35,6 +37,7 @@ func _process(_delta:float) -> void:
 		else:
 			reset_room()
 	
+	# Behind Room Code
 	if $Player.position.y >= 240:
 		if GameState.room == 8:
 			get_tree().change_scene_to_file("res://locations/campfire/campfire.tscn")
@@ -63,6 +66,8 @@ func reset_room():
 	for node in enemies:
 		node.queue_free()
 	
+	# Place the camera enemies in a random position based on
+	# the room counter
 	for i in range(GameState.room):
 		var camera_enemy_instance = camera_enemy.instantiate()
 		random_placement.x = randi_range(32, 288)
@@ -71,7 +76,10 @@ func reset_room():
 		camera_enemy_instance.position = random_placement
 		camera_enemy_instance.direction = randi_range(-180,180)
 		add_child(camera_enemy_instance)
-		
+	
+	# Place the puzzle pieces based on the puzzle_requirement variable
+	# This implies that there will be more or less than 4 puzzles for 1
+	# room, but it isn't done for now.
 	for i in range(GameState.puzzle_requirement):
 		var puzzle_instance = puzzle.instantiate()
 		random_placement.x = randi_range(52, 268)

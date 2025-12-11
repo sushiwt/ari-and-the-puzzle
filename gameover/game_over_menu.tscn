@@ -1,22 +1,27 @@
-[gd_scene load_steps=29 format=3 uid="uid://dar0xa4ebivpb"]
+[gd_scene load_steps=33 format=3 uid="uid://dar0xa4ebivpb"]
 
 [ext_resource type="Texture2D" uid="uid://cnq88afelre7f" path="res://gameover/sprite/game_over.png" id="1_4st0s"]
-[ext_resource type="Script" uid="uid://qjkwtrm5sbv8" path="res://menu/gui_elements/title.gd" id="2_2up6k"]
-[ext_resource type="PackedScene" uid="uid://iefe3fpk1u25" path="res://menu/gui_elements/button.tscn" id="2_ru24h"]
-[ext_resource type="Texture2D" uid="uid://yj0y57nhcndx" path="res://menu/sprite/retry.png" id="3_6afgx"]
-[ext_resource type="Texture2D" uid="uid://36chdrpm30d1" path="res://menu/sprite/menu.png" id="4_pu1q3"]
-[ext_resource type="Texture2D" uid="uid://d2d8sp0f0gkyt" path="res://menu/sprite/quit.png" id="5_x0w7j"]
+[ext_resource type="Script" uid="uid://cqgdksem1a2ft" path="res://gameover/game_over_menu.gd" id="1_kq77c"]
+[ext_resource type="Script" uid="uid://qjkwtrm5sbv8" path="res://menu/scripts/gui_elements/title.gd" id="2_2up6k"]
 [ext_resource type="AudioStream" uid="uid://cmtdmr2oti8be" path="res://music/caught.wav" id="6_pu1q3"]
 [ext_resource type="FontFile" uid="uid://de8o0r0elchgg" path="res://basegame/fonts/minitext.ttf" id="7_uaxet"]
 [ext_resource type="Script" uid="uid://c27opd1gad1os" path="res://gameover/scripts/room_label.gd" id="8_2up6k"]
 [ext_resource type="Texture2D" uid="uid://cw3d3iptyjuva" path="res://gameover/sprite/box.png" id="8_lk17m"]
 [ext_resource type="Script" uid="uid://c2urv47qwqa1m" path="res://gameover/scripts/score_label.gd" id="9_jscf4"]
-[ext_resource type="Texture2D" uid="uid://cavbcdgigkojh" path="res://gameover/sprite/unused/game_over_bigari.png" id="10_2bik7"]
+[ext_resource type="Texture2D" uid="uid://cavbcdgigkojh" path="res://basegame/unused/sprites/game_over_bigari.png" id="10_2bik7"]
 [ext_resource type="Texture2D" uid="uid://cvp7v2a1jk1hl" path="res://gameover/sprite/ari_caught_shadow.png" id="10_a43ih"]
 [ext_resource type="Texture2D" uid="uid://bqetp1dyju7yv" path="res://gameover/sprite/ari_caught.png" id="10_e2nvf"]
 [ext_resource type="Script" uid="uid://bgo668wxa74ya" path="res://gameover/scripts/gameover_bigari_light.gd" id="11_a43ih"]
 [ext_resource type="Texture2D" uid="uid://dgwr7tnhtd5q" path="res://gameover/sprite/game_over_background.png" id="12_ku476"]
-[ext_resource type="Script" uid="uid://cb6a6ggsrtgrw" path="res://basegame/alarm.gd" id="16_a43ih"]
+[ext_resource type="Script" uid="uid://cb6a6ggsrtgrw" path="res://locations/bank/scripts/alarm.gd" id="16_a43ih"]
+[ext_resource type="Script" uid="uid://bt83xncec8om7" path="res://menu/buttons/ui.gd" id="16_gv8om"]
+[ext_resource type="Theme" uid="uid://bsuwwjtlqccxr" path="res://basegame/theme.tres" id="19_1lm0s"]
+[ext_resource type="Texture2D" uid="uid://bpfnu667ssohr" path="res://menu/buttons/sprite/play.png" id="20_kcksl"]
+[ext_resource type="Script" uid="uid://b40qrbyokdlfu" path="res://menu/buttons/play.gd" id="21_xguas"]
+[ext_resource type="Texture2D" uid="uid://bhvkdake5t066" path="res://menu/buttons/sprite/menu.png" id="22_1lm0s"]
+[ext_resource type="Script" uid="uid://b56vt5wm3h05u" path="res://menu/buttons/menu.gd" id="23_kcksl"]
+[ext_resource type="Texture2D" uid="uid://cy7j4vos04j18" path="res://menu/buttons/sprite/quit.png" id="24_oh1s6"]
+[ext_resource type="Script" uid="uid://cjkbhn5lqfgih" path="res://menu/buttons/quit.gd" id="25_r5ssw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e2nvf"]
 atlas = ExtResource("10_2bik7")
@@ -97,11 +102,9 @@ fill_from = Vector2(0.534188, 0.508547)
 fill_to = Vector2(0.82906, 0.824786)
 metadata/_snap_count = 2
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_s4mg2"]
-size = Vector2(64, 16)
-
 [node name="GameOverMenu" type="Node2D"]
 texture_filter = 1
+script = ExtResource("1_kq77c")
 
 [node name="ScrollingBackground" type="Sprite2D" parent="."]
 modulate = Color(0.501961, 0.501961, 0.501961, 1)
@@ -133,61 +136,11 @@ script = ExtResource("11_a43ih")
 stream = ExtResource("6_pu1q3")
 autoplay = true
 
-[node name="NinePatchRect" type="NinePatchRect" parent="."]
-offset_left = 16.0
-offset_top = 120.0
-offset_right = 80.0
-offset_bottom = 184.0
-texture = ExtResource("8_lk17m")
-patch_margin_left = 3
-patch_margin_top = 3
-patch_margin_right = 3
-patch_margin_bottom = 3
-
-[node name="RetryButton" parent="." instance=ExtResource("2_ru24h")]
-position = Vector2(24, 128)
-animation_offset = -67
-animation_delay = 15
-
-[node name="Retry" type="Sprite2D" parent="RetryButton"]
-position = Vector2(32, 8)
-texture = ExtResource("3_6afgx")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RetryButton"]
-position = Vector2(32, 8)
-shape = SubResource("RectangleShape2D_s4mg2")
-
-[node name="MenuButton" parent="." instance=ExtResource("2_ru24h")]
-position = Vector2(24, 144)
-option = "menu"
-animation_delay = 30
-
-[node name="Retry" type="Sprite2D" parent="MenuButton"]
-position = Vector2(32, 8)
-texture = ExtResource("4_pu1q3")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MenuButton"]
-position = Vector2(32, 8)
-shape = SubResource("RectangleShape2D_s4mg2")
-
-[node name="QuitButton" parent="." instance=ExtResource("2_ru24h")]
-position = Vector2(24, 160)
-option = "quit"
-animation_delay = 45
-
-[node name="Retry" type="Sprite2D" parent="QuitButton"]
-position = Vector2(32, 8)
-texture = ExtResource("5_x0w7j")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="QuitButton"]
-position = Vector2(32, 8)
-shape = SubResource("RectangleShape2D_s4mg2")
-
 [node name="NinePatchRect2" type="NinePatchRect" parent="."]
 offset_left = 16.0
 offset_top = 60.0
-offset_right = 112.0
-offset_bottom = 108.0
+offset_right = 116.0
+offset_bottom = 105.0
 texture = ExtResource("8_lk17m")
 patch_margin_left = 3
 patch_margin_top = 3
@@ -228,3 +181,52 @@ position = Vector2(80, 40)
 scale = Vector2(2, 2)
 color = Color(0.501961, 0.501961, 1, 1)
 script = ExtResource("16_a43ih")
+
+[node name="MenuButtons" type="PanelContainer" parent="."]
+offset_left = 24.0
+offset_top = 128.0
+offset_right = 84.0
+offset_bottom = 176.0
+theme = ExtResource("19_1lm0s")
+script = ExtResource("16_gv8om")
+animation_offset = -92
+animation_delay = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuButtons"]
+layout_mode = 2
+focus_mode = 2
+focus_behavior_recursive = 2
+theme_override_constants/separation = 0
+alignment = 2
+
+[node name="Retry" type="Button" parent="MenuButtons/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("19_1lm0s")
+text = "Retry"
+icon = ExtResource("20_kcksl")
+flat = true
+alignment = 0
+script = ExtResource("21_xguas")
+
+[node name="Menu" type="Button" parent="MenuButtons/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("19_1lm0s")
+text = "Menu"
+icon = ExtResource("22_1lm0s")
+flat = true
+alignment = 0
+script = ExtResource("23_kcksl")
+
+[node name="Quit" type="Button" parent="MenuButtons/VBoxContainer"]
+layout_mode = 2
+focus_previous = NodePath("../Menu")
+theme = ExtResource("19_1lm0s")
+text = "Quit"
+icon = ExtResource("24_oh1s6")
+flat = true
+alignment = 0
+script = ExtResource("25_r5ssw")
+
+[connection signal="pressed" from="MenuButtons/VBoxContainer/Retry" to="MenuButtons/VBoxContainer/Retry" method="_on_pressed"]
+[connection signal="pressed" from="MenuButtons/VBoxContainer/Menu" to="MenuButtons/VBoxContainer/Menu" method="_on_pressed"]
+[connection signal="pressed" from="MenuButtons/VBoxContainer/Quit" to="MenuButtons/VBoxContainer/Quit" method="_on_pressed"]

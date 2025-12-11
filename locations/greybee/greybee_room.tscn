@@ -2,7 +2,7 @@
 
 [ext_resource type="AudioStream" uid="uid://bo4jkb0p6jl8w" path="res://music/greybee.mp3" id="1_4fmby"]
 [ext_resource type="Script" uid="uid://oqbf8uxyyouc" path="res://locations/greybee/greybee_room.gd" id="1_clexq"]
-[ext_resource type="PackedScene" uid="uid://crkjbf8g4gr6x" path="res://basegame/ui.tscn" id="2_00mef"]
+[ext_resource type="PackedScene" uid="uid://crkjbf8g4gr6x" path="res://locations/bank/ui.tscn" id="2_00mef"]
 [ext_resource type="Texture2D" uid="uid://yg20ljineafx" path="res://locations/greybee/sprite/square-ezgif.com-png-to-jpg-converter.jpg" id="2_5vg7a"]
 [ext_resource type="PackedScene" uid="uid://cveiyoy15wew4" path="res://player/player.tscn" id="2_tm4w3"]
 [ext_resource type="PackedScene" uid="uid://o4trd2rn4x07" path="res://dialogue/talkable.tscn" id="7_cl5oe"]
