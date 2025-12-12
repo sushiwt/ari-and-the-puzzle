@@ -9,6 +9,8 @@ var use_spd
 var player_state = "idle"
 var player_direction = "Down"
 
+var pause = preload("res://player/pause.tscn")
+
 @onready var talkable_finder: Area2D = $Direction/TalkableFinder
 var gui_exists = false
 var rot_map = {
@@ -24,6 +26,10 @@ func _ready() -> void:
 		$TouchControls.visible = true
 
 func _process(_delta:float) -> void:
+	if Input.is_action_just_pressed("pause") && !gui_exists:
+		var pause_instance = pause.instantiate()
+		add_sibling(pause_instance)
+	
 	if Input.is_action_just_pressed("dialogue_confirm") && !gui_exists:
 		var talkables = talkable_finder.get_overlapping_areas()
 		if talkables.size() > 0:

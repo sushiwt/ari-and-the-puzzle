@@ -41,7 +41,7 @@ points = PackedVector2Array(16, -32, 16, 32, 0, 32, -16, 0, 0, -32)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wodsf"]
 size = Vector2(40, 40)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["Obstacle"]]
 script = ExtResource("1_rkbax")
 
 [node name="CameraDirectionArea" type="Area2D" parent="." groups=["Camera Checker"]]

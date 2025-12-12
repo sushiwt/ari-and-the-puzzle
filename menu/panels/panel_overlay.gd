@@ -6,9 +6,10 @@ func _ready() -> void:
 	grab_focus()
 
 func _process(_delta:float) -> void:
-	if Input.is_action_just_pressed("back"):
+	if Input.is_action_just_pressed("back") || Input.is_action_just_pressed("confirm"):
 		exit()
-		GameState.focused_ui_element.grab_focus()
+		if GameState.focused_ui_element != null:
+			GameState.focused_ui_element.grab_focus()
 
 func _on_panel_container_mouse_entered() -> void:
 	is_in_panel = true
@@ -28,3 +29,7 @@ func exit():
 
 func _on_debug_menu_button_button_down() -> void:
 	get_tree().change_scene_to_file("res://basegame/debug/debug_menu.tscn")
+
+
+func _on_resume_pressed() -> void:
+	exit()

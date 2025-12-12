@@ -186,7 +186,7 @@ script = ExtResource("16_a43ih")
 offset_left = 24.0
 offset_top = 128.0
 offset_right = 84.0
-offset_bottom = 176.0
+offset_bottom = 144.0
 theme = ExtResource("19_1lm0s")
 script = ExtResource("16_gv8om")
 animation_offset = -92
@@ -197,7 +197,6 @@ layout_mode = 2
 focus_mode = 2
 focus_behavior_recursive = 2
 theme_override_constants/separation = 0
-alignment = 2
 
 [node name="Retry" type="Button" parent="MenuButtons/VBoxContainer"]
 layout_mode = 2
@@ -218,6 +217,7 @@ alignment = 0
 script = ExtResource("23_kcksl")
 
 [node name="Quit" type="Button" parent="MenuButtons/VBoxContainer"]
+visible = false
 layout_mode = 2
 focus_previous = NodePath("../Menu")
 theme = ExtResource("19_1lm0s")
