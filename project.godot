@@ -8,6 +8,10 @@
 
 config_version=5
 
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
 [application]
 
 config/name="Ari And The Puzzle (Demo)"
@@ -20,10 +24,10 @@ config/version="1.3.2"
 config/tags=PackedStringArray("passion_projects")
 run/main_scene="uid://b4hofg1kgse0l"
 config/use_custom_user_dir=true
-config/features=PackedStringArray("4.5", "GL Compatibility")
+config/features=PackedStringArray("4.6", "GL Compatibility")
 run/max_fps=60
 boot_splash/bg_color=Color(0, 0, 0, 1)
-boot_splash/fullsize=false
+boot_splash/stretch_mode=0
 boot_splash/use_filter=false
 boot_splash/image="uid://b0bx8xsv77igo"
 config/icon="uid://ba5nmyliq213f"
