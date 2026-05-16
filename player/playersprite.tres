@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=38 format=3 uid="uid://18w4y5eq60p"]
+[gd_resource type="SpriteFrames" format=3 uid="uid://18w4y5eq60p"]
 
 [ext_resource type="Texture2D" uid="uid://dnwmxki8m3tcg" path="res://player/sprite/ari.png" id="1_gl231"]
 

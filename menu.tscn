@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://b4hofg1kgse0l"]
+[gd_scene format=3 uid="uid://b4hofg1kgse0l"]
 
 [ext_resource type="AudioStream" uid="uid://yhot3kyjldep" path="res://music/theme.wav" id="1_nrnbx"]
 [ext_resource type="Texture2D" uid="uid://biat1rvcam0or" path="res://menu/sprite/background_background.png" id="2_g7jxm"]
@@ -80,20 +80,20 @@ animations = [{
 "speed": 1.0
 }]
 
-[node name="Menu" type="Node2D"]
+[node name="Menu" type="Node2D" unique_id=2000345490]
 texture_filter = 1
 
-[node name="Music" type="AudioStreamPlayer" parent="."]
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=493155118]
 stream = ExtResource("1_nrnbx")
 script = ExtResource("2_jspdm")
 
-[node name="BackgroundBackground" type="Sprite2D" parent="."]
+[node name="BackgroundBackground" type="Sprite2D" parent="." unique_id=1350132230]
 modulate = Color(1, 1, 1, 0.466667)
 position = Vector2(320, 120)
 texture = ExtResource("2_g7jxm")
 script = ExtResource("3_iqepy")
 
-[node name="Background2" type="Sprite2D" parent="."]
+[node name="Background2" type="Sprite2D" parent="." unique_id=1246739433]
 modulate = Color(0, 0, 0, 0.364706)
 texture_repeat = 2
 position = Vector2(188, 152)
@@ -102,7 +102,7 @@ script = ExtResource("9_4ndjb")
 animation_offset = 256
 weight = 0.05
 
-[node name="Background" type="Sprite2D" parent="."]
+[node name="Background" type="Sprite2D" parent="." unique_id=737259658]
 texture_repeat = 2
 position = Vector2(160, 120)
 texture = ExtResource("2_nrnbx")
@@ -110,7 +110,7 @@ script = ExtResource("9_4ndjb")
 animation_offset = 256
 weight = 0.05
 
-[node name="HighScore" type="PanelContainer" parent="."]
+[node name="HighScore" type="PanelContainer" parent="." unique_id=301658712]
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
@@ -125,13 +125,13 @@ grow_vertical = 2
 theme = ExtResource("15_oxnod")
 script = ExtResource("8_td6mg")
 
-[node name="HighScoreLabel" type="Label" parent="HighScore"]
+[node name="HighScoreLabel" type="Label" parent="HighScore" unique_id=1065296351]
 layout_mode = 2
 size_flags_horizontal = 8
 text = "High Score: "
 horizontal_alignment = 2
 
-[node name="Credits" type="PanelContainer" parent="."]
+[node name="Credits" type="PanelContainer" parent="." unique_id=64272782]
 offset_left = 244.0
 offset_top = 200.0
 offset_right = 304.0
@@ -141,17 +141,17 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_guify")
 script = ExtResource("9_3ls4m")
 animation_offset = 80
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Credits"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Credits" unique_id=1260284215]
 layout_mode = 2
 theme_override_constants/separation = -1
 
-[node name="DemoLabel" type="Label" parent="Credits/VBoxContainer"]
+[node name="DemoLabel" type="Label" parent="Credits/VBoxContainer" unique_id=1582440133]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 0.7529412)
 text = "(Demo)"
 horizontal_alignment = 2
 
-[node name="CreditsButton" type="Button" parent="Credits/VBoxContainer"]
+[node name="CreditsButton" type="Button" parent="Credits/VBoxContainer" unique_id=796295533]
 layout_mode = 2
 focus_neighbor_left = NodePath("../../../MenuButtons/VBoxContainer/Quit")
 focus_next = NodePath("../../../MenuButtons/VBoxContainer/Play")
@@ -161,7 +161,7 @@ flat = true
 alignment = 2
 script = ExtResource("14_oil5j")
 
-[node name="MenuButtons" type="PanelContainer" parent="."]
+[node name="MenuButtons" type="PanelContainer" parent="." unique_id=1541478577]
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
@@ -175,7 +175,7 @@ theme = ExtResource("15_oxnod")
 script = ExtResource("9_3ls4m")
 animation_offset = -96
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MenuButtons"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuButtons" unique_id=290205144]
 layout_mode = 2
 size_flags_vertical = 8
 focus_mode = 2
@@ -183,7 +183,7 @@ focus_behavior_recursive = 2
 theme_override_constants/separation = 0
 alignment = 2
 
-[node name="Play" type="Button" parent="MenuButtons/VBoxContainer"]
+[node name="Play" type="Button" parent="MenuButtons/VBoxContainer" unique_id=2047050310]
 layout_mode = 2
 theme = ExtResource("15_oxnod")
 text = "Play"
@@ -192,7 +192,7 @@ flat = true
 alignment = 0
 script = ExtResource("16_gd0jp")
 
-[node name="Settings" type="Button" parent="MenuButtons/VBoxContainer"]
+[node name="Settings" type="Button" parent="MenuButtons/VBoxContainer" unique_id=641519535]
 layout_mode = 2
 theme = ExtResource("15_oxnod")
 text = "Settings "
@@ -201,7 +201,7 @@ flat = true
 alignment = 0
 script = ExtResource("17_3ls4m")
 
-[node name="MoreGames" type="Button" parent="MenuButtons/VBoxContainer"]
+[node name="MoreGames" type="Button" parent="MenuButtons/VBoxContainer" unique_id=451999072]
 layout_mode = 2
 focus_neighbor_right = NodePath("../../../Credits/VBoxContainer/CreditsButton")
 focus_next = NodePath("../../../Credits/VBoxContainer/CreditsButton")
@@ -213,7 +213,7 @@ flat = true
 alignment = 0
 script = ExtResource("15_5h80m")
 
-[node name="Quit" type="Button" parent="MenuButtons/VBoxContainer"]
+[node name="Quit" type="Button" parent="MenuButtons/VBoxContainer" unique_id=955460315]
 layout_mode = 2
 focus_neighbor_right = NodePath("../../../Credits/VBoxContainer/CreditsButton")
 focus_next = NodePath("../../../Credits/VBoxContainer/CreditsButton")
@@ -225,16 +225,16 @@ flat = true
 alignment = 0
 script = ExtResource("18_5h80m")
 
-[node name="HSeparator" type="HSeparator" parent="MenuButtons/VBoxContainer"]
+[node name="HSeparator" type="HSeparator" parent="MenuButtons/VBoxContainer" unique_id=657897825]
 layout_mode = 2
 theme_override_constants/separation = 8
 theme_override_styles/separator = SubResource("StyleBoxEmpty_oil5j")
 
-[node name="TextureRect" type="TextureRect" parent="MenuButtons/VBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="MenuButtons/VBoxContainer" unique_id=1540366575]
 layout_mode = 2
 texture = ExtResource("22_guify")
 
-[node name="Medal" type="AnimatedSprite2D" parent="."]
+[node name="Medal" type="AnimatedSprite2D" parent="." unique_id=307989957]
 visible = false
 position = Vector2(24, 24)
 sprite_frames = SubResource("SpriteFrames_oxnod")
