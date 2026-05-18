@@ -16,7 +16,10 @@ func _ready() -> void:
 
 func _process(_delta:float) -> void:
 	if $Player.position.y <= 0 or glitch_effect_timer >= 120:
-		get_tree().change_scene_to_packed(end_of_demo)
+		if Settings.is_demo:
+			get_tree().change_scene_to_packed(end_of_demo)
+		else:
+			get_tree().change_scene_to_file("res://locations/intro/intro.tscn")
 	
 	if glitch_effect_check:
 		glitch_effect_timer += 1

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ffns7ii756od"]
+[gd_scene format=3 uid="uid://ffns7ii756od"]
 
 [ext_resource type="Texture2D" uid="uid://6axfoariuds1" path="res://locations/campfire/sprite/trail.png" id="1_0g46y"]
 [ext_resource type="Script" uid="uid://dqj6bjurkqtgk" path="res://locations/campfire/campfire.gd" id="1_4fjnm"]
@@ -15,64 +15,64 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m1u5h"]
 size = Vector2(23.9337, 26.0313)
 
-[node name="Campfire" type="Node2D"]
+[node name="Campfire" type="Node2D" unique_id=1717131949]
 texture_filter = 1
 script = ExtResource("1_4fjnm")
 
-[node name="Cliff" type="Sprite2D" parent="."]
+[node name="Cliff" type="Sprite2D" parent="." unique_id=208435432]
 position = Vector2(160, 1120)
 texture = ExtResource("1_btnor")
 
-[node name="Grass" type="Sprite2D" parent="."]
+[node name="Grass" type="Sprite2D" parent="." unique_id=1361977858]
 position = Vector2(160, 872)
 texture = ExtResource("2_wt4if")
 
-[node name="Trail" type="Sprite2D" parent="."]
+[node name="Trail" type="Sprite2D" parent="." unique_id=454391025]
 position = Vector2(160, 360)
 texture = ExtResource("1_0g46y")
 
-[node name="Path" type="Sprite2D" parent="."]
+[node name="Path" type="Sprite2D" parent="." unique_id=1545295978]
 position = Vector2(160, 120)
 texture = ExtResource("2_2gjsw")
 
-[node name="Campfire" type="Sprite2D" parent="."]
+[node name="Campfire" type="Sprite2D" parent="." unique_id=885992756]
 position = Vector2(160, 972)
 texture = ExtResource("9_m1u5h")
 region_enabled = true
 region_rect = Rect2(0, 0, 320, 240)
 
-[node name="J" type="StaticBody2D" parent="." groups=["NPC"]]
+[node name="J" type="StaticBody2D" parent="." unique_id=1011508776 groups=["NPC"]]
 position = Vector2(184, 1104)
 
-[node name="Blob" type="Sprite2D" parent="J"]
+[node name="Blob" type="Sprite2D" parent="J" unique_id=200831051]
 position = Vector2(0, -1)
 texture = ExtResource("6_mk5xf")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="J"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="J" unique_id=1910623947]
 position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_m1u5h")
 
-[node name="TalkableComponent" parent="J" instance=ExtResource("7_4dvq6")]
+[node name="TalkableComponent" parent="J" unique_id=1822255620 instance=ExtResource("7_4dvq6")]
 dialogue_resource = ExtResource("8_4dvq6")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="J/TalkableComponent"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="J/TalkableComponent" unique_id=2114214140]
 shape = SubResource("RectangleShape2D_m1u5h")
 
-[node name="Player" parent="." instance=ExtResource("3_4ixws")]
+[node name="Player" parent="." unique_id=475039454 instance=ExtResource("3_4ixws")]
 position = Vector2(160, 24)
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1169560113]
 limit_left = 0
 limit_top = 0
 limit_right = 320
 
-[node name="Walls" type="StaticBody2D" parent="."]
+[node name="Walls" type="StaticBody2D" parent="." unique_id=675819657]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls" unique_id=1280755715]
 polygon = PackedVector2Array(144, -16, 144, 488, 0, 560, 0, 1128, 88, 1114, 168, 1139, 169, 1161, -16, 1160, -16, 560, 128, 488, 128, -32, 192, -32, 192, 488, 336, 560, 336, 1160, 169, 1161, 168, 1139, 255, 1116, 320, 1131, 320, 560, 176, 488, 176, -16)
 
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Walls"]
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Walls" unique_id=1471262812]
 polygon = PackedVector2Array(209, 921, 209, 980, 238, 989, 242, 951, 251, 914, 260, 996, 274, 982, 293, 980, 293, 921, 292, 921, 276, 905, 252, 857, 250, 857, 226, 905, 210, 921)
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1369807693]
 stream = ExtResource("11_hgrvk")
