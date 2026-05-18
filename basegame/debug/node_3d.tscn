@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://cvgy7jcauurbx"]
+
+[ext_resource type="PackedScene" uid="uid://ckq1qrj8313lj" path="res://locations/bank/bank.tscn" id="1_bvfil"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_pnmfe"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_y17sw"]
+sky_material = SubResource("ProceduralSkyMaterial_pnmfe")
+
+[sub_resource type="Environment" id="Environment_4nfxe"]
+background_mode = 2
+sky = SubResource("Sky_y17sw")
+tonemap_mode = 2
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_bvfil"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pnmfe"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_bvfil")
+
+[sub_resource type="QuadMesh" id="QuadMesh_y17sw"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_pnmfe")
+size = Vector2(3.2, 2.4)
+
+[sub_resource type="GDScript" id="GDScript_bvfil"]
+script/source = "extends MeshInstance3D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	self.rotate_y(0.01)
+"
+
+[node name="Node3D" type="Node3D" unique_id=103765437]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=17432243]
+environment = SubResource("Environment_4nfxe")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1851917180]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=286413309]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.2673259)
+mesh = SubResource("QuadMesh_y17sw")
+skeleton = NodePath("../SubViewport")
+script = SubResource("GDScript_bvfil")
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=1694996773]
+size = Vector2i(320, 240)
+
+[node name="Bank" parent="SubViewport" unique_id=1322561534 instance=ExtResource("1_bvfil")]

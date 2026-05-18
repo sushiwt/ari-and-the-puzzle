@@ -6,7 +6,7 @@ func _ready() -> void:
 	grab_focus()
 
 func _process(_delta:float) -> void:
-	if Input.is_action_just_pressed("back") || Input.is_action_just_pressed("confirm"):
+	if Input.is_action_just_pressed("back"):
 		exit()
 		if GameState.focused_ui_element != null:
 			GameState.focused_ui_element.grab_focus()

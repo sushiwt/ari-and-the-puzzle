@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bxomscsa0kltd"]
+[gd_scene format=3 uid="uid://bxomscsa0kltd"]
 
 [ext_resource type="Script" uid="uid://b0mnxxteyq6gb" path="res://menu/panels/panel_overlay.gd" id="1_x8as2"]
 [ext_resource type="Texture2D" uid="uid://dtlidpg357uty" path="res://menu/sprite/panel.png" id="2_u5gwn"]
@@ -25,7 +25,7 @@ thickness = 8
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fredc"]
 
-[node name="Settings" type="Control"]
+[node name="Settings" type="Control" unique_id=774541194]
 z_index = 10
 texture_filter = 1
 layout_mode = 3
@@ -36,13 +36,13 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_x8as2")
 
-[node name="PanelBackground" type="ColorRect" parent="."]
+[node name="PanelBackground" type="ColorRect" parent="." unique_id=340652247]
 layout_mode = 0
 offset_right = 320.0
 offset_bottom = 240.0
 color = Color(0, 0, 0, 0.501961)
 
-[node name="PanelShadow" type="ColorRect" parent="."]
+[node name="PanelShadow" type="ColorRect" parent="." unique_id=1160223506]
 layout_mode = 0
 offset_left = 100.0
 offset_top = 72.0
@@ -50,14 +50,14 @@ offset_right = 228.0
 offset_bottom = 176.0
 color = Color(0, 0, 0, 0.25098)
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1543717670]
 layout_mode = 0
 offset_left = 96.0
 offset_top = 68.0
 offset_right = 224.0
 offset_bottom = 172.0
 
-[node name="NinePatchRect" type="NinePatchRect" parent="PanelContainer"]
+[node name="NinePatchRect" type="NinePatchRect" parent="PanelContainer" unique_id=638269439]
 layout_mode = 2
 texture = ExtResource("2_u5gwn")
 patch_margin_left = 5
@@ -65,7 +65,7 @@ patch_margin_top = 5
 patch_margin_right = 5
 patch_margin_bottom = 5
 
-[node name="SettingsLabel" type="Label" parent="PanelContainer/NinePatchRect"]
+[node name="SettingsLabel" type="Label" parent="PanelContainer/NinePatchRect" unique_id=1523910559]
 layout_mode = 0
 offset_left = 38.0
 offset_top = 4.0
@@ -76,7 +76,7 @@ theme_override_fonts/font = ExtResource("3_mlxts")
 theme_override_font_sizes/font_size = 32
 text = "- Settings -"
 
-[node name="MasterVolLabel" type="Label" parent="PanelContainer/NinePatchRect"]
+[node name="MasterVolLabel" type="Label" parent="PanelContainer/NinePatchRect" unique_id=101278808]
 layout_mode = 0
 offset_left = 8.0
 offset_top = 24.0
@@ -87,7 +87,7 @@ theme_override_fonts/font = ExtResource("3_mlxts")
 theme_override_font_sizes/font_size = 32
 text = "Master Volume"
 
-[node name="MasterVolume" type="HSlider" parent="PanelContainer/NinePatchRect"]
+[node name="MasterVolume" type="HSlider" parent="PanelContainer/NinePatchRect" unique_id=343729401]
 layout_mode = 0
 offset_left = 8.0
 offset_top = 40.0
@@ -99,11 +99,12 @@ theme_override_icons/grabber_highlight = ExtResource("4_dm5nv")
 theme_override_styles/slider = SubResource("StyleBoxLine_mottj")
 theme_override_styles/grabber_area = SubResource("StyleBoxLine_fredc")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_fredc")
-min_value = -72.0
-max_value = 0.0
+max_value = 1.0
+step = 0.001
+value = 0.895
 script = ExtResource("5_elxc5")
 
-[node name="BigAriLabel" type="Label" parent="PanelContainer/NinePatchRect"]
+[node name="BigAriLabel" type="Label" parent="PanelContainer/NinePatchRect" unique_id=1120448257]
 layout_mode = 0
 offset_left = 8.0
 offset_top = 63.0
@@ -114,7 +115,7 @@ theme_override_fonts/font = ExtResource("3_mlxts")
 theme_override_font_sizes/font_size = 32
 text = "Disable big Ari"
 
-[node name="BigAriCheckbox" type="CheckBox" parent="PanelContainer/NinePatchRect"]
+[node name="BigAriCheckbox" type="CheckBox" parent="PanelContainer/NinePatchRect" unique_id=1632141718]
 layout_mode = 0
 offset_left = 101.0
 offset_top = 58.0
@@ -127,7 +128,7 @@ theme_override_icons/checked = ExtResource("6_fuc8l")
 theme_override_icons/unchecked = ExtResource("7_fmqj4")
 script = ExtResource("8_mlxts")
 
-[node name="BigAriLabel2" type="Label" parent="PanelContainer/NinePatchRect"]
+[node name="BigAriLabel2" type="Label" parent="PanelContainer/NinePatchRect" unique_id=2110946844]
 layout_mode = 0
 offset_left = 8.0
 offset_top = 81.0
@@ -138,7 +139,7 @@ theme_override_fonts/font = ExtResource("3_mlxts")
 theme_override_font_sizes/font_size = 32
 text = "Slide on walls"
 
-[node name="WallCheckbox" type="CheckBox" parent="PanelContainer/NinePatchRect"]
+[node name="WallCheckbox" type="CheckBox" parent="PanelContainer/NinePatchRect" unique_id=1519543525]
 layout_mode = 0
 offset_left = 101.0
 offset_top = 76.0
@@ -150,7 +151,7 @@ theme_override_icons/checked = ExtResource("6_fuc8l")
 theme_override_icons/unchecked = ExtResource("7_fmqj4")
 script = ExtResource("8_u5gwn")
 
-[node name="Back" type="Sprite2D" parent="."]
+[node name="Back" type="Sprite2D" parent="." unique_id=1069549730]
 position = Vector2(4, 4)
 texture = ExtResource("10_dm5nv")
 centered = false
