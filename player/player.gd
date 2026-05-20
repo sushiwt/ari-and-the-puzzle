@@ -3,6 +3,8 @@ extends CharacterBody2D
 const WALK_SPEED = 100.0
 const RUN_SPEED = 200.0
 
+@export var demo_pause_toggle = false
+
 var mvmt_vector: Vector2
 var use_spd
 
@@ -10,6 +12,7 @@ var player_state = "idle"
 var player_direction = "Down"
 
 var pause = preload("res://player/pause.tscn")
+var demo_pause = preload("res://player/demo_pause.tscn")
 
 @onready var talkable_finder: Area2D = $Direction/TalkableFinder
 var gui_exists = false
@@ -27,8 +30,13 @@ func _ready() -> void:
 
 func _process(_delta:float) -> void:
 	if Input.is_action_just_pressed("pause") && !gui_exists:
-		var pause_instance = pause.instantiate()
-		add_sibling(pause_instance)
+		if demo_pause_toggle:
+			var pause_instance = demo_pause.instantiate()
+			add_sibling(pause_instance)
+		else:
+			var pause_instance = pause.instantiate()
+			add_sibling(pause_instance)
+			
 	
 	if Input.is_action_just_pressed("dialogue_confirm") && !gui_exists:
 		var talkables = talkable_finder.get_overlapping_areas()

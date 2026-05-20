@@ -13,7 +13,7 @@ texture = ExtResource("1_vh2gh")
 [node name="Player" parent="." unique_id=1655164581 instance=ExtResource("1_ihrpd")]
 position = Vector2(160, 158)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=716802894]
+[node name="TentCollision" type="StaticBody2D" parent="." unique_id=716802894]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=73493620]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TentCollision" unique_id=73493620]
 polygon = PackedVector2Array(140, 192, 136, 220, 184, 220, 180, 192, 208, 192, 208, 132, 168, 128, 136, 128, 112, 132, 112, 192, 96, 240, 96, 112, 224, 112, 224, 240, 96, 240, 112, 192)

@@ -1,0 +1,29 @@
+[gd_resource type="Theme" format=3 uid="uid://c8sxp26ht7xao"]
+
+[ext_resource type="FontFile" uid="uid://b46ftxdi2uwiu" path="res://basegame/fonts/minitextmono.ttf" id="1_owmiq"]
+
+[sub_resource type="FontVariation" id="FontVariation_owmiq"]
+base_font = ExtResource("1_owmiq")
+spacing_top = -3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_avsfx"]
+bg_color = Color(0, 0, 0, 1)
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s7k07"]
+bg_color = Color(1, 1, 1, 1)
+
+[resource]
+default_font = ExtResource("1_owmiq")
+default_font_size = 16
+Button/colors/font_color = Color(0.3396053, 0.5426322, 1, 1)
+Button/colors/font_focus_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(0, 0, 0, 1)
+Button/fonts/font = SubResource("FontVariation_owmiq")
+Button/styles/disabled = SubResource("StyleBoxFlat_avsfx")
+Button/styles/focus = SubResource("StyleBoxFlat_s7k07")
+Button/styles/hover = SubResource("StyleBoxFlat_s7k07")
+Button/styles/normal = SubResource("StyleBoxFlat_avsfx")
+Button/styles/pressed = SubResource("StyleBoxFlat_s7k07")
+Label/constants/line_spacing = 0

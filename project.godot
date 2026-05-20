@@ -53,7 +53,7 @@ window/stretch/mode="viewport"
 
 [editor]
 
-movie_writer/movie_file="C:/Users/sushi/Documents/Godot Games/ari-and-the-puzzle/basegame/movies/output.avi"
+movie_writer/movie_file="C:/Users/sushi/Documents/GitHub/ari-and-the-puzzle/basegame/movies/output.avi"
 movie_writer/disable_vsync=true
 movie_writer/fps=30
 
