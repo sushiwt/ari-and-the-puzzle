@@ -25,6 +25,9 @@ var finished_room_15 = false
 
 var focused_ui_element: Button
 
+var player_switch_confirm = false
+var player_switch_position: Vector2 = Vector2(0,0)
+
 func _process(_delta:float) -> void:
 	room_timer += 1
 	

@@ -15,12 +15,13 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 func _process(delta: float) -> void:
-	letter_amount += 0.5
 	
 	var focused_node = get_viewport().gui_get_focus_owner()
 	if focused_node is Button:
 		text = \" > \" + focused_node.text.substr(3, floor(letter_amount)) + \"|\"
 	
+	if focused_node.text.length() > letter_amount:
+		letter_amount += 0.5
 		
 	last_text = current_text
 	current_text = focused_node.text
@@ -88,3 +89,14 @@ offset_bottom = 241.0
 theme = ExtResource("2_oe8y4")
 text = " >"
 script = SubResource("GDScript_oe8y4")
+
+[node name="Label3" type="Label" parent="CanvasLayer" unique_id=12127728]
+visible = false
+texture_filter = 1
+offset_top = 228.0
+offset_right = 120.0
+offset_bottom = 251.0
+theme = ExtResource("2_oe8y4")
+text = " Resuming game..."
+
+[connection signal="button_down" from="CanvasLayer/PlayButton" to="." method="_on_play_button_button_down"]

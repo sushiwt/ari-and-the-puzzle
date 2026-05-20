@@ -69,7 +69,7 @@ limit_right = 320
 [node name="Walls" type="StaticBody2D" parent="." unique_id=675819657]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls" unique_id=1280755715]
-polygon = PackedVector2Array(144, -16, 144, 488, 0, 560, 0, 1128, 88, 1114, 168, 1139, 169, 1161, -16, 1160, -16, 560, 128, 488, 128, -32, 192, -32, 192, 488, 336, 560, 336, 1160, 169, 1161, 168, 1139, 255, 1116, 320, 1131, 320, 560, 176, 488, 176, -16)
+polygon = PackedVector2Array(144, -16, 144, 488, 0, 560, 0, 1128, 88, 1114, 168, 1139, 169, 1161, -16, 1160, -16, 544, 128, 472, 128, -32, 192, -32, 192, 472, 336, 544, 336, 1160, 169, 1161, 168, 1139, 255, 1116, 320, 1131, 320, 560, 176, 488, 176, -16)
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Walls" unique_id=1471262812]
 polygon = PackedVector2Array(209, 921, 209, 980, 238, 989, 242, 951, 251, 914, 260, 996, 274, 982, 293, 980, 293, 921, 292, 921, 276, 905, 252, 857, 250, 857, 226, 905, 210, 921)

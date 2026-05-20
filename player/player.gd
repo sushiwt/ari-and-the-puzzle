@@ -27,6 +27,9 @@ func _ready() -> void:
 	$TouchControls.visible = false
 	if OS.has_feature("web_android") || OS.has_feature("web_ios"):
 		$TouchControls.visible = true
+	
+	if GameState.player_switch_confirm:
+		position = GameState.player_switch_position
 
 func _process(_delta:float) -> void:
 	if Input.is_action_just_pressed("pause") && !gui_exists:
@@ -82,5 +85,3 @@ func _process(_delta:float) -> void:
 	
 	$PlayerSprite.play(player_state + player_direction)
 	$Direction.rotation = rot_map.get(mvmt_vector, $Direction.rotation)
-	
-	

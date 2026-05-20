@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://iahxyro5hkx6"]
+
+[ext_resource type="Script" uid="uid://cyx6mlt40kycl" path="res://basegame/player_move_object.gd" id="1_mx7ye"]
+
+[node name="PlayerMoveObject" type="Area2D" unique_id=875299654]
+script = ExtResource("1_mx7ye")
+next_position = Vector2(162, 165)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

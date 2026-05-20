@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://cveiyoy15wew4"]
+[gd_scene format=3 uid="uid://cveiyoy15wew4"]
 
 [ext_resource type="Script" uid="uid://c7qco6ebf2l72" path="res://player/player.gd" id="1_rkbax"]
 [ext_resource type="Texture2D" uid="uid://cnrpl5elw8qg5" path="res://player/sprite/shadow.png" id="2_g1dw6"]
@@ -41,25 +41,25 @@ points = PackedVector2Array(16, -32, 16, 32, 0, 32, -16, 0, 0, -32)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wodsf"]
 size = Vector2(40, 40)
 
-[node name="Player" type="CharacterBody2D" groups=["Obstacle"]]
+[node name="Player" type="CharacterBody2D" unique_id=870061595 groups=["Obstacle", "Player"]]
 script = ExtResource("1_rkbax")
 
-[node name="CameraDirectionArea" type="Area2D" parent="." groups=["Camera Checker"]]
+[node name="CameraDirectionArea" type="Area2D" parent="." unique_id=1580080270 groups=["Camera Checker"]]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraDirectionArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraDirectionArea" unique_id=1295873037]
 shape = SubResource("CircleShape2D_yllr7")
 
-[node name="PlayerCatchArea" type="Area2D" parent="." groups=["Player"]]
+[node name="PlayerCatchArea" type="Area2D" parent="." unique_id=1822602248 groups=["Player"]]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerCatchArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerCatchArea" unique_id=1996523407]
 shape = SubResource("RectangleShape2D_g1dw6")
 
-[node name="PlayerShadow" type="Sprite2D" parent="."]
+[node name="PlayerShadow" type="Sprite2D" parent="." unique_id=2076762210]
 texture_filter = 1
 position = Vector2(0, 14)
 texture = ExtResource("2_g1dw6")
 
-[node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
+[node name="PlayerSprite" type="AnimatedSprite2D" parent="." unique_id=822486163]
 texture_filter = 1
 position = Vector2(0, 14)
 sprite_frames = ExtResource("2_rkbax")
@@ -68,28 +68,28 @@ frame = 6
 frame_progress = 0.42794573
 offset = Vector2(0, -24)
 
-[node name="PlayerCollision" type="CollisionShape2D" parent="."]
+[node name="PlayerCollision" type="CollisionShape2D" parent="." unique_id=1234456259]
 position = Vector2(0, 13.5)
 shape = SubResource("RectangleShape2D_oul6g")
 
-[node name="Direction" type="Marker2D" parent="."]
+[node name="Direction" type="Marker2D" parent="." unique_id=1637675105]
 position = Vector2(0, 13)
 
-[node name="TalkableFinder" type="Area2D" parent="Direction"]
+[node name="TalkableFinder" type="Area2D" parent="Direction" unique_id=593543145]
 collision_layer = 0
 collision_mask = 16
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/TalkableFinder"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/TalkableFinder" unique_id=1754258629]
 position = Vector2(0, 13)
 shape = SubResource("RectangleShape2D_2ieo8")
 
-[node name="TouchControls" type="CanvasLayer" parent="."]
+[node name="TouchControls" type="CanvasLayer" parent="." unique_id=1017745759]
 visible = false
 
-[node name="DPad" type="Node2D" parent="TouchControls"]
+[node name="DPad" type="Node2D" parent="TouchControls" unique_id=1827742211]
 position = Vector2(0, 240)
 
-[node name="UpButton" type="TouchScreenButton" parent="TouchControls/DPad"]
+[node name="UpButton" type="TouchScreenButton" parent="TouchControls/DPad" unique_id=1004835538]
 modulate = Color(1, 1, 1, 0.501961)
 texture_filter = 1
 position = Vector2(48, -112)
@@ -100,7 +100,7 @@ shape = SubResource("ConvexPolygonShape2D_2ieo8")
 passby_press = true
 action = "ui_up"
 
-[node name="DownButton" type="TouchScreenButton" parent="TouchControls/DPad"]
+[node name="DownButton" type="TouchScreenButton" parent="TouchControls/DPad" unique_id=960225756]
 modulate = Color(1, 1, 1, 0.501961)
 texture_filter = 1
 position = Vector2(48, -48)
@@ -111,7 +111,7 @@ shape = SubResource("ConvexPolygonShape2D_ebec5")
 passby_press = true
 action = "ui_down"
 
-[node name="LeftButton" type="TouchScreenButton" parent="TouchControls/DPad"]
+[node name="LeftButton" type="TouchScreenButton" parent="TouchControls/DPad" unique_id=29303795]
 modulate = Color(1, 1, 1, 0.501961)
 texture_filter = 1
 position = Vector2(16, -80)
@@ -122,7 +122,7 @@ shape = SubResource("ConvexPolygonShape2D_yllr7")
 passby_press = true
 action = "ui_left"
 
-[node name="RightButton" type="TouchScreenButton" parent="TouchControls/DPad"]
+[node name="RightButton" type="TouchScreenButton" parent="TouchControls/DPad" unique_id=1955104246]
 modulate = Color(1, 1, 1, 0.501961)
 texture_filter = 1
 position = Vector2(80, -80)
@@ -133,7 +133,7 @@ shape = SubResource("ConvexPolygonShape2D_kb6p2")
 passby_press = true
 action = "ui_right"
 
-[node name="ConfirmButton" type="TouchScreenButton" parent="TouchControls"]
+[node name="ConfirmButton" type="TouchScreenButton" parent="TouchControls" unique_id=1616399848]
 modulate = Color(1, 1, 1, 0.501961)
 texture_filter = 1
 position = Vector2(240, 160)
