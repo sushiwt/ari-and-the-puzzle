@@ -1,0 +1,102 @@
+[gd_scene load_steps=10 format=3 uid="uid://c2omnrd8s3ott"]
+
+[ext_resource type="Script" uid="uid://b0mnxxteyq6gb" path="res://menu/panels/panel_overlay.gd" id="1_ax4dq"]
+[ext_resource type="Texture2D" uid="uid://dtlidpg357uty" path="res://menu/sprite/panel.png" id="2_3m6c0"]
+[ext_resource type="FontFile" uid="uid://de8o0r0elchgg" path="res://basegame/fonts/minitext.ttf" id="3_3u30p"]
+[ext_resource type="Theme" uid="uid://bsuwwjtlqccxr" path="res://basegame/theme.tres" id="4_qykqh"]
+[ext_resource type="Texture2D" uid="uid://bpfnu667ssohr" path="res://menu/buttons/sprite/play.png" id="5_tjcvr"]
+[ext_resource type="Script" uid="uid://b40qrbyokdlfu" path="res://menu/buttons/play.gd" id="6_0js2u"]
+[ext_resource type="Texture2D" uid="uid://cy7j4vos04j18" path="res://menu/buttons/sprite/quit.png" id="6_qykqh"]
+[ext_resource type="Texture2D" uid="uid://bhvkdake5t066" path="res://menu/buttons/sprite/menu.png" id="7_y5b5q"]
+[ext_resource type="Script" uid="uid://b56vt5wm3h05u" path="res://menu/buttons/menu.gd" id="8_dfn2w"]
+
+[node name="Pause" type="Control" groups=["Dialogue"]]
+z_index = 10
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ax4dq")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PanelBackground" type="ColorRect" parent="CanvasLayer"]
+offset_right = 320.0
+offset_bottom = 240.0
+color = Color(0, 0, 0, 0.501961)
+
+[node name="PanelShadow" type="ColorRect" parent="CanvasLayer"]
+offset_left = 132.0
+offset_top = 100.0
+offset_right = 196.0
+offset_bottom = 160.0
+color = Color(0, 0, 0, 0.25098)
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer"]
+texture_filter = 1
+offset_left = 128.0
+offset_top = 96.0
+offset_right = 192.0
+offset_bottom = 168.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/PanelContainer"]
+layout_mode = 2
+texture = ExtResource("2_3m6c0")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="Paused" type="Label" parent="CanvasLayer/PanelContainer/NinePatchRect"]
+layout_mode = 0
+offset_top = 4.0
+offset_right = 64.0
+offset_bottom = 18.0
+theme_override_fonts/font = ExtResource("3_3u30p")
+text = "- Paused -"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/PanelContainer/NinePatchRect"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 20.0
+offset_right = 60.0
+offset_bottom = 68.0
+theme_override_constants/separation = 0
+
+[node name="Resume" type="Button" parent="CanvasLayer/PanelContainer/NinePatchRect/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_qykqh")
+text = "Resume"
+icon = ExtResource("5_tjcvr")
+flat = true
+alignment = 0
+
+[node name="Retry" type="Button" parent="CanvasLayer/PanelContainer/NinePatchRect/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_qykqh")
+text = "Retry"
+icon = ExtResource("6_qykqh")
+flat = true
+alignment = 0
+script = ExtResource("6_0js2u")
+
+[node name="Menu" type="Button" parent="CanvasLayer/PanelContainer/NinePatchRect/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_qykqh")
+text = "Menu"
+icon = ExtResource("7_y5b5q")
+flat = true
+alignment = 0
+script = ExtResource("8_dfn2w")
+
+[connection signal="gui_input" from="CanvasLayer/PanelBackground" to="." method="_on_panel_background_gui_input"]
+[connection signal="gui_input" from="CanvasLayer/PanelShadow" to="." method="_on_panel_background_gui_input"]
+[connection signal="mouse_entered" from="CanvasLayer/PanelContainer" to="." method="_on_panel_container_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/PanelContainer" to="." method="_on_panel_container_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer/PanelContainer/NinePatchRect/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="CanvasLayer/PanelContainer/NinePatchRect/VBoxContainer/Retry" to="CanvasLayer/PanelContainer/NinePatchRect/VBoxContainer/Retry" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/PanelContainer/NinePatchRect/VBoxContainer/Menu" to="CanvasLayer/PanelContainer/NinePatchRect/VBoxContainer/Menu" method="_on_pressed"]
