@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
-const WALK_SPEED = 100.0
-const RUN_SPEED = 200.0
+const WALK_SPEED = 75.0
+const RUN_SPEED = 100.0
 
 @export var demo_pause_toggle = false
 
@@ -54,10 +54,16 @@ func _process(delta:float) -> void:
 	use_spd = WALK_SPEED
 	mvmt_vector = Vector2.ZERO
 	player_state = "idle"
+	$PlayerSprite.speed_scale = 0.75
 	
 	if Settings.slide_on_walls:
 		if is_on_ceiling() || is_on_floor() || is_on_wall():
 			use_spd = RUN_SPEED
+			$PlayerSprite.speed_scale = 1.0
+	
+	if Input.is_action_pressed("run"):
+		use_spd = RUN_SPEED
+		$PlayerSprite.speed_scale = 1.0
 	
 	if !gui_exists:
 		if Input.is_action_pressed("ui_left"):

@@ -25,7 +25,7 @@ polygon = PackedVector2Array(140, 192, 136, 220, 184, 220, 180, 192, 208, 192, 2
 [node name="PlayerMoveObject" parent="." unique_id=875299654 instance=ExtResource("3_y63wb")]
 position = Vector2(160, 216)
 location_path = "intro/intro2.tscn"
-next_position = Vector2(161, 116)
+next_position = Vector2(625, 596)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerMoveObject" unique_id=1887457717]
 shape = SubResource("RectangleShape2D_u154t")

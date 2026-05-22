@@ -66,6 +66,7 @@ sprite_frames = ExtResource("2_rkbax")
 animation = &"runLeft"
 frame = 6
 frame_progress = 0.42794573
+speed_scale = 0.75
 offset = Vector2(0, -24)
 
 [node name="PlayerCollision" type="CollisionShape2D" parent="." unique_id=1234456259]

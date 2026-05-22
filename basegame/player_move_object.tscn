@@ -6,6 +6,4 @@
 script = ExtResource("1_mx7ye")
 next_position = Vector2(162, 165)
 
-[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=235699293]
-
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

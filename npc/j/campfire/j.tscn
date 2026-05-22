@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://dd4xrsvyqa4aj"]
+
+[ext_resource type="Texture2D" uid="uid://c70fc0d52i3mj" path="res://npc/j/campfire/blob.png" id="1_4ehec"]
+[ext_resource type="PackedScene" uid="uid://o4trd2rn4x07" path="res://dialogue/talkable.tscn" id="2_mj72w"]
+[ext_resource type="Resource" uid="uid://bl32xr6gs7g3j" path="res://dialogue/dialogue/untitled.dialogue" id="3_41sa3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m1u5h"]
+size = Vector2(23.9337, 26.0313)
+
+[node name="J" type="StaticBody2D" unique_id=839103784 groups=["NPC"]]
+
+[node name="Blob" type="Sprite2D" parent="." unique_id=1712788837]
+position = Vector2(0, -1)
+texture = ExtResource("1_4ehec")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1148829939]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_m1u5h")
+
+[node name="TalkableComponent" parent="." unique_id=2062484297 instance=ExtResource("2_mj72w")]
+dialogue_resource = ExtResource("3_41sa3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TalkableComponent" unique_id=671278010]
+shape = SubResource("RectangleShape2D_m1u5h")

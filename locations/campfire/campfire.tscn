@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bisymyarc5mvr" path="res://locations/campfire/sprite/path.png" id="2_2gjsw"]
 [ext_resource type="Texture2D" uid="uid://bjltgg25fuol1" path="res://locations/campfire/sprite/grass.png" id="2_wt4if"]
 [ext_resource type="PackedScene" uid="uid://cveiyoy15wew4" path="res://player/player.tscn" id="3_4ixws"]
-[ext_resource type="Texture2D" uid="uid://c70fc0d52i3mj" path="res://locations/campfire/sprite/blob.png" id="6_mk5xf"]
+[ext_resource type="Texture2D" uid="uid://c70fc0d52i3mj" path="res://npc/j/campfire/blob.png" id="6_mk5xf"]
 [ext_resource type="PackedScene" uid="uid://o4trd2rn4x07" path="res://dialogue/talkable.tscn" id="7_4dvq6"]
 [ext_resource type="Resource" uid="uid://bl32xr6gs7g3j" path="res://dialogue/dialogue/untitled.dialogue" id="8_4dvq6"]
 [ext_resource type="Texture2D" uid="uid://dvuxn8ffbi873" path="res://locations/campfire/sprite/campfire.png" id="9_m1u5h"]
